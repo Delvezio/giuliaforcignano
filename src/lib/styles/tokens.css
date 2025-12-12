@@ -1,0 +1,129 @@
+/* ========= Design Tokens ========= */
+:root {
+	/* Base in numeri (per rgb(var(--x))) */
+	--white: 255 255 255; /* #FFFFFF */
+	--ink: 51 51 51; /* #333333 */
+
+	/* Alias editor-friendly (VS Code mostra i quadratini) */
+	--accent1: rgb(96 167 178); /* #60a7b2  brand */
+	--accent2: rgb(240 203 226); /* #f0cbe2  rosa  */
+	--accent3: rgb(189 180 217); /* #bdb4d9  lilla */
+	--accent4: rgb(180 202 234); /* #b4caea  azzurro */
+	--accent5: rgb(249 210 141); /* #f9d28d  ocra  */
+
+	/* Valori BASE numerici (500) per generare la scala */
+	--accent1-500: 96 167 178;
+	--accent2-500: 240 203 226;
+	--accent3-500: 189 180 217;
+	--accent4-500: 180 202 234;
+	--accent5-500: 249 210 141;
+
+	--black: 0 0 0;
+
+	/* ===== Scala 50→900 (compat: usa SRGB, non oklab) ===== */
+	/* accent1 */
+	--accent1-50: color-mix(in srgb, white 95%, rgb(var(--accent1-500)));
+	--accent1-100: color-mix(in srgb, white 90%, rgb(var(--accent1-500)));
+	--accent1-200: color-mix(in srgb, white 80%, rgb(var(--accent1-500)));
+	--accent1-300: color-mix(in srgb, white 70%, rgb(var(--accent1-500)));
+	--accent1-400: color-mix(in srgb, white 60%, rgb(var(--accent1-500)));
+	/* 500 è la base */
+	--accent1-600: color-mix(in srgb, rgb(var(--accent1-500)) 90%, black);
+	--accent1-700: color-mix(in srgb, rgb(var(--accent1-500)) 80%, black);
+	--accent1-800: color-mix(in srgb, rgb(var(--accent1-500)) 70%, black);
+	--accent1-900: color-mix(in srgb, rgb(var(--accent1-500)) 60%, black);
+
+	/* accent2 */
+	--accent2-50: color-mix(in srgb, white 95%, rgb(var(--accent2-500)));
+	--accent2-100: color-mix(in srgb, white 90%, rgb(var(--accent2-500)));
+	--accent2-200: color-mix(in srgb, white 80%, rgb(var(--accent2-500)));
+	--accent2-300: color-mix(in srgb, white 70%, rgb(var(--accent2-500)));
+	--accent2-400: color-mix(in srgb, white 60%, rgb(var(--accent2-500)));
+	--accent2-600: color-mix(in srgb, rgb(var(--accent2-500)) 90%, black);
+	--accent2-700: color-mix(in srgb, rgb(var(--accent2-500)) 80%, black);
+	--accent2-800: color-mix(in srgb, rgb(var(--accent2-500)) 70%, black);
+	--accent2-900: color-mix(in srgb, rgb(var(--accent2-500)) 60%, black);
+
+	/* accent3 */
+	--accent3-50: color-mix(in srgb, white 95%, rgb(var(--accent3-500)));
+	--accent3-100: color-mix(in srgb, white 90%, rgb(var(--accent3-500)));
+	--accent3-200: color-mix(in srgb, white 80%, rgb(var(--accent3-500)));
+	--accent3-300: color-mix(in srgb, white 70%, rgb(var(--accent3-500)));
+	--accent3-400: color-mix(in srgb, white 60%, rgb(var(--accent3-500)));
+	--accent3-600: color-mix(in srgb, rgb(var(--accent3-500)) 90%, black);
+	--accent3-700: color-mix(in srgb, rgb(var(--accent3-500)) 80%, black);
+	--accent3-800: color-mix(in srgb, rgb(var(--accent3-500)) 70%, black);
+	--accent3-900: color-mix(in srgb, rgb(var(--accent3-500)) 60%, black);
+
+	/* accent4 */
+	--accent4-50: color-mix(in srgb, white 95%, rgb(var(--accent4-500)));
+	--accent4-100: color-mix(in srgb, white 90%, rgb(var(--accent4-500)));
+	--accent4-200: color-mix(in srgb, white 80%, rgb(var(--accent4-500)));
+	--accent4-300: color-mix(in srgb, white 70%, rgb(var(--accent4-500)));
+	--accent4-400: color-mix(in srgb, white 60%, rgb(var(--accent4-500)));
+	--accent4-600: color-mix(in srgb, rgb(var(--accent4-500)) 90%, black);
+	--accent4-700: color-mix(in srgb, rgb(var(--accent4-500)) 80%, black);
+	--accent4-800: color-mix(in srgb, rgb(var(--accent4-500)) 70%, black);
+	--accent4-900: color-mix(in srgb, rgb(var(--accent4-500)) 60%, black);
+
+	/* accent5 */
+	--accent5-50: color-mix(in srgb, white 95%, rgb(var(--accent5-500)));
+	--accent5-100: color-mix(in srgb, white 90%, rgb(var(--accent5-500)));
+	--accent5-200: color-mix(in srgb, white 80%, rgb(var(--accent5-500)));
+	--accent5-300: color-mix(in srgb, white 70%, rgb(var(--accent5-500)));
+	--accent5-400: color-mix(in srgb, white 60%, rgb(var(--accent5-500)));
+	--accent5-600: color-mix(in srgb, rgb(var(--accent5-500)) 90%, black);
+	--accent5-700: color-mix(in srgb, rgb(var(--accent5-500)) 80%, black);
+	--accent5-800: color-mix(in srgb, rgb(var(--accent5-500)) 70%, black);
+	--accent5-900: color-mix(in srgb, rgb(var(--accent5-500)) 60%, black);
+
+	/* Semantica / alias */
+	--color-bg: rgb(var(--white));
+	--color-fg: rgb(var(--ink));
+	--color-accent1: var(--accent1);
+	--color-accent2: var(--accent2);
+	--color-accent3: var(--accent3);
+	--color-accent4: var(--accent4);
+	--color-accent5: var(--accent5);
+
+	--color-primary: var(--color-accent1);
+	--color-secondary: var(--color-accent3);
+	--color-accent: var(--color-accent2);
+
+	/* Gradient pagina (rosa → bianco → azzurro) */
+	--site-bg-gradient: linear-gradient(
+		135deg,
+		var(--accent2-50) 0%,
+		rgba(var(--white) / 0.95) 45%,
+		var(--accent4-50) 100%
+	);
+
+	/* Layout tokens */
+	--container-max: 80rem;
+	--container-px: 1rem;
+	--section-py: 4rem;
+	--radius: 1rem;
+	--radius-2xl: 2rem;
+	--shadow-card: 0 6px 24px rgba(0, 0, 0, 0.08);
+	--shadow-soft: 0 2px 12px rgba(0, 0, 0, 0.06);
+
+	--font-sans:
+		ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, 'Helvetica Neue', Arial,
+		'Noto Sans';
+	--step--1: 0.875rem;
+	--step-0: 1rem;
+	--step-1: 1.25rem;
+	--step-2: 1.5rem;
+	--step-3: 1.875rem;
+	--step-4: 2.25rem;
+	--step-5: 3rem;
+	--leading-tight: 1.15;
+	--leading-normal: 1.6;
+}
+
+@media (min-width: 768px) {
+	:root {
+		--container-px: 1.5rem;
+		--section-py: 5rem;
+	}
+}

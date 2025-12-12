@@ -1,3 +1,137 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
+
+/* === Import design tokens (CSS variables) === */
+@import '../lib/styles/tokens.css';
+
+/* === Mappa i token come colori Tailwind v4 (@theme) ===
+   In questo modo puoi usare classi come:
+   bg-accent1-200 text-ink border-accent4-600
+*/
+
+/* === Crete Round (self-hosted) === */
+@font-face {
+	font-family: 'Crete Round';
+	src: url('/fonts/CreteRound-Regular.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Crete Round';
+	src: url('/fonts/CreteRound-Italic.ttf') format('truetype');
+	font-weight: 400;
+	font-style: italic;
+	font-display: swap;
+}
+
+@theme {
+	/* base */
+	--color-white: rgb(var(--white));
+	--color-ink: rgb(var(--ink));
+	--color-fg: rgb(var(--ink));
+
+	/* accent1 */
+	--color-accent1-50: var(--accent1-50);
+	--color-accent1-100: var(--accent1-100);
+	--color-accent1-200: var(--accent1-200);
+	--color-accent1-300: var(--accent1-300);
+	--color-accent1-400: var(--accent1-400);
+	--color-accent1-500: var(--accent1);
+	--color-accent1-600: var(--accent1-600);
+	--color-accent1-700: var(--accent1-700);
+	--color-accent1-800: var(--accent1-800);
+	--color-accent1-900: var(--accent1-900);
+	--color-accent1: var(--color-accent1-500);
+
+	/* accent2 */
+	--color-accent2-50: var(--accent2-50);
+	--color-accent2-100: var(--accent2-100);
+	--color-accent2-200: var(--accent2-200);
+	--color-accent2-300: var(--accent2-300);
+	--color-accent2-400: var(--accent2-400);
+	--color-accent2-500: var(--accent2);
+	--color-accent2-600: var(--accent2-600);
+	--color-accent2-700: var(--accent2-700);
+	--color-accent2-800: var(--accent2-800);
+	--color-accent2-900: var(--accent2-900);
+	--color-accent2: var(--color-accent2-500);
+
+	/* accent3 */
+	--color-accent3-50: var(--accent3-50);
+	--color-accent3-100: var(--accent3-100);
+	--color-accent3-200: var(--accent3-200);
+	--color-accent3-300: var(--accent3-300);
+	--color-accent3-400: var(--accent3-400);
+	--color-accent3-500: var(--accent3);
+	--color-accent3-600: var(--accent3-600);
+	--color-accent3-700: var(--accent3-700);
+	--color-accent3-800: var(--accent3-800);
+	--color-accent3-900: var(--accent3-900);
+	--color-accent3: var(--color-accent3-500);
+
+	/* accent4 */
+	--color-accent4-50: var(--accent4-50);
+	--color-accent4-100: var(--accent4-100);
+	--color-accent4-200: var(--accent4-200);
+	--color-accent4-300: var(--accent4-300);
+	--color-accent4-400: var(--accent4-400);
+	--color-accent4-500: var(--accent4);
+	--color-accent4-600: var(--accent4-600);
+	--color-accent4-700: var(--accent4-700);
+	--color-accent4-800: var(--accent4-800);
+	--color-accent4-900: var(--accent4-900);
+	--color-accent4: var(--color-accent4-500);
+
+	/* accent5 */
+	--color-accent5-50: var(--accent5-50);
+	--color-accent5-100: var(--accent5-100);
+	--color-accent5-200: var(--accent5-200);
+	--color-accent5-300: var(--accent5-300);
+	--color-accent5-400: var(--accent5-400);
+	--color-accent5-500: var(--accent5);
+	--color-accent5-600: var(--accent5-600);
+	--color-accent5-700: var(--accent5-700);
+	--color-accent5-800: var(--accent5-800);
+	--color-accent5-900: var(--accent5-900);
+	--color-accent5: var(--color-accent5-500);
+
+	/* ruoli semantici come utility */
+	--color-primary: var(--color-accent1);
+	--color-secondary: var(--color-accent3);
+	--color-accent: var(--color-accent2);
+
+	/* Font families */
+	--font-sans: var(--font-sans); /* già definito nei tokens */
+	--font-heading: 'Crete Round', ui-serif, Georgia, serif;
+}
+
+/* === Stili globali + gradient di background “appena percettibile” === */
+html {
+	font-family: var(--font-sans);
+	color: var(--color-ink);
+	background: var(--site-bg-gradient) fixed;
+	background-size: 160% 160%;
+}
+body {
+	background: transparent;
+}
+
+/* === Helper layout controllati da token === */
+.container-gf {
+	max-width: var(--container-max);
+	padding-inline: var(--container-px);
+	margin-inline: auto;
+}
+.section-gf {
+	padding-block: var(--section-py);
+}
+
+/* Card morbida riutilizzabile */
+.card-gf {
+	border-radius: var(--radius-2xl);
+	box-shadow: var(--shadow-card);
+	background: rgb(var(--white) / 0.7);
+	backdrop-filter: blur(6px);
+}
