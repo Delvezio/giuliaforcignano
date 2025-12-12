@@ -17,10 +17,9 @@ export const actions = {
       return fail(400, { ok: false, error: 'Campi obbligatori mancanti' });
     }
 
-    // TODO: integra invio (es. SMTP / Formspree / API) — per ora log.
+    // TODO: integra invio reale (SMTP/Formspree/API). Per ora log.
     console.log('[contact] new message:', { name, email, message });
 
-    // Redirect “grazie”
     throw redirect(303, '/thank-you');
   }
 };

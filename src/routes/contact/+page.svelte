@@ -45,7 +45,7 @@
       </div>
 
       <div class="flex justify-end">
-        <Button variant="solid" color="accent1">Invia</Button>
+        <Button variant="solid" color="accent1" type="submit">Invia</Button>
       </div>
     </form>
     <p class="text-xs opacity-70 mt-3">Usiamo un sistema anti-spam invisibile (honeypot).</p>

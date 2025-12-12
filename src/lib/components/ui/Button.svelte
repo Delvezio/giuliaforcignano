@@ -6,6 +6,7 @@
    * - size:    'sm' | 'md' | 'lg'
    * - full:    true per width 100%
    * - href:    se valorizzato, renderizza <a> invece di <button>
+   * - type:    'button' | 'submit' | 'reset' (default 'button')
    */
   export let className: string = '';
   export let variant: 'solid' | 'outline' | 'soft' = 'solid';
@@ -13,6 +14,7 @@
   export let size: 'sm' | 'md' | 'lg' = 'md';
   export let full: boolean = false;
   export let href: string | undefined = undefined;
+  export let type: 'button' | 'submit' | 'reset' = 'button';
 
   const padd = { sm: 'px-4 py-2 text-sm', md: 'px-5 py-2.5', lg: 'px-6 py-3 text-lg' }[size];
 
@@ -21,7 +23,6 @@
      focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2
      disabled:opacity-50 disabled:pointer-events-none ${padd} ${full ? 'w-full' : ''} ${className}`;
 
-  // Mappe LITERAL per outline (per evitare classi dinamiche)
   const border500 = {
     accent1: 'border-accent1-500',
     accent2: 'border-accent2-500',
@@ -37,20 +38,17 @@
     accent3: 'text-accent3',
     accent4: 'text-accent4',
     accent5: 'text-accent5',
-    ink:     'text-white' // su fondo scuro
+    ink:     'text-white'
   } as const;
 
-  // Testo leggibile per solid
   const solidText = (color === 'accent1' || color === 'ink') ? 'text-white' : 'text-ink';
 
-  // Classi principali (bg gestito via style inline per solid/soft)
   const classes =
     variant === 'solid'
       ? `${base} ${solidText} hover:opacity-90`
       : variant === 'outline'
       ? `${base} border ${border500[color]} bg-white/70 ${textBase[color]} hover:bg-accent1-50`
-      : /* soft */
-        `${base} text-ink hover:brightness-95`;
+      : `${base} text-ink hover:brightness-95`;
 </script>
 
 {#if href}
@@ -72,7 +70,7 @@
 {:else}
   <button
     class={classes}
-    type="button"
+    type={type}
     style={
       variant === 'solid'
         ? `background: var(--color-${color}-500);`
