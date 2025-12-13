@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 128 128">
+  <defs>
+    <linearGradient id="g" x1="0" y1="128" x2="128" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="rgb(240 203 226)"/>
+      <stop offset="0.52" stop-color="white"/>
+      <stop offset="1" stop-color="rgb(180 202 234)"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="28" fill="url(#g)"/>
+  <g transform="translate(10,8)">
+    <!-- cerchio brand -->
+    <circle cx="54" cy="56" r="42" fill="rgb(96 167 178)" opacity="0.12"/>
+    <!-- monogramma GF -->
+    <path d="M26 68c10 8 28 8 38-2 10-10 10-26 0-36-10-10-27-10-37 0" fill="none" stroke="rgb(96 167 178)" stroke-width="7" stroke-linecap="round"/>
+    <path d="M74 36h18v34H78" fill="none" stroke="rgb(96 167 178)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>
