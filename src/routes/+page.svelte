@@ -2,6 +2,7 @@
   import Hero from '$lib/components/sections/Hero.svelte';
   import Services from '$lib/components/sections/Services.svelte';
   import Testimonials from '$lib/components/sections/Testimonials.svelte';
+  import FinalCta from '$lib/components/sections/FinalCta.svelte';
   import Section from '$lib/components/ui/Section.svelte';
   import Heading from '$lib/components/ui/Heading.svelte';
   import Paragraph from '$lib/components/ui/Paragraph.svelte';
@@ -39,3 +40,15 @@
     </div>
   </Card>
 </Section>
+
+<!-- CTA finale -->
+<FinalCta
+  title="Prontə a iniziare?"
+  text="Parliamo del tuo progetto: obiettivi, tempi e percorso più adatto."
+  primaryHref="/contact"
+  primaryLabel="Prenota un contatto"
+  secondaryHref="/about"
+  secondaryLabel="Scopri di più"
+  secondaryVariant="outline"
+  bg="accent2"
+/>
