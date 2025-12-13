@@ -1,6 +1,7 @@
 <script lang="ts">
   import Hero from '$lib/components/sections/Hero.svelte';
   import Services from '$lib/components/sections/Services.svelte';
+  import Testimonials from '$lib/components/sections/Testimonials.svelte';
   import Section from '$lib/components/ui/Section.svelte';
   import Heading from '$lib/components/ui/Heading.svelte';
   import Paragraph from '$lib/components/ui/Paragraph.svelte';
@@ -22,6 +23,8 @@
 />
 
 <Services title="Servizi" intro="Tre aree in evidenza: descrizione breve e call to action." />
+
+<Testimonials title="Dicono di me" intro="Cosa dicono le persone che hanno lavorato con me." />
 
 <!-- Esempio sezione di follow-up -->
 <Section align="center">
