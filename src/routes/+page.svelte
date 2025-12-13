@@ -1,5 +1,6 @@
 <script lang="ts">
   import Hero from '$lib/components/sections/Hero.svelte';
+  import Services from '$lib/components/sections/Services.svelte';
   import Section from '$lib/components/ui/Section.svelte';
   import Heading from '$lib/components/ui/Heading.svelte';
   import Paragraph from '$lib/components/ui/Paragraph.svelte';
@@ -19,6 +20,8 @@
   secondaryVariant="outline"
   bg="gradient"
 />
+
+<Services title="Servizi" intro="Tre aree in evidenza: descrizione breve e call to action." />
 
 <!-- Esempio sezione di follow-up -->
 <Section align="center">
