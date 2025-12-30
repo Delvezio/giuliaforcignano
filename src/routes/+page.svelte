@@ -1,3 +1,4 @@
+<!-- src/routes/+page.svelte -->
 <script lang="ts">
   import Hero from '$lib/components/sections/Hero.svelte';
   import Services from '$lib/components/sections/Services.svelte';
@@ -11,16 +12,17 @@
 </script>
 
 <Hero
-  eyebrow="Benvenuta/o"
-  title="Giulia Forcignano"
-  subtitle="Progetto, contenuti e consulenza. Una base solida per crescere in 5+ pagine, blog e form contatti."
-  image="/img/hero.svg"
+  subtitle="Ti posso aiutare a riconoscere dinamiche relazionali, ruoli e blocchi che influenzano la tua vita."
+  highlights={[
+    { icon: '🏠', text: 'Sedute in presenza' },
+    { icon: '💻', text: 'Sedute online' }
+  ]}
+  image="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&h=1200&q=80"
   primaryHref="/contact"
   primaryLabel="Prenota"
   secondaryHref="/about"
   secondaryLabel="Scopri di più"
   secondaryVariant="outline"
-  bg="gradient"
 />
 
 <Services title="Servizi" intro="Tre aree in evidenza: descrizione breve e call to action." />
@@ -28,7 +30,7 @@
 <Testimonials title="Dicono di me" intro="Cosa dicono le persone che hanno lavorato con me." />
 
 <!-- Esempio sezione di follow-up -->
-<Section align="center">
+<Section>
   <Card bg="glass" padding="lg" className="max-w-3xl mx-auto">
     <Heading level={2} align="center" className="mb-3">Pronti per la Landing</Heading>
     <Paragraph align="center" className="mb-4">

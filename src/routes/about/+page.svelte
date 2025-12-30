@@ -17,7 +17,7 @@
 </Section>
 
 <!-- Bio + Foto -->
-<Section columns={2} gap="gap-8 md:gap-10">
+<Section>
   <!-- Foto / Media -->
   <Card bg="glass" padding="lg" className="aspect-4/3 overflow-hidden">
     <!-- Sostituisci con una <img> reale -->
@@ -46,7 +46,7 @@
 </Section>
 
 <!-- Valori / Pillars -->
-<Section columns={3}>
+<Section>
   <Card bg="accent2" tone="200" padding="lg">
     <Heading level={3} className="mb-2">Cura</Heading>
     <Paragraph>Attenzione ai dettagli, relazione con la persona e percorsi su misura.</Paragraph>
@@ -62,7 +62,7 @@
 </Section>
 
 <!-- CTA finale -->
-<Section align="center">
+<Section>
   <Card bg="glass" padding="lg" className="max-w-3xl mx-auto">
     <Heading level={2} align="center" className="mb-3">Parliamone</Heading>
     <Paragraph align="center" className="mb-4">

@@ -90,13 +90,8 @@
 	--color-secondary: var(--color-accent3);
 	--color-accent: var(--color-accent2);
 
-	/* Gradient pagina (rosa → bianco → azzurro) */
-	--site-bg-gradient: linear-gradient(
-		135deg,
-		var(--accent2-50) 0%,
-		rgba(var(--white) / 0.95) 45%,
-		var(--accent4-50) 100%
-	);
+	/* Sfumatura soft: ocra (accent5-200) in basso-sinistra → bianco → azzurro (accent4-200) in alto-destra */
+	--site-bg-gradient: linear-gradient(135deg, var(--accent5-300) 0%, var(--accent4-300) 100%);
 
 	/* Layout tokens */
 	--container-max: 80rem;
@@ -116,14 +111,47 @@
 	--step-2: 1.5rem;
 	--step-3: 1.875rem;
 	--step-4: 2.25rem;
-	--step-5: 3rem;
+	--step-5: 3.5rem;
 	--leading-tight: 1.15;
 	--leading-normal: 1.6;
 }
 
 @media (min-width: 768px) {
 	:root {
-		--container-px: 1.5rem;
+		--container-px: 0rem;
 		--section-py: 5rem;
+	}
+}
+
+:root {
+	/* Quanto “sborda” il pannello bianco oltre la container */
+	--panel-bleed: clamp(12px, 2.5vw, 28px);
+}
+
+/* === HERO layout tokens (semplici) ===================================== */
+:root {
+	/* margine laterale della section hero (tablet/desktop) */
+	--section-hero-mx: clamp(12px, 2.5vw, 28px);
+	/* overlap dell'immagine sopra/sotto il pannello */
+	--hero-image-overlap: 10%;
+}
+
+/* su mobile: niente margine laterale, la section tocca i bordi */
+@media (max-width: 768px) {
+	:root {
+		--section-hero-mx: 0px;
+	}
+}
+
+/* === Width tokens (section/container) =================================== */
+:root {
+	--section-w: 100vw; /* mobile */
+	--container-w: 100vw; /* mobile */
+	--container-px: clamp(16px, 4vw, 28px);
+}
+@media (min-width: 768px) {
+	:root {
+		--section-w: 90vw; /* section = 90% viewport */
+		--container-w: 80vw; /* container = 80% viewport */
 	}
 }

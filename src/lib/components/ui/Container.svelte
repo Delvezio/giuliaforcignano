@@ -1,21 +1,20 @@
 <!-- src/lib/components/ui/Container.svelte -->
 <script lang="ts">
-  /**
-   * Wrapper con larghezza massima e padding orizzontale
-   * controllati dai token (container-max, container-px).
-   * Props:
-   * - as: tag HTML da usare (div, section, main, article)
-   * - className: classi extra tailwind
-   * - fluid: se true, rimuove il max-width (full-bleed con padding)
-   */
-  export let as: 'div' | 'section' | 'main' | 'article' = 'div';
+  /** Tag HTML */
+  export let as: 'div' | 'section' | 'article' = 'div';
+  /** Padding orizzontale: usa classi Tailwind standard */
+  export let px: string = 'px-4 sm:px-8 md:px-16';
+  /** Padding verticale opzionale (vuoto di default) */
+  export let py: string = '';
+  /** Background opzionale: es. 'bg-white', 'bg-accent2-50' */
+  export let bg: string = '';
+  /** Classi aggiuntive */
   export let className: string = '';
-  export let fluid: boolean = false;
 </script>
 
 <svelte:element
   this={as}
-  class={`container-gf ${fluid ? 'max-w-none' : ''} ${className}`}
+  class={`cont w-full ${px} ${py} ${bg} ${className}`.trim()}
 >
   <slot />
 </svelte:element>

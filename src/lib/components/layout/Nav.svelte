@@ -1,4 +1,6 @@
+<!-- src/lib/components/layout/Nav.svelte -->
 <script lang="ts">
+  import Section from '$lib/components/ui/Section.svelte';
   import Container from '$lib/components/ui/Container.svelte';
   import Button from '$lib/components/ui/Button.svelte';
   import { page } from '$app/stores';
@@ -18,7 +20,8 @@
 </script>
 
 <header class="sticky top-0 z-40">
-  <div class="backdrop-blur supports-backdrop-filter:bg-white/60 bg-white/80 border-b border-black/5">
+  <div class="backdrop-blur supports-backdrop-filter:bg-white/10 bg-white/80 ">
+    <Section>
     <Container className="h-16 flex items-center justify-between">
       <!-- Logo -->
       <a href="/" class="font-heading text-2xl text-ink">
@@ -61,6 +64,7 @@
         {/if}
       </button>
     </Container>
+    </Section>
 
     <!-- Mobile sheet -->
     {#if open}
@@ -82,6 +86,7 @@
             </Button>
           </div>
         </Container>
+        
       </div>
     {/if}
   </div>

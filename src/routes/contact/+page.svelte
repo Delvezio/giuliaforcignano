@@ -16,7 +16,7 @@
   </div>
 </Section>
 
-<Section align="center">
+<Section>
   <Card bg="glass" padding="lg" className="max-w-2xl w-full mx-auto">
     <form method="POST" use:enhance class="space-y-4">
       <!-- honeypot anti-spam -->

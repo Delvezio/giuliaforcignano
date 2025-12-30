@@ -113,25 +113,9 @@ html {
 	color: var(--color-ink);
 	background: var(--site-bg-gradient) fixed;
 	background-size: 160% 160%;
+	min-height: 100%;
 }
 body {
-	background: transparent;
-}
-
-/* === Helper layout controllati da token === */
-.container-gf {
-	max-width: var(--container-max);
-	padding-inline: var(--container-px);
-	margin-inline: auto;
-}
-.section-gf {
-	padding-block: var(--section-py);
-}
-
-/* Card morbida riutilizzabile */
-.card-gf {
-	border-radius: var(--radius-2xl);
-	box-shadow: var(--shadow-card);
-	background: rgb(var(--white) / 0.7);
-	backdrop-filter: blur(6px);
+	background: var(--site-bg-gradient) fixed;
+	background-attachment: fixed;
 }
