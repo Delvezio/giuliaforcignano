@@ -104,7 +104,8 @@
 
 	/* Font families */
 	--font-sans: var(--font-sans); /* già definito nei tokens */
-	--font-heading: 'Crete Round', ui-serif, Georgia, serif;
+	--font-heading: 'Literata', ui-serif, Georgia, serif; /* headings = Literata */
+	--font-logo: 'Crete Round', serif; /* logo = Crete Round */
 }
 
 /* === Stili globali + gradient di background “appena percettibile” === */

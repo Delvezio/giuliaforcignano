@@ -61,7 +61,7 @@
 </Section>
 
 <!-- Griglia 3 colonne (responsiva) -->
-<Section columns={3} gap="gap-6 md:gap-8">
+<Section>
   {#each items as item}
     <Card bg={item.color ?? 'accent2'} tone={item.tone ?? '200'} padding="lg" className="h-full">
       <div class="flex flex-col h-full">

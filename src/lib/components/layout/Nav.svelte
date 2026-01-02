@@ -24,7 +24,7 @@
     <Section>
     <Container className="h-16 flex items-center justify-between">
       <!-- Logo -->
-      <a href="/" class="font-heading text-2xl text-ink">
+      <a href="/" class="font-logo text-2xl text-ink">
         Giulia<span class="text-accent1 italic">Forcignanò</span>
       </a>
 

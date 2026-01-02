@@ -1,3 +1,4 @@
+
 <!-- src/routes/+page.svelte -->
 <script lang="ts">
   import Hero from '$lib/components/sections/Hero.svelte';
@@ -8,9 +9,8 @@
   import Heading from '$lib/components/ui/Heading.svelte';
   import Paragraph from '$lib/components/ui/Paragraph.svelte';
   import Card from '$lib/components/ui/Card.svelte';
+import MediaText from '$lib/components/sections/MediaText.svelte';
   import Button from '$lib/components/ui/Button.svelte';
-  import MediaText from '$lib/components/sections/MediaText.svelte';
-  import SectionHeader from '$lib/components/sections/SectionHeader.svelte';
 </script>
 
 <Hero
@@ -26,18 +26,6 @@
   secondaryLabel="Scopri di più"
   secondaryVariant="outline"
 />
-
-<SectionHeader
-  title="Servizi"
-  intro="Un percorso che unisce ascolto, metodo e continuità: scegli la modalità più adatta a te."
->
-  <svelte:fragment slot="icon">
-    <!-- esempio SVG inline -->
-    <svg viewBox="0 0 24 24" class="w-12 h-12 md:w-14 md:h-14" fill="none" stroke="currentColor" stroke-width="1.5">
-      <path d="M12 3l2.4 4.8L20 9l-4 3.9.9 5.6L12 16.8 7.1 18.5 8 12.9 4 9l5.6-.2L12 3z"/>
-    </svg>
-  </svelte:fragment>
-</SectionHeader>
 
 <!-- Sezione 2: Media + Text (riga 1) -->
 <MediaText
