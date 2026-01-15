@@ -3,7 +3,6 @@
 	"private": true,
 	"version": "0.0.1",
 	"type": "module",
-	
 	"scripts": {
 		"dev": "vite dev",
 		"build": "svelte-kit build",
@@ -39,6 +38,6 @@
 		"vite": "^7.2.2"
 	},
 	"engines": {
-    "node": "20.x"
-  	}
+		"node": "20.x"
+	}
 }
