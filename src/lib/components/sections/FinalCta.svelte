@@ -6,15 +6,15 @@
   import Button from '$lib/components/ui/Button.svelte';
 
   /** Testo */
-  export let title: string = 'Prontə a iniziare?';
+  export let title: string = '';
   export let text: string =
-    'Parliamo del tuo progetto: obiettivi, tempi e percorso più adatto.';
+    '';
 
   /** CTA */
-  export let primaryHref: string = '/contact';
-  export let primaryLabel: string = 'Prenota un contatto';
-  export let secondaryHref: string | undefined = '/about';
-  export let secondaryLabel: string | undefined = 'Scopri di più';
+  export let primaryHref: string = '';
+  export let primaryLabel: string = '';
+  export let secondaryHref: string | undefined = '';
+  export let secondaryLabel: string | undefined = '';
   export let secondaryVariant: 'outline' | 'soft' = 'outline';
 
   /** Sfondo sezione */
@@ -29,10 +29,15 @@
       : undefined;
 </script>
 
-<Section align="center" style={sectionBgStyle}>
+<Section >
   <Card bg="glass" padding="lg" className="max-w-3xl w-full mx-auto">
+    {#if title}
     <Heading level={2} align="center" className="mb-3">{title}</Heading>
+    {/if}
+    {#if text}
     <Paragraph align="center" className="mb-5 max-w-prose mx-auto">{text}</Paragraph>
+    {/if}
+    {#if primaryHref && primaryLabel}
     <div class="flex flex-wrap justify-center gap-3">
       <Button variant="solid" color="accent1" href={primaryHref}>{primaryLabel}</Button>
       {#if secondaryHref && secondaryLabel}
@@ -41,5 +46,6 @@
         </Button>
       {/if}
     </div>
+    {/if}
   </Card>
 </Section>

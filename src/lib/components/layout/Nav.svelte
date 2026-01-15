@@ -7,9 +7,9 @@
 
   const links = [
     { href: '/', label: 'Home' },
-    { href: '/about', label: 'About' },
-    { href: '/blog', label: 'Blog' },
-    { href: '/contact', label: 'Contatti' }
+    { href: '/about', label: 'Chi sono' },
+    { href: '/method', label: 'Metodo' },
+    { href: '#contatti', label: 'Contatti' }
   ];
 
   let open = false;
@@ -40,8 +40,8 @@
           </a>
         {/each}
 
-        <Button variant="solid" color="accent1" href="/contact" className="ml-2">
-          Prenota
+        <Button size="md" variant="solid" color="accent1" href="tel:+393403783231" className="ml-2">
+          Chiama ora
         </Button>
       </nav>
 

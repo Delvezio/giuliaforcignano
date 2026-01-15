@@ -14,86 +14,77 @@
 </script>
 
 <Hero
-  subtitle="Ti posso aiutare a riconoscere dinamiche relazionali, ruoli e blocchi che influenzano la tua vita."
+  subtitle="Consulenza e sostegno psicologico rivolte ad adolescenti e adulti a Torino."
   highlights={[
-    { icon: '🏠', text: 'Sedute in presenza' },
-    { icon: '💻', text: 'Sedute online' }
+    { icon: '/img/icon/Therapy-Counseling.png', text: 'Sedute in presenza' },
+    { icon: '/img/icon/hello.png', text: 'Sedute online' }
   ]}
-  image="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&h=1200&q=80"
+  image="/img/photo/giulia-forcignano-psicologa-3.jpg"
   primaryHref="/contact"
-  primaryLabel="Prenota"
+  primaryLabel="Chiama ora"
   secondaryHref="/about"
   secondaryLabel="Scopri di più"
   secondaryVariant="outline"
 />
 
 <SectionHeader
-  title="Servizi"
-  intro="Un percorso che unisce ascolto, metodo e continuità: scegli la modalità più adatta a te."
->
-  <svelte:fragment slot="icon">
-    <!-- esempio SVG inline -->
-    <svg viewBox="0 0 24 24" class="w-12 h-12 md:w-14 md:h-14" fill="none" stroke="currentColor" stroke-width="1.5">
-      <path d="M12 3l2.4 4.8L20 9l-4 3.9.9 5.6L12 16.8 7.1 18.5 8 12.9 4 9l5.6-.2L12 3z"/>
-    </svg>
-  </svelte:fragment>
-</SectionHeader>
+  title="Inizia un percorso consapevole verso "
+  titleAccent="il cambiamento"
+  intro="Ti posso aiutare a riconoscere e superare dinamiche relazionali, ruoli e blocchi che influenzano la tua vita."
+  iconSrc="/img/icon/upgrade.svg"
+  iconAlt="Mongolfiera"
+  iconFloat={false}
+  iconFloatDistance="8px"
+  iconFloatDuration="2.5s"
+/>
 
 <!-- Sezione 2: Media + Text (riga 1) -->
 <MediaText
-  eyebrow="Un approccio su misura"
-  title="Sedute in presenza"
-  text="In studio, a Forcignano. Uno spazio riservato, sicuro e accogliente."
-  image="https://images.unsplash.com/photo-1554151228-14d9def656e4?auto=format&fit=crop&w=1100&q=80"
+  eyebrow="Chi sono"
+  title="Psicologa laureata all'Università di Torino"
+  text="Sono una giovane psicologa laureata in Psicologia del lavoro e del benessere presso l'Università di Torino, con orientamento all'Analisi Transazionale."
+  image="/img/photo/giulia-forcignano-psicologa-2.jpg"
   alt="Seduta in presenza"
+  primaryHref="/about"
+  primaryLabel="Scopri di più"
 />
 
 <!-- Sezione 2: Media + Text (riga 2, invertita) -->
 <MediaText
   reverse
-  eyebrow="Ovunque ti trovi"
-  title="Sedute online"
-  text="Percorsi completi da remoto, con la stessa cura e continuità."
-  image="https://images.unsplash.com/photo-1542744173-05336fcc7ad4?auto=format&fit=crop&w=1100&q=80"
+  eyebrow="Cos'è l'Analisi Transazionale"
+  title="Un approccio che analizza le interazioni tra le persone"
+  text="Aiuto a riconoscere schemi di comportamento disfunzionali, decisioni prese nell'infanzia e a sviluppare consapevolezza per un cambiamento personale e relazionale."
+  image="/img/photo/pexels-shvets-production-7176026.jpg"
   alt="Seduta online"
 />
 
 <!-- Sezione 2: Media + Text (riga 3) -->
 <MediaText
   eyebrow="Continuità e supporto"
-  title="Materiali & follow-up"
-  text="Riepiloghi, esercizi e letture per consolidare il lavoro tra una seduta e l’altra."
-  image="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1100&q=80"
+  title="Vicino a te, ovunque tu sia, con sedute in presenza e online"
+  text="Puoi iniziare il tuo percorso in uno dei miei studi oppure da casa, con sedute online. Entrambe le modalità offrono uno spazio protetto, flessibile e su misura per te."
+  image="/img/photo/pexels-liza-summer-6383268.jpg"
   alt="Materiali e follow-up"
 />
 
 
-<Services title="Servizi" intro="Tre aree in evidenza: descrizione breve e call to action." />
+<Services eyebrow="Aree di intervento" title="Con quali difficoltà posso aiutarti" intro="Ogni percorso è personalizzato e basato sulle tue reali esigenze." />
 
-<Testimonials title="Dicono di me" intro="Cosa dicono le persone che hanno lavorato con me." />
+<!-- <Testimonials title="Dicono di me" intro="Cosa dicono le persone che hanno lavorato con me." />-->
 
-<!-- Esempio sezione di follow-up -->
-<Section>
-  <Card bg="glass" padding="lg" className="max-w-3xl mx-auto">
-    <Heading level={2} align="center" className="mb-3">Pronti per la Landing</Heading>
-    <Paragraph align="center" className="mb-4">
-      Questa base crescerà in 5+ pagine, blog e form contatti.
-    </Paragraph>
-    <div class="flex flex-wrap justify-center gap-3">
-      <Button variant="solid" color="accent1" href="/contact">Inizia ora</Button>
-      <Button variant="outline" color="accent1" href="/about">Roadmap</Button>
-    </div>
-  </Card>
-</Section>
-
-<!-- CTA finale -->
-<FinalCta
-  title="Prontə a iniziare?"
-  text="Parliamo del tuo progetto: obiettivi, tempi e percorso più adatto."
-  primaryHref="/contact"
-  primaryLabel="Prenota un contatto"
-  secondaryHref="/about"
-  secondaryLabel="Scopri di più"
-  secondaryVariant="outline"
+<SectionHeader
+  title="Il tuo viaggio "
+  titleAccent="inizia qui"
+  intro="Un percorso che unisce ascolto, metodo e continuità: scegli la modalità più adatta a te."
+  iconSrc="/img/icon/hot-air-balloon.svg"
+  iconAlt="Mongolfiera"
+  iconFloat={true}
+  iconFloatDistance="8px"
+  iconFloatDuration="2.5s"
+  primaryHref="tel:+393403783231"
+  primaryLabel="Chiamami ora"
   bg="accent2"
+  secondaryHref="mailto:info@giuliaforcignano.it"
+  secondaryLabel="Scrivimi"
 />

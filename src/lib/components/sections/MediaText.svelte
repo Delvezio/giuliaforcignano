@@ -48,11 +48,11 @@
       <!-- Testo -->
       <div class="w-full lg:w-[48%]" class:lg:order-1={reverse}>
         {#if eyebrow}
-          <p class="text-sm font-medium tracking-wide uppercase text-accent1 mb-2">{eyebrow}</p>
+          <p class="text-sm font-medium tracking-wide uppercase text-accent1 mb-1">{eyebrow}</p>
         {/if}
 
         <!-- Slot opzionale per accentuare parole con <em> -->
-        <Heading level={3} className="mb-3"><slot name="title">{title}</slot></Heading>
+        <Heading level={3} className="mb-8"><slot name="title">{title}</slot></Heading>
 
         {#if text}
           <Paragraph variant="lead" className="mb-5 max-w-prose">{text}</Paragraph>

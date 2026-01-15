@@ -11,7 +11,7 @@
   export let className: string = '';
   export let variant: 'solid' | 'outline' | 'soft' = 'solid';
   export let color: 'accent1' | 'accent2' | 'accent3' | 'accent4' | 'accent5' | 'ink' = 'accent1';
-  export let size: 'sm' | 'md' | 'lg' = 'md';
+  export let size: 'sm' | 'md' | 'lg' = 'lg';
   export let full: boolean = false;
   export let href: string | undefined = undefined;
   export let type: 'button' | 'submit' | 'reset' = 'button';

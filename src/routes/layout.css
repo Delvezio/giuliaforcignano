@@ -110,6 +110,7 @@
 
 /* === Stili globali + gradient di background “appena percettibile” === */
 html {
+	scroll-behavior: smooth;
 	font-family: var(--font-sans);
 	color: var(--color-ink);
 	background: var(--site-bg-gradient) fixed;
