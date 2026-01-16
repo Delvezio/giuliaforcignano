@@ -9,31 +9,88 @@
   export let description: string | undefined = undefined;
   export let html: string | undefined = undefined;
 
+  // === Scroll lock globale con contatore ===
   let dialogEl: HTMLDivElement | null = null;
+  let mounted = false;
+  let hasKeyListener = false;
+  let isLockedByThis = false;
+
+  // Variabili di modulo (condivise tra istanze)
+  let lockCount = 0;
+  let savedOverflow = '';
+  let savedPaddingRight = '';
+
+  function lockScroll() {
+    if (!browser) return;
+    if (lockCount === 0) {
+      const root = document.documentElement;
+      savedOverflow = root.style.overflow || '';
+      savedPaddingRight = root.style.paddingRight || '';
+      const sbw = window.innerWidth - root.clientWidth; // larghezza scrollbar
+      root.style.overflow = 'hidden';
+      if (sbw > 0) root.style.paddingRight = `${sbw}px`;
+    }
+    lockCount++;
+    isLockedByThis = true;
+  }
+
+  function unlockScroll() {
+    if (!browser) return;
+    if (isLockedByThis) {
+      lockCount = Math.max(0, lockCount - 1);
+      isLockedByThis = false;
+      if (lockCount === 0) {
+        const root = document.documentElement;
+        root.style.overflow = savedOverflow;
+        root.style.paddingRight = savedPaddingRight;
+      }
+    }
+  }
 
   function onKey(e: KeyboardEvent) {
     if (e.key === 'Escape') open = false;
   }
 
-  // ⬇️ sostituisci i tuoi con questi
   onMount(() => {
-    if (browser && open) {
-      window.addEventListener('keydown', onKey);
+    mounted = true;
+    if (!browser) return;
+
+    if (open) {
+      lockScroll();
+      if (!hasKeyListener) {
+        window.addEventListener('keydown', onKey);
+        hasKeyListener = true;
+      }
       tick().then(() => dialogEl?.focus());
     }
   });
 
-  $: if (browser) {
+  // Reattivo: attacca/stacca in modo bilanciato
+  $: if (browser && mounted) {
     if (open) {
-      window.addEventListener('keydown', onKey);
+      if (!isLockedByThis) lockScroll();
+      if (!hasKeyListener) {
+        window.addEventListener('keydown', onKey);
+        hasKeyListener = true;
+      }
       tick().then(() => dialogEl?.focus());
     } else {
-      window.removeEventListener('keydown', onKey);
+      if (hasKeyListener) {
+        window.removeEventListener('keydown', onKey);
+        hasKeyListener = false;
+      }
+      if (isLockedByThis) unlockScroll();
     }
   }
 
   onDestroy(() => {
-    if (browser) window.removeEventListener('keydown', onKey);
+    if (!browser) return;
+    if (hasKeyListener) {
+      window.removeEventListener('keydown', onKey);
+      hasKeyListener = false;
+    }
+    // In caso il componente venga distrutto mentre è ancora aperto
+    if (isLockedByThis) unlockScroll();
   });
 
   function close() {
@@ -41,9 +98,8 @@
   }
 </script>
 
-
 {#if open}
-  <!-- Backdrop: scurisce + sfoca -->
+  <!-- Backdrop -->
   <div class="fixed inset-0 z-50">
     <button
       class="absolute inset-0 bg-black/40 backdrop-blur"
@@ -51,7 +107,7 @@
       on:click={close}
     ></button>
 
-    <!-- Bottom sheet wrapper -->
+    <!-- Bottom sheet -->
     <div class="fixed inset-x-0 bottom-0 z-[60] mx-auto w-full max-w-screen-md">
       <div
         role="dialog"
@@ -64,7 +120,7 @@
                max-h-[min(100vh-1rem)] md:max-h-[min(100vh-2rem)]
                pb-[env(safe-area-inset-bottom)]"
       >
-        <!-- Header con titolo centrato + X fissa -->
+        <!-- Header con titolo e X -->
         <div class="relative p-5 md:p-6 border-b border-black/5 shrink-0">
           <h3 id="service-dialog-title" class="font-heading text-2xl md:text-3xl text-center">
             {title}
@@ -82,14 +138,13 @@
           </button>
         </div>
 
-        <!-- Immagine (opzionale, non cresce) -->
         {#if image}
           <div class="overflow-hidden shrink-0">
-            <img src={image} alt={title} class="block h-40 w-auto md:h-56 mx-auto" />
+            <img src={image} alt={title} class="block h-40 w-full md:h-56 object-cover" />
           </div>
         {/if}
 
-        <!-- Body: occupa lo spazio restante e scrolla se serve -->
+        <!-- Corpo scrollabile -->
         <div class="p-5 md:p-6 grow min-h-0 overflow-y-auto">
           {#if html}
             <div class="prose prose-ink prose-headings:font-heading max-w-none">
@@ -103,17 +158,17 @@
         <!-- CTA footer -->
         <div class="p-5 md:p-6 border-t border-black/5 shrink-0">
           <div class="flex flex-col sm:flex-row gap-3">
-            <!-- Primary: sempre visibile; su lg resta l’unico e diventa full width -->
+            <!-- Primary: sempre visibile, full width su lg -->
             <Button
               variant="solid"
               color="accent1"
               href="tel:+393403783231"
               className="w-full lg:w-full"
             >
-              Chiamami ora
+              Chiama
             </Button>
 
-            <!-- Secondary: visibile fino a md; nascosto su lg -->
+            <!-- Secondary: nascosto su lg -->
             <Button
               variant="outline"
               color="accent1"

@@ -23,7 +23,7 @@
   };
   export let services: Service[] = [
     {
-      title: 'Disturbi da Ansia',
+      title: 'In Studio',
       image: '/img/icon/Therapy-Counseling.png',
       text: '',
       modalHtml: `
@@ -39,8 +39,8 @@
     `,
     },
     {
-      title: 'Disturbi da Ansia',
-      image: '/img/service/hello.svg',
+      title: 'Sedute Online',
+      image: '/img/icon/hello.svg',
       text: '',
       modalHtml: `
       <h3>Cosa faremo insieme</h3>
