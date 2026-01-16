@@ -49,17 +49,18 @@
     <!-- Bottom sheet: ancorata al fondo, con bordo superiore arrotondato -->
     <div class="fixed inset-x-0 bottom-0 z-[60] mx-auto w-full max-w-screen-md">
       <div
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="service-dialog-title"
-        tabindex="-1"
-        bind:this={dialogEl}
-        class="bg-white rounded-t-3xl border border-black/5 overflow-hidden
-               flex flex-col
-               /* vincoli di altezza sulla viewport, senza toccare il body */
-               max-h-[min(100dvh-1rem)] md:max-h-[min(100dvh-2rem)]
-               pb-[env(safe-area-inset-bottom)]"
-      >
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="service-dialog-title"
+  tabindex="-1"
+  bind:this={dialogEl}
+  class="bg-white rounded-t-3xl border border-black/5 overflow-hidden
+         flex flex-col
+         max-h-[90vh] md:max-h-[92vh]       /* fallback compatibile */
+         pb-[env(safe-area-inset-bottom)]"
+  
+  style="max-height: calc(100svh - 1rem);"
+>
         <!-- Header con titolo centrato + X -->
         <div class="relative p-5 md:p-6 border-b border-black/5 shrink-0">
           <h3 id="service-dialog-title" class="font-heading text-2xl md:text-3xl text-center">
@@ -86,15 +87,16 @@
         {/if}
 
         <!-- Body: occupa lo spazio restante e scrolla se serve -->
-        <div class="p-5 md:p-6 grow min-h-0 overflow-y-auto">
-          {#if html}
-            <div class="prose prose-ink prose-headings:font-heading max-w-none">
-              {@html html}
-            </div>
-          {:else if description}
-            <p class="leading-relaxed">{description}</p>
-          {/if}
-        </div>
+        <div class="p-5 md:p-6 grow min-h-0 overflow-y-auto overscroll-contain"
+     style="-webkit-overflow-scrolling: touch;">
+  {#if html}
+    <div class="prose prose-ink prose-headings:font-heading max-w-none">
+      {@html html}
+    </div>
+  {:else if description}
+    <p class="leading-relaxed">{description}</p>
+  {/if}
+</div>
 
         <!-- CTA footer -->
         <div class="p-5 md:p-6 border-t border-black/5 shrink-0">
