@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { browser } from '$app/environment';
   import { onMount, onDestroy, tick } from 'svelte';
   import Button from '$lib/components/ui/Button.svelte';
 
@@ -14,50 +15,62 @@
   let dialogEl: HTMLDivElement | null = null;
 
   function lockScroll() {
-    const root = document.documentElement;
-    prevOverflow = root.style.overflow || '';
-    prevPaddingRight = root.style.paddingRight || '';
-    const sbw = window.innerWidth - root.clientWidth; // larghezza scrollbar
-    root.style.overflow = 'hidden';
-    if (sbw > 0) root.style.paddingRight = `${sbw}px`;
-  }
-  function unlockScroll() {
-    const root = document.documentElement;
-    root.style.overflow = prevOverflow;
-    root.style.paddingRight = prevPaddingRight;
-  }
+  if (!browser) return;
+  const root = document.documentElement;
+  prevOverflow = root.style.overflow || '';
+  prevPaddingRight = root.style.paddingRight || '';
+  const sbw = window.innerWidth - root.clientWidth;
+  root.style.overflow = 'hidden';
+  if (sbw > 0) root.style.paddingRight = `${sbw}px`;
+}
+
+function unlockScroll() {
+  if (!browser) return;
+  const root = document.documentElement;
+  root.style.overflow = prevOverflow;
+  root.style.paddingRight = prevPaddingRight;
+}
+
   function onKey(e: KeyboardEvent) {
     if (e.key === 'Escape') open = false;
   }
 
   onMount(() => {
-    mounted = true;
-    if (open) {
-      lockScroll();
-      window.addEventListener('keydown', onKey);
-      tick().then(() => dialogEl?.focus());
-    }
-  });
-
-  $: if (mounted) {
-    if (open) {
-      lockScroll();
-      window.addEventListener('keydown', onKey);
-      tick().then(() => dialogEl?.focus());
-    } else {
-      unlockScroll();
-      window.removeEventListener('keydown', onKey);
-    }
+  if (!browser) return;
+  mounted = true;
+  if (open) {
+    lockScroll();
+    window.addEventListener('keydown', onKey);
+    tick().then(() => dialogEl?.focus());
   }
+});
 
-  onDestroy(() => {
+$: if (browser && mounted) {
+  if (open) {
+    lockScroll();
+    window.addEventListener('keydown', onKey);
+    tick().then(() => dialogEl?.focus());
+  } else {
     unlockScroll();
     window.removeEventListener('keydown', onKey);
-  });
+  }
+}
+
+onDestroy(() => {
+  if (!browser) return;
+  unlockScroll();
+  window.removeEventListener('keydown', onKey);
+});
+
 
   function close() {
-    open = false;
+  open = false;
+  // in casi estremi assicura lo sblocco anche se l’effetto reattivo non scatta
+  if (browser) {
+    queueMicrotask(unlockScroll);
   }
+}
+
 </script>
 
 {#if open}

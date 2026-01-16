@@ -1,10 +1,13 @@
 <script lang="ts">
+  import { browser } from '$app/environment';
   import ServiceModal from '$lib/components/ui/ServiceModal.svelte';
   import Heading from './Heading.svelte';
 
   export let title: string;
   export let image: string | undefined = undefined;   // opzionale
   export let text: string | undefined = undefined;    // sottotitolo/descrizione breve
+  export let modalTitle: string | undefined;
+  export let modalImg: string | undefined;
 
   // Contenuto ricco per la modale (HTML trusted)
   export let modalHtml: string | undefined = undefined;
@@ -45,10 +48,12 @@
 </article>
 
 <!-- MODALE -->
-<ServiceModal
-  bind:open
-  {title}
-  image={image}
-  html={modalHtml}
-  description={modalDescription}
-/>
+ {#if browser}
+  <ServiceModal
+    bind:open
+    {title}
+    image={image}
+    html={modalHtml}
+    description={modalDescription}
+  />
+{/if}
