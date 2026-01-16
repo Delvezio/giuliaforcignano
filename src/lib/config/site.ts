@@ -1,6 +1,6 @@
 export const site = {
   name: 'Giulia Forcignano',
-  title: 'Giulia Forcignano — Progetto e contenuti',
+  title: 'Giulia Forcignano — Psicologa',
   description:
     'Psicologa - psicoterapeuta in formazione analitico transazionale. Sedute in presenza e online. Torino.',
   url: 'https://giuliaforcignano.vercel.app', // aggiorna con il tuo dominio quando lo hai
