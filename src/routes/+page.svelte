@@ -14,6 +14,7 @@
 </script>
 
 <Hero
+eyebrow="Psicologa"
   subtitle="Consulenza e sostegno psicologico rivolte ad adolescenti e adulti a Torino."
   highlights={[
     { icon: '/img/icon/Therapy-Counseling.png', text: 'Sedute in presenza' },
