@@ -1,6 +1,5 @@
 <script lang="ts">
   import { onMount, onDestroy, tick } from 'svelte';
-  import { browser } from '$app/environment';
   import Button from '$lib/components/ui/Button.svelte';
 
   export let open = false;
@@ -9,88 +8,51 @@
   export let description: string | undefined = undefined;
   export let html: string | undefined = undefined;
 
-  // === Scroll lock globale con contatore ===
-  let dialogEl: HTMLDivElement | null = null;
   let mounted = false;
-  let hasKeyListener = false;
-  let isLockedByThis = false;
-
-  // Variabili di modulo (condivise tra istanze)
-  let lockCount = 0;
-  let savedOverflow = '';
-  let savedPaddingRight = '';
+  let prevOverflow = '';
+  let prevPaddingRight = '';
+  let dialogEl: HTMLDivElement | null = null;
 
   function lockScroll() {
-    if (!browser) return;
-    if (lockCount === 0) {
-      const root = document.documentElement;
-      savedOverflow = root.style.overflow || '';
-      savedPaddingRight = root.style.paddingRight || '';
-      const sbw = window.innerWidth - root.clientWidth; // larghezza scrollbar
-      root.style.overflow = 'hidden';
-      if (sbw > 0) root.style.paddingRight = `${sbw}px`;
-    }
-    lockCount++;
-    isLockedByThis = true;
+    const root = document.documentElement;
+    prevOverflow = root.style.overflow || '';
+    prevPaddingRight = root.style.paddingRight || '';
+    const sbw = window.innerWidth - root.clientWidth; // larghezza scrollbar
+    root.style.overflow = 'hidden';
+    if (sbw > 0) root.style.paddingRight = `${sbw}px`;
   }
-
   function unlockScroll() {
-    if (!browser) return;
-    if (isLockedByThis) {
-      lockCount = Math.max(0, lockCount - 1);
-      isLockedByThis = false;
-      if (lockCount === 0) {
-        const root = document.documentElement;
-        root.style.overflow = savedOverflow;
-        root.style.paddingRight = savedPaddingRight;
-      }
-    }
+    const root = document.documentElement;
+    root.style.overflow = prevOverflow;
+    root.style.paddingRight = prevPaddingRight;
   }
-
   function onKey(e: KeyboardEvent) {
     if (e.key === 'Escape') open = false;
   }
 
   onMount(() => {
     mounted = true;
-    if (!browser) return;
-
     if (open) {
       lockScroll();
-      if (!hasKeyListener) {
-        window.addEventListener('keydown', onKey);
-        hasKeyListener = true;
-      }
+      window.addEventListener('keydown', onKey);
       tick().then(() => dialogEl?.focus());
     }
   });
 
-  // Reattivo: attacca/stacca in modo bilanciato
-  $: if (browser && mounted) {
+  $: if (mounted) {
     if (open) {
-      if (!isLockedByThis) lockScroll();
-      if (!hasKeyListener) {
-        window.addEventListener('keydown', onKey);
-        hasKeyListener = true;
-      }
+      lockScroll();
+      window.addEventListener('keydown', onKey);
       tick().then(() => dialogEl?.focus());
     } else {
-      if (hasKeyListener) {
-        window.removeEventListener('keydown', onKey);
-        hasKeyListener = false;
-      }
-      if (isLockedByThis) unlockScroll();
+      unlockScroll();
+      window.removeEventListener('keydown', onKey);
     }
   }
 
   onDestroy(() => {
-    if (!browser) return;
-    if (hasKeyListener) {
-      window.removeEventListener('keydown', onKey);
-      hasKeyListener = false;
-    }
-    // In caso il componente venga distrutto mentre è ancora aperto
-    if (isLockedByThis) unlockScroll();
+    unlockScroll();
+    window.removeEventListener('keydown', onKey);
   });
 
   function close() {
@@ -99,7 +61,7 @@
 </script>
 
 {#if open}
-  <!-- Backdrop -->
+  <!-- Backdrop: scurisce + sfoca -->
   <div class="fixed inset-0 z-50">
     <button
       class="absolute inset-0 bg-black/40 backdrop-blur"
@@ -107,20 +69,25 @@
       on:click={close}
     ></button>
 
-    <!-- Bottom sheet -->
-    <div class="fixed inset-x-0 bottom-0 z-[60] mx-auto w-full max-w-screen-md">
+    <!-- Wrapper: occupa tutta la viewport, posiziona il pannello in basso -->
+    <div class="fixed inset-0 z-[60] flex items-end justify-center p-2 md:p-4">
+      <!-- Pannello bottom-sheet:
+           - max-h con unità *svh* per iOS/Chrome mobile
+           - layout a colonna, header/footer fissi, body scrolla -->
       <div
         role="dialog"
         aria-modal="true"
         aria-labelledby="service-dialog-title"
         tabindex="-1"
         bind:this={dialogEl}
-        class="bg-white rounded-t-3xl border border-black/5 overflow-hidden
-               flex flex-col
-               max-h-[min(100vh-1rem)] md:max-h-[min(100vh-2rem)]
+        class="w-full max-w-screen-md
+               bg-white border border-black/5
+               rounded-t-3xl md:rounded-3xl
+               overflow-hidden flex flex-col
+               max-h-[100svh] md:max-h-[calc(100svh-2rem)]
                pb-[env(safe-area-inset-bottom)]"
       >
-        <!-- Header con titolo e X -->
+        <!-- Header con titolo centrato + X -->
         <div class="relative p-5 md:p-6 border-b border-black/5 shrink-0">
           <h3 id="service-dialog-title" class="font-heading text-2xl md:text-3xl text-center">
             {title}
@@ -138,13 +105,14 @@
           </button>
         </div>
 
+        <!-- Immagine (opzionale) - non cresce -->
         {#if image}
           <div class="overflow-hidden shrink-0">
             <img src={image} alt={title} class="block h-40 w-full md:h-56 object-cover" />
           </div>
         {/if}
 
-        <!-- Corpo scrollabile -->
+        <!-- Body: cresce e scrolla se supera la viewport -->
         <div class="p-5 md:p-6 grow min-h-0 overflow-y-auto">
           {#if html}
             <div class="prose prose-ink prose-headings:font-heading max-w-none">
@@ -158,7 +126,7 @@
         <!-- CTA footer -->
         <div class="p-5 md:p-6 border-t border-black/5 shrink-0">
           <div class="flex flex-col sm:flex-row gap-3">
-            <!-- Primary: sempre visibile, full width su lg -->
+            <!-- Primary: full width su lg come richiesto -->
             <Button
               variant="solid"
               color="accent1"
@@ -168,7 +136,7 @@
               Chiama
             </Button>
 
-            <!-- Secondary: nascosto su lg -->
+            <!-- Secondary: fino a md visibile; nascosto su lg -->
             <Button
               variant="outline"
               color="accent1"
