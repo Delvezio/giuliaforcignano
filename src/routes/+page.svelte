@@ -19,7 +19,7 @@
     { icon: '/img/icon/Therapy-Counseling.png', text: 'Sedute in presenza' },
     { icon: '/img/icon/hello.png', text: 'Sedute online' }
   ]}
-  image="/img/photo/giulia-forcignano-psicologa-3.jpg"
+  image="/img/photo/giulia-forcignano-psicologa-6.jpg"
   primaryHref="/contact"
   primaryLabel="Chiama ora"
   secondaryHref="/about"
@@ -42,8 +42,8 @@
 <MediaText
   eyebrow="Chi sono"
   title="Psicologa laureata all'Università di Torino"
-  text="Sono una giovane psicologa laureata in Psicologia del lavoro e del benessere presso l'Università di Torino, con orientamento all'Analisi Transazionale."
-  image="/img/photo/giulia-forcignano-psicologa-2.jpg"
+  text="Sono una psicologa laureata in Psicologia del lavoro e del benessere presso l'Università di Torino, con orientamento all'Analisi Transazionale."
+  image="/img/photo/giulia-forcignano-psicologa-7.png"
   alt="Seduta in presenza"
   primaryHref="/about"
   primaryLabel="Scopri di più"
