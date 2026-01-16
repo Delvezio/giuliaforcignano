@@ -9,68 +9,80 @@
   export let description: string | undefined = undefined;
   export let html: string | undefined = undefined;
 
-  let mounted = false;
-  let prevOverflow = '';
-  let prevPaddingRight = '';
   let dialogEl: HTMLDivElement | null = null;
 
-  function lockScroll() {
-  if (!browser) return;
-  const root = document.documentElement;
-  prevOverflow = root.style.overflow || '';
-  prevPaddingRight = root.style.paddingRight || '';
-  const sbw = window.innerWidth - root.clientWidth;
-  root.style.overflow = 'hidden';
-  if (sbw > 0) root.style.paddingRight = `${sbw}px`;
-}
+  // === Scroll lock globale (ref-counter) ===
+  let prevOverflow = '';
+  let prevPaddingRight = '';
 
-function unlockScroll() {
-  if (!browser) return;
-  const root = document.documentElement;
-  root.style.overflow = prevOverflow;
-  root.style.paddingRight = prevPaddingRight;
-}
+  // un solo contatore condiviso tra TUTTE le istanze (modulo)
+  let lockCount = 0;
+
+  function lockScroll() {
+    if (!browser) return;
+    const root = document.documentElement;
+    if (lockCount === 0) {
+      // salva stato precedente
+      prevOverflow = root.style.overflow || '';
+      prevPaddingRight = root.style.paddingRight || '';
+      // compensa la scrollbar per evitare "salti" orizzontali
+      const sbw = window.innerWidth - root.clientWidth;
+      root.style.overflow = 'hidden';
+      if (sbw > 0) root.style.paddingRight = `${sbw}px`;
+    }
+    lockCount += 1;
+  }
+
+  function unlockScroll() {
+    if (!browser) return;
+    if (lockCount > 0) lockCount -= 1;
+    if (lockCount === 0) {
+      const root = document.documentElement;
+      root.style.overflow = prevOverflow;
+      root.style.paddingRight = prevPaddingRight;
+      prevOverflow = '';
+      prevPaddingRight = '';
+    }
+  }
 
   function onKey(e: KeyboardEvent) {
-    if (e.key === 'Escape') open = false;
+    if (e.key === 'Escape') close();
+  }
+
+  function close() {
+    // chiudi prima…
+    open = false;
+    // …e garantisci comunque lo sblocco in microtask
+    if (browser) queueMicrotask(unlockScroll);
   }
 
   onMount(() => {
-  if (!browser) return;
-  mounted = true;
-  if (open) {
-    lockScroll();
-    window.addEventListener('keydown', onKey);
-    tick().then(() => dialogEl?.focus());
-  }
-});
+    if (!browser) return;
+    if (open) {
+      lockScroll();
+      window.addEventListener('keydown', onKey);
+      tick().then(() => dialogEl?.focus());
+    }
+  });
 
-$: if (browser && mounted) {
-  if (open) {
-    lockScroll();
-    window.addEventListener('keydown', onKey);
-    tick().then(() => dialogEl?.focus());
-  } else {
-    unlockScroll();
+  // reattività sull’apertura/chiusura
+  $: if (browser) {
+    if (open) {
+      lockScroll();
+      window.addEventListener('keydown', onKey);
+      tick().then(() => dialogEl?.focus());
+    } else {
+      window.removeEventListener('keydown', onKey);
+      unlockScroll();
+    }
+  }
+
+  onDestroy(() => {
+    if (!browser) return;
     window.removeEventListener('keydown', onKey);
-  }
-}
-
-onDestroy(() => {
-  if (!browser) return;
-  unlockScroll();
-  window.removeEventListener('keydown', onKey);
-});
-
-
-  function close() {
-  open = false;
-  // in casi estremi assicura lo sblocco anche se l’effetto reattivo non scatta
-  if (browser) {
-    queueMicrotask(unlockScroll);
-  }
-}
-
+    // in qualunque caso, a distruzione, rilascia il lock
+    unlockScroll();
+  });
 </script>
 
 {#if open}
@@ -82,22 +94,17 @@ onDestroy(() => {
       on:click={close}
     ></button>
 
-    <!-- Wrapper: occupa tutta la viewport, posiziona il pannello in basso -->
-    <div class="fixed inset-0 z-[60] flex items-end justify-center p-2 md:p-4">
-      <!-- Pannello bottom-sheet:
-           - max-h con unità *svh* per iOS/Chrome mobile
-           - layout a colonna, header/footer fissi, body scrolla -->
+    <!-- Bottom sheet wrapper -->
+    <div class="fixed inset-x-0 bottom-0 z-[60] mx-auto w-full max-w-screen-md">
       <div
         role="dialog"
         aria-modal="true"
         aria-labelledby="service-dialog-title"
         tabindex="-1"
         bind:this={dialogEl}
-        class="w-full max-w-screen-md
-               bg-white border border-black/5
-               rounded-t-3xl md:rounded-3xl
-               overflow-hidden flex flex-col
-               max-h-[100svh] md:max-h-[calc(100svh-2rem)]
+        class="bg-white rounded-t-3xl border border-black/5 overflow-hidden
+               flex flex-col
+               max-h-[min(100svh-1rem)] md:max-h-[min(100svh-2rem)]
                pb-[env(safe-area-inset-bottom)]"
       >
         <!-- Header con titolo centrato + X -->
@@ -118,14 +125,14 @@ onDestroy(() => {
           </button>
         </div>
 
-        <!-- Immagine (opzionale) - non cresce -->
+        <!-- Immagine (opzionale, non cresce) -->
         {#if image}
           <div class="overflow-hidden shrink-0">
-            <img src={image} alt={title} class="block h-40 w-full md:h-56 object-cover" />
+            <img src={image} alt={title} class="block h-40 w-full md:h-56" />
           </div>
         {/if}
 
-        <!-- Body: cresce e scrolla se supera la viewport -->
+        <!-- Body scrollabile -->
         <div class="p-5 md:p-6 grow min-h-0 overflow-y-auto">
           {#if html}
             <div class="prose prose-ink prose-headings:font-heading max-w-none">
@@ -139,23 +146,12 @@ onDestroy(() => {
         <!-- CTA footer -->
         <div class="p-5 md:p-6 border-t border-black/5 shrink-0">
           <div class="flex flex-col sm:flex-row gap-3">
-            <!-- Primary: full width su lg come richiesto -->
-            <Button
-              variant="solid"
-              color="accent1"
-              href="tel:+393403783231"
-              className="w-full lg:w-full"
-            >
+            <!-- Primary: full width su lg -->
+            <Button variant="solid" color="accent1" href="tel:+393403783231" className="w-full lg:w-full">
               Chiama
             </Button>
-
-            <!-- Secondary: fino a md visibile; nascosto su lg -->
-            <Button
-              variant="outline"
-              color="accent1"
-              href="mailto:info@giuliaforcignano.it"
-              className="w-full sm:w-auto lg:hidden"
-            >
+            <!-- Secondary: visibile fino a md, nascosto su lg -->
+            <Button variant="outline" color="accent1" href="mailto:info@giuliaforcignano.it" className="w-full sm:w-auto lg:hidden">
               Scrivi
             </Button>
           </div>
