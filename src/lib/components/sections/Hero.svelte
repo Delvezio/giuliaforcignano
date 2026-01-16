@@ -56,7 +56,7 @@
           {/if}
 
           <Heading level={1}>
-            Psicoterapeuta in formazione analitico<em class="italic"> transazionale</em>
+            Psicoterapeuta in formazione analitico <em class="italic">transazionale</em>
           </Heading>
 
           <div class="max-w-prose">
