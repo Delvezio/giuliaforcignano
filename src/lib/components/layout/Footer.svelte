@@ -1,4 +1,5 @@
 <script lang="ts">
+import { resolve } from '$app/paths';
   import Section from '$lib/components/ui/Section.svelte';
   import Container from '$lib/components/ui/Container.svelte';
   import Heading from '$lib/components/ui/Heading.svelte';
@@ -15,7 +16,7 @@
       <div class="grid gap-10 md:grid-cols-4">
         <!-- Brand + intro + social -->
         <div class="space-y-3">
-          <a href="/" class="font-logo text-2xl text-ink inline-block">
+          <a href={resolve('/')}  class="font-logo text-2xl text-ink inline-block">
             Giulia<span class="text-accent1 italic">Forcignanò</span>
           </a>
           <Paragraph className="opacity-80">
@@ -43,6 +44,23 @@
                 </svg>
               </a> -->
             </div>
+            <div class="pt-3">
+              <a
+                rel="nofollow noopener noreferrer"
+                href="https://www.guidapsicologi.it/studio/giulia-forcignano?utm_source=204388&utm_medium=widget&utm_campaign=widget-company_stamp"
+                target="_blank"
+                class="inline-flex"
+                aria-label="Profilo su Guidapsicologi"
+              >
+                <img
+                  src="https://www.guidapsicologi.it/stamp.xpng?com=204388&v=10"
+                  alt="Giulia Forcignano su Guidapsicologi"
+                  class="w-full h-auto bg-cover p-0 m-0 rounded-3xl"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </a>
+            </div>  
           </div>
         </div>
 
@@ -50,10 +68,11 @@
         <nav class="space-y-3">
           <Heading level={5} className="text-xs opacity-60">Scopri di più</Heading>
           <ul class="list-none m-0 p-0 space-y-1">
-            <li><a class="hover:underline" href="/">Home</a></li>
-            <li><a class="hover:underline" href="/about">Chi sono</a></li>
-            <li><a class="hover:underline" href="/metodo">Metodo</a></li>
+             <li><a class="hover:underline" href={resolve('/')}>Home</a></li>
+  <li><a class="hover:underline" href={resolve('/about')}>Chi sono</a></li>
+  <li><a class="hover:underline" href={resolve('/method')}>Metodo</a></li>
           </ul>
+          
         </nav>
 
         <!-- Contatti -->
@@ -125,7 +144,7 @@
       <!-- Bottom bar -->
       <div class="mt-10 pt-6 border-t border-black/5 text-sm flex flex-col md:flex-row items-center justify-between gap-3">
         <span class="opacity-70">© {year} Giulia Forcignano — Tutti i diritti riservati</span>
-        <span class="opacity-60">Design & dev · <a class="underline hover:no-underline" href="/">Delvup</a></span>
+        <span class="opacity-60">Delvup — Design, dev & care</span>
       </div>
     </Container>
   </Section>

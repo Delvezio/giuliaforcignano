@@ -6,13 +6,10 @@
   export let title: string;
   export let image: string | undefined = undefined;   // opzionale
   export let text: string | undefined = undefined;    // sottotitolo/descrizione breve
-  export let modalTitle: string | undefined;
-  export let modalImg: string | undefined;
-
-  // Contenuto ricco per la modale (HTML trusted)
-  export let modalHtml: string | undefined = undefined;
-  // Fallback testo semplice se non passi html
+  export let modalTitle: string | undefined = undefined;
+  export let modalImg: string | undefined = undefined;
   export let modalDescription: string | undefined = undefined;
+  export let modalHtml: string | undefined = undefined;
 
   let open = false;
 </script>
@@ -25,7 +22,7 @@
   <!-- Usare un <button> a tutta larghezza = a11y ok (click + tastiera) -->
   <button
     type="button"
-    class="group block w-full min-h-[20rem] md:min-h-[22rem] text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-accent1-300"
+    class="group block w-full min-h-80 md:min-h-88 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-accent1-300"
     aria-label={`Apri dettagli: ${title}`}
     on:click={() => (open = true)}
   >
@@ -41,7 +38,7 @@
       </div>
     {/if}
       {#if text}
-        <p class="opacity-80 text-sm text-center">{text}</p>
+        <p class="sm:hidden opacity-80 text-sm text-center">{text}</p>
       {/if}
     </div>
   </button>
@@ -51,9 +48,9 @@
  {#if browser}
   <ServiceModal
     bind:open
-    {title}
-    image={image}
-    html={modalHtml}
+    title={modalTitle ?? title}
+    image={modalImg ?? image}
     description={modalDescription}
+    html={modalHtml}
   />
 {/if}

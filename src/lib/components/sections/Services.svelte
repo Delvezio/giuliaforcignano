@@ -4,8 +4,7 @@
   import SectionHeader from '$lib/components/sections/SectionHeader.svelte';
   import ServiceCard from '$lib/components/ui/ServiceCard.svelte';
 
-  // Tipi: niente `export` qui
-  type Faq = { q: string; a: string };
+  // Tipi: niente `export` qui type Faq = { q: string; a: string };
   type Service = {
     title: string;
     image?: string;
@@ -24,9 +23,9 @@
   /** Lista servizi (override possibile via prop) */
   export let services: Service[] = [
     {
-      title: 'Disturbi da Ansia',
+      title: 'Ansia',
       image: '/img/service/ansia.svg',
-      text: '',
+      text: 'Scopri di più',
       modalHtml: `
       <h3>Di cosa si tratta?</h3>
       <p>Il disturbo d'ansia è una condizione caratterizzata da un'eccessiva preoccupazione e da un'apprensione persistente, sproporzionate rispetto alla realtà, che interferiscono con la vita quotidiana. Può manifestarsi con sintomi mentali (nervosismo, irritabilità) e, talvolta, fisici (tremore, difficoltà respiratorie, palpitazioni).</p>
@@ -44,7 +43,7 @@
     {
       title: 'Lavoro',
       image: '/img/service/lavoro.svg',
-      text: '',
+      text: 'Scopri di più',
       modalHtml: `
       <h3>Di cosa si tratta?</h3>
       <p>Stress lavorativo, burn-out, mobbing, difficoltà relazionali nei contesti professionali, riorientamento, insicurezza professionale.</p>
@@ -63,7 +62,7 @@
     {
       title: 'Depressione',
       image: '/img/service/depressione.svg',
-      text: '',
+      text: 'Scopri di più',
       modalHtml: `
       <h3>Di cosa si tratta?</h3>
       <p>La depressione è un disturbo dell’umore caratterizzato da una profonda e persistente tristezza, perdita di interesse o piacere per le attività quotidiane, un calo significativo dell’energia, del desiderio e del piacere sessuale. Può influenzare il pensiero, il comportamento, il sonno, l'appetito e la percezione di sé. I sintomi possono variare da lievi a gravi, e interferire con il funzionamento personale, sociale e lavorativo.</p>
@@ -81,7 +80,7 @@
     {
       title: 'Elaborazione del Trauma',
       image: '/img/service/trauma.svg',
-      text: '',
+      text: 'Scopri di più',
       modalHtml: `
       <h3>Di cosa si tratta?</h3>
       <p>Un evento traumatico può lasciare tracce profonde e durature nella psiche, anche molto tempo dopo il suo verificarsi. Il trauma psicologico può derivare da esperienze come incidenti, maltrattamenti, violenze, lutti, trascuratezza, malattie o situazioni percepite come schiaccianti e fuori controllo.</p>
@@ -97,9 +96,9 @@
     `,
     },
     {
-      title: 'Disturbi da Stress',
+      title: 'Stress',
       image: '/img/service/meditation-yaga.svg',
-      text: '',
+      text: 'Scopri di più',
       modalHtml: `
       <h3>Di cosa si tratta?</h3>
       <p>Capita a tutti, in certi periodi, di sentirsi sotto pressione. Ma quando lo stress diventa troppo intenso o dura troppo a lungo, può iniziare a pesare in modo significativo sulla salute mentale ed emotiva. Il corpo e la mente restano in uno stato di allerta continuo.</p>
@@ -119,7 +118,7 @@
     {
       title: 'Disturbi di personalità',
       image: '/img/service/asking-question.svg',
-      text: '',
+      text: 'Scopri di più',
       modalHtml: `
       <h3>Di cosa si tratta?</h3>
       <p>I disturbi di personalità sono modalità stabili e pervasive di percepire sé stessi, gli altri e il mondo, che si discostano in modo marcato dalle aspettative culturali e che compromettono il funzionamento personale, relazionale o sociale. Non si tratta di semplici tratti caratteriali, ma di schemi profondamente radicati che influenzano il modo di pensare, sentire, comportarsi e relazionarsi.</p>
@@ -138,7 +137,7 @@
     {
       title: 'Disturbi Alimentari',
       image: '/img/service/fast-food.svg',
-      text: '',
+      text: 'Scopri di più',
       modalHtml: `
       <h3>Di cosa si tratta?</h3>
       <p>I disturbi alimentari sono condizioni complesse che coinvolgono una relazione disfunzionale con il cibo, il corpo e il controllo. Possono manifestarsi con comportamenti restrittivi, abbuffate, condotte di eliminazione o esercizio fisico eccessivo, spesso accompagnati da un’immagine corporea distorta e da un’elevata sofferenza emotiva.</p>
@@ -157,7 +156,7 @@
     {
       title: 'Sostegno alla genitorialità',
       image: '/img/service/having-fun.svg',
-      text: '',
+      text: 'Scopri di più',
       modalHtml: `
       <h3>Di cosa si tratta?</h3>
       <p>Essere genitori è una delle esperienze più profonde, ma anche tra le più complesse. Ogni fase della crescita porta con sé nuove sfide, emozioni contrastanti e spesso domande difficili: “Sto facendo abbastanza?”, “Perché mio figlio si comporta così?”, “Come posso essere presente senza invadere il suo spazio?”.</p>
@@ -175,7 +174,7 @@
     {
       title: 'Disabilità cognitive',
       image: '/img/service/being-creative.svg',
-      text: '',
+      text: 'Scopri di più',
       modalHtml: `
       <h3>Di cosa si tratta?</h3>
       <p>Le disabilità cognitive comprendono condizioni che influenzano lo sviluppo o il funzionamento di abilità come attenzione, memoria, linguaggio, capacità di apprendere e problem solving. Possono avere origine congenita o acquisita, e variare notevolmente per gravità e caratteristiche.</p>
@@ -208,9 +207,9 @@
     <SectionHeader eyebrow={eyebrow} title={title} intro={intro} />
     <div class="w-full flex justify-center">
       <div class="mx-auto inline-flex flex-wrap items-stretch justify-center gap-6 
-                sm:max-w-[20rem] md:max-w-[42rem] lg:max-w-[64rem]">
-        {#each services as s}
-          <div class="basis-[20rem] shrink-0 shrink-0 w-[20rem]">
+                sm:max-w-[20rem] md:max-w-2xl lg:max-w-5xl">
+        {#each services as s (s.title)}
+          <div class="basis-[20rem] shrink-0 w-[20rem]">
             <ServiceCard
               title={s.title}
               image={s.image}

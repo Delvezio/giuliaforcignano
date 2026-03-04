@@ -23,7 +23,7 @@
   export let reverse: boolean = false;
 
   // CTA
-  export let primaryHref: string = '/contact';
+  export let primaryHref: string = '';
   export let primaryLabel: string = 'Chiama ora';
   export let secondaryHref: string = '/about';
   export let secondaryLabel: string = 'Scopri di più';
@@ -45,12 +45,12 @@
         class="flex w-full grow self-stretch
                flex-col lg:flex-row
                flex-wrap lg:flex-nowrap
-               gap-[70px] lg:gap-x-[3%] lg:gap-y-0
+               gap-[70px] lg:gap-x-[1%] lg:gap-y-0
                lg:justify-between lg:items-stretch
-               py-16 lg:pt-0 lg:pb-0 my-18"
+               py-16 lg:pt-0 lg:pb-0 my-2 lg:my-18"
       >
         <!-- Colonna testo -->
-        <div class="w-full lg:w-[50%] flex flex-col gap-[30px] lg:py-[100px]" class:lg:order-2={reverse}>
+        <div class="w-full lg:w-[50%] flex flex-col gap-5 lg:gap-[30px] lg:py-[100px]" class:lg:order-2={reverse}>
           {#if eyebrow}
             <p class="text-sm font-medium tracking-wide uppercase text-accent1">{eyebrow}</p>
           {/if}
@@ -66,13 +66,13 @@
           </div>
 
           <div class="flex flex-wrap gap-3">
-            <Button variant="solid" color="accent1" href={primaryHref}>{primaryLabel}</Button>
+            <Button variant="solid" color="accent1" href="tel:+393403783231">{primaryLabel}</Button>
             <Button variant={secondaryVariant} color="accent1" href={secondaryHref}>{secondaryLabel}</Button>
           </div>
 
           {#if highlights && highlights.length}
             <ul class="mt-4 flex flex-wrap items-center gap-x-6 gap-y-3">
-              {#each highlights as h}
+              {#each highlights as h, i (`${h.text}-${i}`)}
                 <li class="inline-flex items-center gap-2 w-auto flex-none">
                   {#if h.icon}
                     {#if isImageIcon(h.icon)}
@@ -80,7 +80,7 @@
                       <img
                         src={h.icon}
                         alt=""
-                        class="h-8 w-8 md:h-12 md:w-12 object-contain"
+                        class="h-12 w-12 md:h-16 md:w-16 object-contain"
                         loading="lazy"
                         decoding="async"
                       />
