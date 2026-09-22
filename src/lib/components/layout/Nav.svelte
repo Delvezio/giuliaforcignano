@@ -11,7 +11,6 @@
     | '/'
     | '/about'
     | '/method'
-    | '/blog'
     | '/contact'
     | '/cookies'
     | '/privacy'

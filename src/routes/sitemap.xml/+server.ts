@@ -1,5 +1,4 @@
 import { site, pageMeta } from '$lib/config/site';
-import { posts } from '$lib/data/posts';
 
 export const prerender = true;
 
@@ -8,7 +7,6 @@ export function GET() {
     ...Object.entries(pageMeta)
       .filter(([, meta]) => !meta.noindex)
       .map(([path]) => path),
-    ...posts.map((post) => `/blog/${post.slug}`),
   ];
 
   const body = `<?xml version="1.0" encoding="UTF-8"?>

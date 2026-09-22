@@ -1,7 +1,6 @@
 <script lang="ts">
   import { page } from '$app/stores';
   import { site, pageMeta } from '$lib/config/site';
-  import { posts } from '$lib/data/posts';
 
   export let title: string | null = null;
   export let description: string | null = null;
@@ -14,19 +13,6 @@
   $: resolved = (() => {
     const known = pageMeta[pathname];
     if (known) return known;
-
-    if (pathname.startsWith('/blog/')) {
-      const slug = pathname.slice('/blog/'.length);
-      const post = posts.find((p) => p.slug === slug);
-      if (post) {
-        return {
-          title: `${post.title} | Blog di ${site.name}`,
-          description: post.excerpt,
-          noindex: false,
-        };
-      }
-    }
-
     return { title: site.title, description: site.description, noindex: false };
   })();
 

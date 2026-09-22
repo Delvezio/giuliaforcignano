@@ -40,11 +40,6 @@ export const pageMeta: Record<string, PageMeta> = {
     description:
       'Scrivimi o chiamami per fissare un appuntamento, in studio a Torino in Corso Moncalieri 266 oppure online. Rispondo entro 24 ore lavorative.',
   },
-  '/blog': {
-    title: 'Blog | Giulia Forcignanò, psicologa a Torino',
-    description:
-      'Articoli e riflessioni su benessere psicologico, relazioni e percorsi di consapevolezza.',
-  },
   '/privacy': {
     title: 'Informativa Privacy | Giulia Forcignanò',
     description: 'Come vengono trattati i dati personali raccolti tramite questo sito.',
