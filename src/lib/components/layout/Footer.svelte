@@ -103,26 +103,10 @@ import { resolve } from '$app/paths';
 
         <!-- Studi -->
         <div class="space-y-3">
-          <Heading level={5} className="text-xs opacity-60">I miei studi</Heading>
+          <Heading level={5} className="text-xs opacity-60">Il mio studio</Heading>
           <ul class="list-none m-0 p-0 space-y-2">
             <li class="flex items-start gap-2">
               <!-- icona pin -->
-              <svg viewBox="0 0 24 24" class="w-4 h-4 mt-1 shrink-0" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                <path d="M12 22s-7-5.33-7-11a7 7 0 1 1 14 0c0 5.67-7 11-7 11z"/>
-                <circle cx="12" cy="11" r="3"/>
-              </svg>
-              <a
-                href="https://www.google.com/maps/dir/?api=1&destination=Via+Saluzzo,+121,+10126+Torino+TO&travelmode=walking"
-                target="_blank" rel="noopener noreferrer"
-                class="hover:underline cursor-pointer"
-                aria-label="Apri indicazioni per Via Saluzzo 121, 10126 Torino su Google Maps"
-              >
-                <p>Via Saluzzo, 121</p>
-                <p class="opacity-70">10126 Torino TO</p>
-              </a>
-            </li>
-
-            <li class="flex items-start gap-2">
               <svg viewBox="0 0 24 24" class="w-4 h-4 mt-1 shrink-0" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                 <path d="M12 22s-7-5.33-7-11a7 7 0 1 1 14 0c0 5.67-7 11-7 11z"/>
                 <circle cx="12" cy="11" r="3"/>
