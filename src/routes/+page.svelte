@@ -24,8 +24,6 @@
 	secondaryVariant="outline"
 />
 
-<Orientamento />
-
 <SectionHeader
 	title="Inizia un percorso consapevole verso "
 	titleAccent="il cambiamento"
@@ -36,6 +34,8 @@
 	iconFloatDistance="8px"
 	iconFloatDuration="2.5s"
 />
+
+<Orientamento showIntro={false} showPageLink={false} />
 
 <!-- Sezione 2: Media + Text (riga 1) -->
 <MediaText
