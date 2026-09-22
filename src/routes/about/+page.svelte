@@ -1,6 +1,4 @@
 <script lang="ts">
-  import Section from '$lib/components/ui/Section.svelte';
-  import Container from '$lib/components/ui/Container.svelte';
   import PageHeader from '$lib/components/sections/PageHeader.svelte';
   import StickyAside from '$lib/components/sections/StickyAside.svelte';
   import Heading from '$lib/components/ui/Heading.svelte';
@@ -10,7 +8,6 @@
 
 	import SectionHeader from '$lib/components/sections/SectionHeader.svelte';
 
-  export let secondaryVariant: 'outline' | 'soft' = 'outline';
 </script>
 
 <PageHeader
@@ -38,11 +35,11 @@
         />
       </svelte:fragment>
 
-      <Heading level={4}>Hai bisogno di aiuto ora?</Heading>
+      <Heading level={4}>Stai pensando di iniziare un percorso?</Heading>
       <Paragraph className="text-ink/80 my-5">
-        Chiamami per fissare un appuntamento o per avere maggiori informazioni.
+        Se vuoi capire come si svolge un primo incontro o chiedermi una prima informazione, trovi qui tutto ciò che può esserti utile.
       </Paragraph>
-      <Button variant="solid" color="accent1" href="/contact">Chiama ora</Button>
+      <Button variant="solid" color="accent1" href="/iniziare-un-percorso">Scopri come iniziare</Button>
     </Card>
   </svelte:fragment>
 
@@ -126,4 +123,3 @@
   secondaryHref="mailto:info@giuliaforcignano.it"
   secondaryLabel="Scrivimi"
 />
-

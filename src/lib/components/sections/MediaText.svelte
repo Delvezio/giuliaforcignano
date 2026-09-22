@@ -48,7 +48,7 @@
       <!-- Testo -->
       <div class="w-full lg:w-[48%]" class:lg:order-1={reverse}>
         {#if eyebrow}
-          <p class="text-sm font-medium tracking-wide uppercase text-accent1 mb-1">{eyebrow}</p>
+          <p class="text-sm font-medium tracking-wide uppercase text-accent1-800 mb-1">{eyebrow}</p>
         {/if}
 
         <!-- Slot opzionale per accentuare parole con <em> -->
@@ -60,7 +60,7 @@
 
         {#if highlights && highlights.length}
           <ul class="mb-5 flex flex-wrap items-center gap-x-6 gap-y-3">
-            {#each highlights as h}
+            {#each highlights as h, i (`${h.text}-${i}`)}
               <li class="inline-flex items-center gap-2 w-auto flex-none">
                 {#if h.icon}
                   <span class="text-xl leading-none" aria-hidden="true">{h.icon}</span>

@@ -1,0 +1,275 @@
+[
+	{
+		"slug": "ansia",
+		"cardTitle": "Ansia",
+		"image": "/img/service/ansia.svg",
+		"seoTitle": "Ansia e attacchi di panico | Psicologa Torino | Giulia Forcignanò",
+		"seoDescription": "Uno spazio psicologico per comprendere ansia, preoccupazioni e attacchi di panico. Colloqui a Torino e online con Giulia Forcignanò.",
+		"title": "Ansia: quando pensieri e tensione prendono troppo spazio",
+		"intro": [
+			"L’ansia è una risposta naturale che può aiutarci ad affrontare situazioni importanti o percepite come difficili. Quando però diventa molto intensa, frequente o difficile da gestire può occupare una parte significativa della quotidianità."
+		],
+		"sections": [
+			{
+				"heading": "Quando l’ansia entra nella vita di tutti i giorni",
+				"paragraphs": [
+					"Può presentarsi attraverso preoccupazioni continue, anticipazioni, difficoltà a rilassarsi, sensazioni fisiche intense oppure momenti improvvisi di forte paura.",
+					"Non tutte le persone vivono l’ansia nello stesso modo e comprenderne il significato richiede di considerare la propria storia e il contesto in cui compare."
+				]
+			},
+			{
+				"heading": "Uno spazio per osservare ciò che accade",
+				"paragraphs": [
+					"Nel percorso possiamo osservare insieme le situazioni in cui l’ansia tende ad attivarsi, i pensieri che la accompagnano e il modo in cui influenza comportamenti e relazioni.",
+					"L’Analisi Transazionale permette inoltre di esplorare alcuni schemi e modalità interiori che possono ripetersi nel tempo, aumentando la consapevolezza delle proprie reazioni."
+				]
+			},
+			{
+				"heading": "Un percorso costruito sulla tua esperienza",
+				"paragraphs": [
+					"L’obiettivo non è applicare una soluzione uguale per tutti, ma comprendere cosa sta accadendo nella tua esperienza e individuare insieme obiettivi realistici e personali."
+				]
+			}
+		],
+		"cta": "Scopri come funziona il primo incontro",
+		"emergency": false
+	},
+	{
+		"slug": "lavoro",
+		"cardTitle": "Lavoro",
+		"image": "/img/service/lavoro.svg",
+		"seoTitle": "Difficoltà lavorative e stress | Psicologa Torino | Giulia Forcignanò",
+		"seoDescription": "Sostegno psicologico per stress lavorativo, cambiamenti professionali, conflitti, pressione e difficoltà nel rapporto con il lavoro.",
+		"title": "Lavoro: quando pressione, responsabilità e relazioni diventano difficili da sostenere",
+		"intro": [
+			"Il lavoro occupa una parte importante della nostra vita e può influenzare profondamente il modo in cui percepiamo noi stessi.",
+			"Pressione, cambiamenti, responsabilità, conflitti o aspettative possono trasformarlo in una fonte di forte tensione."
+		],
+		"sections": [
+			{
+				"heading": "Quando il lavoro continua anche fuori dal lavoro",
+				"paragraphs": [
+					"Può diventare difficile staccare, mettere confini, prendere decisioni o sentirsi adeguati alle richieste.",
+					"A volte emergono anche dinamiche relazionali che tendono a ripetersi: il bisogno di dimostrare continuamente il proprio valore, la difficoltà a dire di no, il timore del giudizio o la tendenza ad assumersi più responsabilità del necessario."
+				]
+			},
+			{
+				"heading": "Osservare il proprio modo di stare nel contesto lavorativo",
+				"paragraphs": [
+					"La mia formazione in Psicologia del Lavoro e l’orientamento analitico transazionale permettono di osservare sia l’esperienza individuale sia le dinamiche relazionali e organizzative che la accompagnano.",
+					"Possiamo lavorare per comprendere meglio ciò che accade e costruire modalità più consapevoli di affrontare il proprio contesto professionale."
+				]
+			}
+		],
+		"cta": "Scopri come funziona il primo incontro",
+		"emergency": false
+	},
+	{
+		"slug": "depressione",
+		"cardTitle": "Depressione",
+		"image": "/img/service/depressione.svg",
+		"seoTitle": "Depressione e abbassamento dell’umore | Psicologa Torino",
+		"seoDescription": "Sostegno psicologico per persone che attraversano depressione o periodi di forte abbassamento dell’umore. Incontri a Torino e online.",
+		"title": "Depressione e momenti di profondo abbassamento dell’umore",
+		"intro": [
+			"La depressione non coincide semplicemente con l’essere tristi.",
+			"Può modificare il modo in cui percepiamo noi stessi, le relazioni, il futuro e attività che prima avevano significato."
+		],
+		"sections": [
+			{
+				"heading": "Quando tutto sembra richiedere più energia",
+				"paragraphs": [
+					"Possono comparire perdita di interesse, senso di vuoto, stanchezza, isolamento, difficoltà di concentrazione o pensieri molto negativi su di sé.",
+					"La presenza e l’intensità di queste esperienze possono essere molto diverse da persona a persona."
+				]
+			},
+			{
+				"heading": "Non ridurre la persona al sintomo",
+				"paragraphs": [
+					"All’interno di un percorso psicologico possiamo esplorare ciò che stai vivendo considerando la tua storia, le relazioni e il modo in cui pensieri ed emozioni interagiscono tra loro.",
+					"Quando necessario, il sostegno psicologico può inserirsi all’interno di un percorso condiviso con altri professionisti sanitari."
+				]
+			}
+		],
+		"cta": "Scopri come funziona il primo incontro",
+		"emergency": true
+	},
+	{
+		"slug": "trauma",
+		"cardTitle": "Elaborazione del trauma",
+		"image": "/img/service/trauma.svg",
+		"seoTitle": "Esperienze traumatiche e sostegno psicologico | Torino",
+		"seoDescription": "Uno spazio psicologico per persone che hanno vissuto esperienze traumatiche o particolarmente difficili. Colloqui a Torino e online.",
+		"title": "Esperienze traumatiche: uno spazio per comprendere ciò che è accaduto",
+		"intro": [
+			"Alcune esperienze possono lasciare conseguenze che continuano a farsi sentire anche quando l’evento è passato.",
+			"Non esiste però un unico modo di reagire a un’esperienza traumatica: ciò che conta è il significato che quella esperienza assume per la persona."
+		],
+		"sections": [
+			{
+				"heading": "Rispettare tempi e possibilità",
+				"paragraphs": [
+					"Ricordi, emozioni, sensazioni o situazioni possono riattivare una sofferenza difficile da gestire.",
+					"Il lavoro psicologico richiede attenzione ai tempi della persona e alla costruzione di uno spazio sufficientemente sicuro in cui poter osservare ciò che accade senza forzature."
+				]
+			},
+			{
+				"heading": "Comprendere il presente insieme alla propria storia",
+				"paragraphs": [
+					"Il percorso può aiutare a riconoscere il modo in cui alcune esperienze continuano a influenzare emozioni, relazioni e scelte nel presente.",
+					"Quando la situazione richiede competenze o interventi specifici differenti, è importante valutare il coinvolgimento di altri professionisti."
+				]
+			}
+		],
+		"cta": "Scopri come funziona il primo incontro",
+		"emergency": false
+	},
+	{
+		"slug": "stress",
+		"cardTitle": "Stress",
+		"image": "/img/service/meditation-yaga.svg",
+		"seoTitle": "Stress e sovraccarico | Psicologa Torino | Giulia Forcignanò",
+		"seoDescription": "Sostegno psicologico per stress, sovraccarico, difficoltà a fermarsi e periodi di forte pressione personale o professionale.",
+		"title": "Stress: quando le richieste superano lo spazio che senti di avere",
+		"intro": [
+			"Lo stress fa parte della vita e può aiutarci ad affrontare periodi impegnativi.",
+			"Quando però le richieste si accumulano e diventa difficile recuperare energie, può iniziare a coinvolgere pensieri, emozioni, corpo e relazioni."
+		],
+		"sections": [
+			{
+				"heading": "Sempre in movimento",
+				"paragraphs": [
+					"Potresti sentire di dover continuare a fare, risolvere, controllare o rispondere alle aspettative anche quando avresti bisogno di fermarti.",
+					"In alcuni momenti può diventare difficile persino riconoscere i propri limiti o concedersi uno spazio senza sentirsi in colpa."
+				]
+			},
+			{
+				"heading": "Comprendere cosa alimenta la pressione",
+				"paragraphs": [
+					"Nel percorso possiamo osservare sia le situazioni esterne sia le richieste che poniamo a noi stessi.",
+					"L’Analisi Transazionale può aiutare a riconoscere alcuni messaggi interiori, ruoli e modalità relazionali che contribuiscono a mantenere determinate dinamiche."
+				]
+			}
+		],
+		"cta": "Scopri come funziona il primo incontro",
+		"emergency": false
+	},
+	{
+		"slug": "disturbi-personalita",
+		"cardTitle": "Disturbi di personalità",
+		"image": "/img/service/asking-question.svg",
+		"seoTitle": "Disturbi di personalità e sostegno psicologico | Torino",
+		"seoDescription": "Sostegno psicologico per persone con diagnosi o difficoltà riconducibili ai disturbi di personalità, a Torino e online.",
+		"title": "Disturbi di personalità: guardare la persona oltre l’etichetta",
+		"intro": [
+			"Una diagnosi può aiutare i professionisti a descrivere alcune modalità di funzionamento, ma non può raccontare interamente una persona.",
+			"Storia, relazioni, risorse, difficoltà e bisogni rimangono sempre individuali."
+		],
+		"sections": [
+			{
+				"heading": "Modalità che possono diventare fonte di sofferenza",
+				"paragraphs": [
+					"Alcuni modi di percepire se stessi, gli altri o le relazioni possono essere molto radicati e generare difficoltà in contesti differenti.",
+					"Se hai già ricevuto una diagnosi, il percorso parte comunque dalla tua esperienza concreta e non soltanto dal suo nome."
+				]
+			},
+			{
+				"heading": "Relazioni e consapevolezza",
+				"paragraphs": [
+					"L’Analisi Transazionale presta particolare attenzione alle modalità relazionali e agli schemi che tendono a ripetersi.",
+					"Il lavoro viene definito sulla base delle necessità della persona e nei limiti delle competenze professionali, valutando quando opportuno l’integrazione con altri professionisti sanitari."
+				]
+			}
+		],
+		"cta": "Scopri come funziona il primo incontro",
+		"emergency": false
+	},
+	{
+		"slug": "disturbi-alimentari",
+		"cardTitle": "Disturbi alimentari",
+		"image": "/img/service/fast-food.svg",
+		"seoTitle": "Disturbi alimentari e sostegno psicologico | Torino",
+		"seoDescription": "Sostegno psicologico nelle difficoltà legate al rapporto con alimentazione, corpo e immagine di sé, all’interno di percorsi appropriati e multidisciplinari.",
+		"title": "Disturbi alimentari: quando il rapporto con cibo e corpo diventa fonte di sofferenza",
+		"intro": [
+			"Il rapporto con l’alimentazione e con il proprio corpo può diventare un luogo in cui si esprimono emozioni, pensieri e difficoltà molto profonde.",
+			"I disturbi alimentari possono assumere forme differenti e richiedono una valutazione attenta della situazione individuale."
+		],
+		"sections": [
+			{
+				"heading": "Oltre il comportamento alimentare",
+				"paragraphs": [
+					"Il lavoro psicologico permette di dare spazio anche a ciò che accompagna il rapporto con il cibo: l’immagine di sé, le emozioni, le relazioni, il bisogno di controllo, le aspettative e il dialogo interno."
+				]
+			},
+			{
+				"heading": "Un lavoro che può richiedere più competenze",
+				"paragraphs": [
+					"I disturbi della nutrizione e dell’alimentazione richiedono frequentemente un approccio multidisciplinare.",
+					"Quando necessario, il percorso psicologico deve quindi integrarsi con il lavoro di medici e altri professionisti sanitari coinvolti nella cura della persona."
+				]
+			}
+		],
+		"cta": "Scopri come funziona il primo incontro",
+		"emergency": false
+	},
+	{
+		"slug": "genitorialita",
+		"cardTitle": "Sostegno alla genitorialità",
+		"image": "/img/service/having-fun.svg",
+		"seoTitle": "Sostegno alla genitorialità | Psicologa Torino",
+		"seoDescription": "Uno spazio di sostegno psicologico per genitori che stanno affrontando difficoltà, cambiamenti o domande nel rapporto con i propri figli.",
+		"title": "Genitorialità: uno spazio per ritrovare ascolto, confini e possibilità",
+		"intro": [
+			"Essere genitori significa confrontarsi continuamente con cambiamenti, responsabilità e domande per le quali non sempre esiste una risposta immediata.",
+			"A volte può essere utile avere uno spazio in cui fermarsi e osservare ciò che sta accadendo."
+		],
+		"sections": [
+			{
+				"heading": "Non esiste il genitore perfetto",
+				"paragraphs": [
+					"Conflitti, difficoltà comunicative, cambiamenti familiari o momenti particolarmente impegnativi possono mettere alla prova il rapporto con i propri figli e anche il modo in cui ci percepiamo come genitori."
+				]
+			},
+			{
+				"heading": "Comprendere ciò che accade nella relazione",
+				"paragraphs": [
+					"Il sostegno alla genitorialità può aiutare a osservare dinamiche, aspettative, emozioni e modalità comunicative che entrano in gioco nella relazione.",
+					"L’obiettivo non è fornire un modello universale di genitore, ma costruire maggiore consapevolezza rispetto alla propria situazione familiare."
+				]
+			}
+		],
+		"cta": "Scopri come funziona il primo incontro",
+		"emergency": false
+	},
+	{
+		"slug": "disabilita-cognitive",
+		"cardTitle": "Disabilità cognitive",
+		"image": "/img/service/being-creative.svg",
+		"seoTitle": "Disabilità cognitive e sostegno psicologico | Torino",
+		"seoDescription": "Sostegno psicologico rivolto a persone con disabilità cognitive e alle loro famiglie, con attenzione alla persona, alle relazioni e al contesto.",
+		"title": "Disabilità cognitive: sostegno alla persona e alle relazioni che la circondano",
+		"intro": [
+			"Una persona non coincide con le proprie difficoltà cognitive.",
+			"Emozioni, relazioni, desideri, possibilità e bisogni fanno parte dell’esperienza individuale e meritano uno spazio di ascolto adeguato."
+		],
+		"sections": [
+			{
+				"heading": "Un intervento costruito sulla persona",
+				"paragraphs": [
+					"Il sostegno psicologico viene adattato alle caratteristiche, alle risorse e alle possibilità della persona, tenendo conto anche del contesto in cui vive.",
+					"Quando appropriato, il lavoro può coinvolgere la famiglia e integrarsi con quello di altri professionisti."
+				]
+			},
+			{
+				"heading": "Anche chi si prende cura può avere bisogno di uno spazio",
+				"paragraphs": [
+					"Familiari e caregiver possono attraversare momenti di fatica, cambiamento e incertezza.",
+					"Avere uno spazio in cui osservare anche la propria esperienza può diventare parte importante del percorso."
+				]
+			}
+		],
+		"cta": "Contattami per maggiori informazioni",
+		"emergency": false
+	}
+]

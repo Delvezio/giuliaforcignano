@@ -17,7 +17,7 @@ import { resolve } from '$app/paths';
         <!-- Brand + intro + social -->
         <div class="space-y-3">
           <a href={resolve('/')}  class="font-logo text-2xl text-ink inline-block">
-            Giulia<span class="text-accent1 italic">Forcignanò</span>
+            Giulia<span class="text-accent1-800 italic">Forcignanò</span>
           </a>
           <Paragraph className="opacity-80">
             Psicologa — sedute in presenza e online.
@@ -71,6 +71,9 @@ import { resolve } from '$app/paths';
              <li><a class="hover:underline" href={resolve('/')}>Home</a></li>
   <li><a class="hover:underline" href={resolve('/about')}>Chi sono</a></li>
   <li><a class="hover:underline" href={resolve('/method')}>Metodo</a></li>
+  <li><a class="hover:underline" href={resolve('/ambiti')}>Ambiti</a></li>
+  <li><a class="hover:underline" href={resolve('/iniziare-un-percorso')}>Primo incontro</a></li>
+  <li><a class="hover:underline" href={resolve('/contatti')}>Contatti</a></li>
           </ul>
           
         </nav>

@@ -2,15 +2,11 @@
 <script lang="ts">
   import Hero from '$lib/components/sections/Hero.svelte';
   import Services from '$lib/components/sections/Services.svelte';
-  import Testimonials from '$lib/components/sections/Testimonials.svelte';
   import FinalCta from '$lib/components/sections/FinalCta.svelte';
-  import Section from '$lib/components/ui/Section.svelte';
-  import Heading from '$lib/components/ui/Heading.svelte';
-  import Paragraph from '$lib/components/ui/Paragraph.svelte';
-  import Card from '$lib/components/ui/Card.svelte';
-  import Button from '$lib/components/ui/Button.svelte';
   import MediaText from '$lib/components/sections/MediaText.svelte';
   import SectionHeader from '$lib/components/sections/SectionHeader.svelte';
+  import Orientamento from '$lib/components/sections/Orientamento.svelte';
+  import FirstMeetingTeaser from '$lib/components/sections/FirstMeetingTeaser.svelte';
 </script>
 
 <Hero
@@ -21,7 +17,7 @@ eyebrow="Psicologa"
     { icon: '/img/icon/hello.png', text: 'Sedute online' }
   ]}
   image="/img/photo/giulia-forcignano-psicologa-6.jpg"
-  primaryHref="/contact"
+  primaryHref="tel:+393403783231"
   primaryLabel="Chiama ora"
   secondaryHref="/about"
   secondaryLabel="Scopri di più"
@@ -64,28 +60,25 @@ eyebrow="Psicologa"
 <MediaText
   eyebrow="Continuità e supporto"
   title="Vicino a te, ovunque tu sia, con sedute in presenza e online"
-  text="Puoi iniziare il tuo percorso in uno dei miei studi oppure da casa, con sedute online. Entrambe le modalità offrono uno spazio protetto, flessibile e su misura per te."
+  text="Puoi iniziare il tuo percorso nel mio studio a Torino oppure da casa, con colloqui online."
   image="/img/photo/pexels-liza-summer-6383268.jpg"
   alt="Materiali e follow-up"
 />
 
 
-<Services eyebrow="Aree di intervento" title="Con quali difficoltà posso aiutarti" intro="Ogni percorso è personalizzato e basato sulle tue reali esigenze." />
+<Orientamento />
+
+<Services />
+
+<FirstMeetingTeaser />
 
 <!-- <Testimonials title="Dicono di me" intro="Cosa dicono le persone che hanno lavorato con me." />-->
 
-<SectionHeader
-  title="Il tuo viaggio "
-  titleAccent="inizia qui"
-  intro="Un percorso che unisce ascolto, metodo e continuità: scegli la modalità più adatta a te."
-  iconSrc="/img/icon/hot-air-balloon.svg"
-  iconAlt="Mongolfiera"
-  iconFloat={true}
-  iconFloatDistance="8px"
-  iconFloatDuration="2.5s"
-  primaryHref="tel:+393403783231"
-  primaryLabel="Chiamami ora"
-  bg="accent2"
-  secondaryHref="mailto:info@giuliaforcignano.it"
-  secondaryLabel="Scrivimi"
+<FinalCta
+  title="Possiamo partire da una prima domanda."
+  text="Se vuoi chiedermi un’informazione o capire se possiamo fissare un primo incontro, puoi contattarmi senza impegno."
+  primaryHref="mailto:info@giuliaforcignano.it"
+  primaryLabel="Scrivimi"
+  secondaryHref="tel:+393403783231"
+  secondaryLabel="Chiamami"
 />

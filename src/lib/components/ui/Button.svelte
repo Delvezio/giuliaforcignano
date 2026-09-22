@@ -33,7 +33,7 @@
   } as const;
 
   const textBase = {
-    accent1: 'text-accent1',
+    accent1: 'text-accent1-800',
     accent2: 'text-accent2',
     accent3: 'text-accent3',
     accent4: 'text-accent4',
@@ -41,7 +41,7 @@
     ink:     'text-white'
   } as const;
 
-  const solidText = (color === 'accent1' || color === 'ink') ? 'text-white' : 'text-ink';
+  const solidText = color === 'ink' ? 'text-white' : 'text-ink';
 
   const classes =
     variant === 'solid'

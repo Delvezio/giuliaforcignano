@@ -64,7 +64,7 @@
         </span>
       {/if}
       {#if eyebrow}
-        <p class="text-sm font-medium tracking-wide uppercase text-accent1">{eyebrow}</p>
+        <p class="text-sm font-medium tracking-wide uppercase text-accent1-800">{eyebrow}</p>
       {/if}
 
       <Heading level={2} align="center">

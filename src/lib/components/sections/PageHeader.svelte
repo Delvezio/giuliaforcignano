@@ -85,12 +85,12 @@
               </div>
             {/if}
 
-            <div class="flex flex-col gap-2">
+            <div class="flex w-full min-w-0 flex-col gap-2">
                 {#if eyebrow}
-                <p class="text-sm font-medium tracking-wide uppercase text-accent1">{eyebrow}</p>
+                <p class="text-sm font-medium tracking-wide uppercase text-accent1-800">{eyebrow}</p>
                 {/if}
 
-                <Heading level={1}>
+                <Heading level={1} className="break-words">
                 <slot name="title">{title}</slot>
                 </Heading>
             </div>
@@ -143,12 +143,12 @@
             </div>
           {/if}
           
-          <div class="flex flex-col gap-2">
+          <div class="flex w-full min-w-0 flex-col gap-2">
             {#if eyebrow}
-                <p class="text-sm font-medium tracking-wide uppercase text-accent1">{eyebrow}</p>
+                <p class="text-sm font-medium tracking-wide uppercase text-accent1-800">{eyebrow}</p>
             {/if}
 
-            <Heading level={1}>
+            <Heading level={1} className="break-words">
                 <slot name="title">{title}</slot>
             </Heading>
           </div>

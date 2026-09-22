@@ -7,7 +7,6 @@
   import Button from '$lib/components/ui/Button.svelte';
 
   export let eyebrow: string | undefined = '';
-  export let title: string | undefined = '';
   export let subtitle: string | undefined =
     "Ti posso aiutare a riconoscere dinamiche relazionali, ruoli e blocchi che influenzano la tua vita.";
 
@@ -52,10 +51,10 @@
         <!-- Colonna testo -->
         <div class="w-full lg:w-[50%] flex flex-col gap-5 lg:gap-[30px] lg:py-[100px]" class:lg:order-2={reverse}>
           {#if eyebrow}
-            <p class="text-sm font-medium tracking-wide uppercase text-accent1">{eyebrow}</p>
+            <p class="text-sm font-medium tracking-wide uppercase text-accent1-800">{eyebrow}</p>
           {/if}
 
-          <Heading level={1}>
+          <Heading level={1} className="break-words">
             Psicoterapeuta in formazione analitico <em class="italic">transazionale</em>
           </Heading>
 
@@ -66,7 +65,7 @@
           </div>
 
           <div class="flex flex-wrap gap-3">
-            <Button variant="solid" color="accent1" href="tel:+393403783231">{primaryLabel}</Button>
+            <Button variant="solid" color="accent1" href={primaryHref}>{primaryLabel}</Button>
             <Button variant={secondaryVariant} color="accent1" href={secondaryHref}>{secondaryLabel}</Button>
           </div>
 

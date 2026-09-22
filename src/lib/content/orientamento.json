@@ -1,0 +1,206 @@
+[
+	{
+		"id": "blocco",
+		"title": "Mi sento bloccato",
+		"description": "So che qualcosa dovrebbe cambiare ma continuo a ritrovarmi nello stesso punto.",
+		"question": "Dove senti soprattutto questo blocco?",
+		"answers": [
+			"Nelle decisioni",
+			"Nel lavoro o nello studio",
+			"Nelle relazioni",
+			"In più aree contemporaneamente"
+		],
+		"resultTitle": "A volte il primo passo è capire cosa ci tiene fermi.",
+		"resultParagraphs": [
+			"Sentirsi bloccati non significa necessariamente non sapere cosa fare. A volte una parte di noi desidera cambiare mentre un’altra continua a muoversi secondo modalità conosciute e consolidate nel tempo.",
+			"Osservare ciò che accade, riconoscere i meccanismi che tendono a ripetersi e comprendere quali bisogni ci sono dietro può aiutare a costruire nuove possibilità di scelta."
+		],
+		"links": [
+			{
+				"label": "Scopri il mio metodo",
+				"description": "Capire come utilizzo l’Analisi Transazionale.",
+				"href": "/method"
+			},
+			{
+				"label": "Come funziona il primo incontro",
+				"description": "Scoprire cosa succede quando si decide di iniziare un percorso.",
+				"href": "/iniziare-un-percorso"
+			},
+			{
+				"label": "Stress e momenti di difficoltà",
+				"description": "Approfondire uno degli ambiti in cui lavoro.",
+				"href": "/ambiti/stress"
+			}
+		]
+	},
+	{
+		"id": "relazioni",
+		"title": "Le relazioni si complicano",
+		"description": "Mi accorgo che alcune dinamiche tendono a ripetersi con persone o in contesti diversi.",
+		"question": "Quale situazione ti sembra più familiare?",
+		"answers": [
+			"Mi adatto troppo agli altri",
+			"Evito il conflitto",
+			"Cerco spesso approvazione",
+			"Mi ritrovo sempre nello stesso ruolo"
+		],
+		"resultTitle": "Le relazioni possono mostrarci schemi che da soli è difficile vedere.",
+		"resultParagraphs": [
+			"Può capitare di cambiare persone e contesti e ritrovarsi comunque in dinamiche che sembrano familiari: adattarsi troppo, evitare il conflitto, cercare approvazione oppure assumere sempre lo stesso ruolo.",
+			"L’Analisi Transazionale presta particolare attenzione proprio a ciò che accade nelle relazioni e agli schemi attraverso cui impariamo a entrare in rapporto con noi stessi e con gli altri."
+		],
+		"links": [
+			{
+				"label": "Scopri l’Analisi Transazionale",
+				"description": "",
+				"href": "/method"
+			},
+			{
+				"label": "Conosci meglio il mio modo di lavorare",
+				"description": "",
+				"href": "/about"
+			},
+			{
+				"label": "Scopri come funziona il primo incontro",
+				"description": "",
+				"href": "/iniziare-un-percorso"
+			}
+		]
+	},
+	{
+		"id": "inadeguatezza",
+		"title": "Mi sento spesso inadeguato",
+		"description": "Mi confronto con gli altri o con le mie aspettative e sento di non essere abbastanza.",
+		"question": "Quando senti più spesso di non essere abbastanza?",
+		"answers": [
+			"Quando mi confronto con gli altri",
+			"Quando devo dimostrare il mio valore",
+			"Quando ricevo critiche o giudizi",
+			"Anche senza un motivo preciso"
+		],
+		"resultTitle": "Il modo in cui guardiamo noi stessi ha una storia.",
+		"resultParagraphs": [
+			"A volte il senso di non essere abbastanza accompagna situazioni molto diverse: il lavoro, le relazioni, le scelte o il confronto con gli altri.",
+			"Può essere utile osservare non soltanto ciò che pensiamo di noi, ma anche le aspettative che abbiamo imparato a porci, il nostro dialogo interno e il modo in cui cerchiamo riconoscimento nelle relazioni."
+		],
+		"links": [
+			{
+				"label": "Scopri il mio metodo",
+				"description": "",
+				"href": "/method"
+			},
+			{
+				"label": "Conosci meglio Giulia",
+				"description": "",
+				"href": "/about"
+			},
+			{
+				"label": "Come funziona il primo incontro",
+				"description": "",
+				"href": "/iniziare-un-percorso"
+			}
+		]
+	},
+	{
+		"id": "ansia",
+		"title": "Ansia e pensieri prendono troppo spazio",
+		"description": "Preoccupazioni, anticipazioni o tensione rendono difficile ascoltare tutto il resto.",
+		"question": "Come tende a farsi sentire?",
+		"answers": [
+			"Attraverso pensieri e anticipazioni",
+			"Con tensione e sensazioni fisiche",
+			"Con momenti improvvisi di forte paura",
+			"In modi diversi a seconda della situazione"
+		],
+		"resultTitle": "Quando l’ansia prende spazio può diventare difficile ascoltare tutto il resto.",
+		"resultParagraphs": [
+			"L’ansia può manifestarsi attraverso pensieri, anticipazioni, tensione e sensazioni fisiche molto diverse da persona a persona.",
+			"Un percorso psicologico può offrire uno spazio in cui osservare quando si attiva, quale significato assume nella propria esperienza e quali pensieri, emozioni e modalità relazionali la accompagnano."
+		],
+		"links": [
+			{
+				"label": "Approfondisci: Ansia",
+				"description": "",
+				"href": "/ambiti/ansia"
+			},
+			{
+				"label": "Scopri il mio metodo",
+				"description": "",
+				"href": "/method"
+			},
+			{
+				"label": "Come funziona il primo incontro",
+				"description": "",
+				"href": "/iniziare-un-percorso"
+			}
+		]
+	},
+	{
+		"id": "cambiamento",
+		"title": "Sto attraversando un cambiamento difficile",
+		"description": "Una nuova fase della vita ha modificato equilibri e punti di riferimento.",
+		"question": "Quale aspetto del cambiamento senti più difficile?",
+		"answers": [
+			"Lasciare ciò che conoscevo",
+			"Adattarmi a un nuovo ruolo o contesto",
+			"Gestire una perdita o una separazione",
+			"Capire quale direzione prendere"
+		],
+		"resultTitle": "Anche i cambiamenti desiderati possono mettere in discussione il nostro equilibrio.",
+		"resultParagraphs": [
+			"Una separazione, un nuovo ruolo, una perdita, un cambiamento professionale o una nuova fase della vita possono modificare punti di riferimento che sembravano stabili.",
+			"Darsi uno spazio per comprendere ciò che sta accadendo può aiutare a riconoscere emozioni, bisogni e risorse con cui affrontare questa fase."
+		],
+		"links": [
+			{
+				"label": "Approfondisci: Stress",
+				"description": "",
+				"href": "/ambiti/stress"
+			},
+			{
+				"label": "Scopri il mio metodo",
+				"description": "",
+				"href": "/method"
+			},
+			{
+				"label": "Come funziona il primo incontro",
+				"description": "",
+				"href": "/iniziare-un-percorso"
+			}
+		]
+	},
+	{
+		"id": "conoscersi",
+		"title": "Voglio conoscermi meglio",
+		"description": "Vorrei comprendere con maggiore consapevolezza il mio modo di pensare, sentire e agire.",
+		"question": "Che cosa vorresti comprendere meglio?",
+		"answers": [
+			"Le mie reazioni",
+			"Le mie relazioni",
+			"Le decisioni che prendo",
+			"Gli schemi che tendono a ripetersi"
+		],
+		"resultTitle": "Un percorso psicologico non deve iniziare necessariamente da un problema.",
+		"resultParagraphs": [
+			"Può nascere anche dal desiderio di comprendere meglio il proprio modo di pensare, sentire e agire.",
+			"Osservare il proprio dialogo interno, le relazioni, le decisioni e gli schemi che tendono a ripetersi può diventare un’occasione per conoscersi con maggiore consapevolezza."
+		],
+		"links": [
+			{
+				"label": "Scopri l’Analisi Transazionale",
+				"description": "",
+				"href": "/method"
+			},
+			{
+				"label": "Conosci meglio Giulia",
+				"description": "",
+				"href": "/about"
+			},
+			{
+				"label": "Come funziona il primo incontro",
+				"description": "",
+				"href": "/iniziare-un-percorso"
+			}
+		]
+	}
+]

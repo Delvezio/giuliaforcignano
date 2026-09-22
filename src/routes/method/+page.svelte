@@ -10,7 +10,6 @@
   import ServiceCard from '$lib/components/ui/ServiceCard.svelte';
 	import SectionHeader from '$lib/components/sections/SectionHeader.svelte';
 
-  export let secondaryVariant: 'outline' | 'soft' = 'outline';
 
   type Service = {
     title: string;
@@ -21,7 +20,7 @@
     // opzionale: fallback testuale se non usi html
     modalDescription?: string;
   };
-  export let services: Service[] = [
+  const services: Service[] = [
     {
       title: 'In Studio',
       image: '/img/icon/Therapy-Counseling.png',
@@ -89,11 +88,11 @@
         />
       </svelte:fragment>
 
-      <Heading level={4}>Hai bisogno di aiuto ora?</Heading>
+      <Heading level={4}>Vuoi capire se questo approccio può essere adatto alle tue esigenze?</Heading>
       <Paragraph className="text-ink/80 my-5">
-        Chiamami per fissare un appuntamento o per avere maggiori informazioni.
+        Il primo incontro è anche uno spazio in cui conoscere il mio modo di lavorare e fare le domande che ritieni importanti.
       </Paragraph>
-      <Button variant="solid" color="accent1" href="/contact">Chiama ora</Button>
+      <Button variant="solid" color="accent1" href="/iniziare-un-percorso">Come funziona il primo incontro</Button>
     </Card>
   </svelte:fragment>
 
@@ -116,7 +115,7 @@
 
 
     <Paragraph variant="lead">
-      Come si sviluppa il percorso terapeutico?
+      Come si sviluppa il percorso psicologico?
     </Paragraph>
 
     <Paragraph >
@@ -136,12 +135,12 @@ Insieme esploreremo i meccanismi interiori che ti guidano, le emozioni che vivi 
     <SectionHeader
       eyebrow="Come ci vediamo"
       title="In studio o sedute online?"
-      intro="Puoi iniziare il tuo percorso in uno dei miei studi oppure comodamente da casa."
+      intro="Puoi iniziare il tuo percorso nel mio studio a Torino oppure online, da uno spazio adatto e riservato."
     />
     <div class="w-full flex justify-center">
       <div class="mx-auto inline-flex flex-wrap items-stretch justify-center gap-6 
                 sm:max-w-[20rem] md:max-w-[42rem] lg:max-w-[64rem]">
-        {#each services as s}
+        {#each services as s (s.title)}
           <div class="basis-[20rem] shrink-0 shrink-0 w-[20rem]">
             <ServiceCard
               title={s.title}
@@ -189,5 +188,3 @@ Insieme esploreremo i meccanismi interiori che ti guidano, le emozioni che vivi 
   secondaryHref="mailto:info@giuliaforcignano.it"
   secondaryLabel="Scrivimi"
 />
-
-
