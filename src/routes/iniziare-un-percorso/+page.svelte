@@ -4,6 +4,31 @@
 	import Container from '$lib/components/ui/Container.svelte';
 	import FinalCta from '$lib/components/sections/FinalCta.svelte';
 
+	const moments = [
+		{
+			number: '01',
+			title: 'Prima di incontrarci',
+			text: 'Puoi scrivere o chiamare anche soltanto per chiedere informazioni. Non è necessario spiegare tutto nel primo messaggio.'
+		},
+		{
+			number: '02',
+			title: 'Durante il colloquio',
+			text: 'Racconti ciò che senti importante con i tuoi tempi e puoi fare tutte le domande che desideri sul mio modo di lavorare.'
+		},
+		{
+			number: '03',
+			title: 'Dopo il primo incontro',
+			text: 'Valutiamo insieme se possiamo costruire un percorso adatto alle tue esigenze e definiamo con chiarezza come procedere.'
+		}
+	];
+
+	const reassurances = [
+		'Non serve avere una diagnosi',
+		'Non devi preparare un discorso',
+		'Puoi fare tutte le domande che desideri',
+		'Puoi scegliere tra studio e colloqui online'
+	];
+
 	const questions = [
 		{
 			question: 'Devo avere una diagnosi?',
@@ -33,91 +58,145 @@
 <PageHeader
 	eyebrow="INIZIARE UN PERCORSO"
 	title="Il primo incontro: uno spazio per capire da dove partire"
+	intro="Decidere di contattare una psicologa può far nascere molte domande. Il primo incontro serve proprio a conoscerci e iniziare a comprendere insieme ciò che ti ha portato qui."
+	panel
+	panelBg="bg-white"
+	image
+	imageSrc="/img/photo/giulia-forcignano-psicologa-5.jpeg"
+	imageAlt="Giulia Forcignanò nel suo studio"
+	align="start"
 />
 
-<Section className="pb-12 md:pb-16">
+<Section className="py-12 md:py-20">
 	<Container>
-		<article class="mx-auto max-w-3xl space-y-10 text-lg leading-relaxed text-ink/85">
-			<div class="space-y-4">
-				<p>Decidere di contattare una psicologa può far nascere molte domande.</p>
-				<p>Cosa devo raccontare? Da dove comincio? Devo sapere già qual è il mio problema?</p>
-				<p>La risposta è no.</p>
-				<p>
-					Il primo incontro serve proprio a conoscerci e iniziare a comprendere insieme ciò che ti
-					ha portato qui.
+		<div class="grid gap-5 lg:grid-cols-3">
+			{#each moments as moment (moment.number)}
+				<section
+					class="relative overflow-hidden rounded-[28px] border border-black/5 bg-white p-7 md:p-9"
+				>
+					<p class="font-heading mb-8 text-5xl text-accent1-200" aria-hidden="true">
+						{moment.number}
+					</p>
+					<h2 class="font-heading mb-4 text-2xl text-ink">{moment.title}</h2>
+					<p class="leading-relaxed text-ink/80">{moment.text}</p>
+				</section>
+			{/each}
+		</div>
+	</Container>
+</Section>
+
+<Section className="pb-12 md:pb-20">
+	<Container>
+		<section class="grid overflow-hidden rounded-[36px] bg-accent2-50 lg:grid-cols-[1.15fr_0.85fr]">
+			<div class="px-6 py-12 sm:px-10 md:px-14 md:py-16">
+				<p class="mb-3 text-sm font-medium uppercase tracking-wide text-accent1-800">
+					UNO SPAZIO SENZA PREPARAZIONE
+				</p>
+				<h2 class="font-heading mb-6 max-w-3xl text-4xl leading-tight text-ink md:text-5xl">
+					Non devi arrivare con le parole giuste.
+				</h2>
+				<div class="max-w-3xl space-y-4 text-lg leading-relaxed text-ink/80">
+					<p>Puoi raccontare ciò che senti importante nel modo che ti viene più naturale.</p>
+					<p>
+						Potresti avere le idee molto chiare oppure sapere soltanto che qualcosa non sta andando
+						come vorresti. Entrambe le situazioni sono un possibile punto di partenza.
+					</p>
+				</div>
+			</div>
+			<div class="flex items-center bg-accent1-100 px-6 py-10 sm:px-10 md:px-12">
+				<ul class="w-full space-y-5">
+					{#each reassurances as reassurance (reassurance)}
+						<li
+							class="flex items-start gap-4 border-b border-accent1-300 pb-5 last:border-0 last:pb-0"
+						>
+							<span
+								class="mt-1 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-accent1-500 text-sm text-white"
+								aria-hidden="true">✓</span
+							>
+							<span class="text-lg text-ink/85">{reassurance}</span>
+						</li>
+					{/each}
+				</ul>
+			</div>
+		</section>
+	</Container>
+</Section>
+
+<Section className="pb-12 md:pb-20">
+	<Container>
+		<div class="grid gap-6 lg:grid-cols-2">
+			<section class="rounded-[32px] bg-white p-7 md:p-10">
+				<p class="mb-3 text-sm font-medium uppercase tracking-wide text-accent1-800">IN STUDIO</p>
+				<h2 class="font-heading mb-5 text-3xl text-ink">Uno spazio a Torino</h2>
+				<p class="mb-5 text-lg leading-relaxed text-ink/80">Ricevo in studio in:</p>
+				<address class="font-heading mb-7 text-2xl not-italic text-ink">
+					Corso Moncalieri 266<br />10133 Torino
+				</address>
+				<a
+					href="https://www.google.com/maps/search/?api=1&query=Corso+Moncalieri+266+Torino"
+					target="_blank"
+					rel="noreferrer"
+					class="font-medium text-accent1-800 underline underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent1-800"
+					>Apri l’indirizzo sulla mappa →</a
+				>
+			</section>
+
+			<section class="rounded-[32px] bg-accent3-50 p-7 md:p-10">
+				<p class="mb-3 text-sm font-medium uppercase tracking-wide text-accent1-800">ONLINE</p>
+				<h2 class="font-heading mb-5 text-3xl text-ink">Da uno spazio adatto e riservato</h2>
+				<div class="space-y-4 text-lg leading-relaxed text-ink/80">
+					<p>È possibile svolgere i colloqui anche online.</p>
+					<p>
+						La modalità può essere valutata in base alle tue esigenze e alle caratteristiche del
+						percorso.
+					</p>
+				</div>
+			</section>
+		</div>
+	</Container>
+</Section>
+
+<Section className="pb-12 md:pb-20">
+	<Container>
+		<section class="w-full rounded-[36px] bg-white px-6 py-10 sm:px-10 md:px-14 md:py-16">
+			<div class="mb-9 grid gap-5 md:grid-cols-[0.8fr_1.2fr] md:items-end">
+				<div>
+					<p class="mb-3 text-sm font-medium uppercase tracking-wide text-accent1-800">
+						DOMANDE FREQUENTI
+					</p>
+					<h2 class="font-heading text-4xl text-ink md:text-5xl">Prima di iniziare</h2>
+				</div>
+				<p class="max-w-2xl text-lg leading-relaxed text-ink/75 md:justify-self-end">
+					Non è necessario decidere tutto prima di contattarmi. Qui trovi alcune risposte alle
+					domande più comuni.
 				</p>
 			</div>
 
-			<section class="space-y-4">
-				<h2 class="font-heading text-3xl text-ink">Non devi arrivare con le parole giuste</h2>
-				<p>Puoi raccontare ciò che senti importante nel modo che ti viene più naturale.</p>
-				<p>
-					Potresti avere le idee molto chiare oppure sapere soltanto che qualcosa non sta andando
-					come vorresti.
-				</p>
-				<p>Entrambe le situazioni sono un possibile punto di partenza.</p>
-			</section>
-
-			<section class="space-y-4">
-				<h2 class="font-heading text-3xl text-ink">Cosa succede durante il primo incontro?</h2>
-				<p>
-					Ti chiederò cosa ti ha portato a contattarmi e avremo modo di esplorare la situazione che
-					stai vivendo.
-				</p>
-				<p>
-					Potrai raccontarmi ciò che ritieni importante e farmi tutte le domande che desideri sul
-					mio modo di lavorare.
-				</p>
-				<p>
-					Il primo colloquio permette anche di capire se possiamo costruire insieme un percorso
-					adatto alle tue esigenze.
-				</p>
-			</section>
-
-			<section class="space-y-4">
-				<h2 class="font-heading text-3xl text-ink">E dopo?</h2>
-				<p>
-					Se decideremo di proseguire, inizieremo a definire gli obiettivi del lavoro e le modalità
-					del percorso.
-				</p>
-				<p>
-					Frequenza degli incontri, durata, compenso e aspetti organizzativi vengono chiariti prima
-					dell’avvio del percorso.
-				</p>
-				<p>Non è necessario decidere tutto prima di contattarmi.</p>
-			</section>
-
-			<section class="space-y-4">
-				<h2 class="font-heading text-3xl text-ink">In studio oppure online</h2>
-				<p>Ricevo in studio in:</p>
-				<address class="not-italic font-semibold">Corso Moncalieri 266<br />10133 Torino</address>
-				<p>È possibile svolgere i colloqui anche online.</p>
-				<p>
-					La modalità può essere valutata in base alle tue esigenze e alle caratteristiche del
-					percorso.
-				</p>
-			</section>
-
-			<section>
-				<h2 class="font-heading mb-6 text-3xl text-ink">Domande frequenti</h2>
-				<div class="space-y-4">
-					{#each questions as item (item.question)}
-						<div class="rounded-2xl bg-accent2-50 p-6">
-							<h3 class="font-heading mb-2 text-xl text-ink">{item.question}</h3>
-							<p>{item.answer}</p>
-						</div>
-					{/each}
-				</div>
-			</section>
-		</article>
+			<div class="divide-y divide-black/10 border-y border-black/10">
+				{#each questions as item (item.question)}
+					<details class="group py-2">
+						<summary
+							class="flex cursor-pointer list-none items-center justify-between gap-6 py-5 text-left font-heading text-xl text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent1-800 md:text-2xl"
+						>
+							{item.question}
+							<span
+								class="text-3xl font-normal text-accent1-800 transition group-open:rotate-45 motion-reduce:transition-none"
+								aria-hidden="true">+</span
+							>
+						</summary>
+						<p class="max-w-4xl pb-6 pr-10 text-lg leading-relaxed text-ink/80">{item.answer}</p>
+					</details>
+				{/each}
+			</div>
+		</section>
 	</Container>
 </Section>
 
 <FinalCta
 	title="Possiamo partire da una prima domanda."
 	text="Non devi essere già sicuro di voler iniziare un percorso per contattarmi."
-	primaryHref="mailto:info@giuliaforcignano.it"
-	primaryLabel="Scrivimi"
+	primaryHref="https://wa.me/393403783231?text=Ciao%20Giulia%2C%20ho%20visitato%20il%20tuo%20sito%20e%20vorrei%20chiederti%20alcune%20informazioni%20sul%20primo%20incontro."
+	primaryLabel="Scrivimi su WhatsApp"
 	secondaryHref="tel:+393403783231"
 	secondaryLabel="Chiamami"
 />

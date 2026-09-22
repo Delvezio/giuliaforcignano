@@ -6,16 +6,14 @@
 
 <Section className="py-12 md:py-20">
 	<Container>
-		<div
-			class="mx-auto max-w-3xl rounded-3xl bg-accent2-50 px-6 py-10 text-center md:px-12 md:py-14"
-		>
+		<div class="w-full rounded-[32px] bg-accent2-50 px-6 py-10 text-center md:px-12 md:py-16">
 			<p class="mb-3 text-sm font-medium uppercase tracking-wide text-accent1-800">
 				INIZIARE UN PERCORSO
 			</p>
 			<h2 class="mb-6 font-heading text-3xl text-ink md:text-4xl">
 				Non devi sapere già da dove cominciare.
 			</h2>
-			<div class="mx-auto max-w-2xl space-y-4 text-lg leading-relaxed text-ink/80">
+			<div class="mx-auto max-w-4xl space-y-4 text-lg leading-relaxed text-ink/80">
 				<p>
 					Il primo incontro serve anche a questo: raccontare ciò che stai vivendo con i tuoi tempi,
 					fare domande e iniziare a comprendere insieme quale può essere il percorso più adatto alle

@@ -23,6 +23,7 @@
 - [x] Menu: Chi sono, Metodo, Ambiti, Primo incontro, Contatti.
 - [x] `/ambiti` raggiungibile.
 - [x] Tutte le nove sottopagine `/ambiti/...` raggiungibili direttamente.
+- [x] `/da-dove-iniziare` raggiungibile.
 - [x] `/iniziare-un-percorso` raggiungibile.
 - [x] `/contatti` raggiungibile.
 - [x] Tutti i link interni e breadcrumb funzionano.
@@ -58,7 +59,7 @@
 
 - [x] Nove illustrazioni esistenti conservate integralmente.
 - [x] Ogni card è un vero link alla pagina corretta.
-- [x] CTA “Approfondisci →” presente.
+- [x] L’intera card è cliccabile, senza CTA “Approfondisci” visibile.
 - [x] Hub e home condividono dati/componenti quando coerente.
 - [x] Copy conforme a `CONTENT_SPEC.md`.
 - [x] Nessun claim medico o promessa di risultato.
@@ -83,12 +84,12 @@
 - [ ] Particolare verifica di trauma, disturbi di personalità, disturbi alimentari e disabilità cognitive.
 - [ ] Controllo finale del tono: professionale, delicato, non commerciale.
 
-
 ## Esito della verifica locale
 
 - `npm run check`: 0 errori, 0 warning. `npm run build`: riuscito.
-- ESLint sui file creati e modificati: riuscito. Il comando globale `npm run lint` resta non superato: Prettier tenta di analizzare un esempio TypeScript non valido in `.github/copilot-instructions.md` (`| ...`) e segnala file preesistenti non formattati. Non è stata cambiata la configurazione per aggirare il controllo.
+- Prettier ed ESLint sui file creati e modificati: riusciti. Il comando globale `npm run lint` resta non superato perché segnala file preesistenti non formattati; non sono stati riformattati file estranei a questa revisione.
 - Il progetto non definisce uno script `test`; il percorso è stato provato manualmente su tutte e sei le varianti, con ritorno, reset, tastiera e refresh.
+- La CTA WhatsApp del risultato usa un testo neutro e non include risposte, scelte o identificativi del percorso.
 - La stringa “Via Saluzzo” compare soltanto nei documenti di istruzione inclusi in `docs/codex-v2`; non compare nei file pubblici `src/` e `static/`.
 - Breakpoint verificati: 320, 390, 768, 1280 e 1600 px. Contrasto e layout shift dell’intero sito restano da verificare in una revisione completa.
 - Nessuna modifica è stata pubblicata: revisione professionale e approvazione della cliente ancora necessarie.

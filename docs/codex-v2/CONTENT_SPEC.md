@@ -230,6 +230,16 @@ Pattern consentito:
 
 La frase deve limitarsi a riepilogare le parole selezionate. Non deve introdurre conclusioni, diagnosi, valutazioni di gravità o suggerimenti clinici.
 
+## CTA WhatsApp conclusiva
+
+Ogni risultato termina anche con una CTA piena **Scrivimi su WhatsApp**. Il messaggio precompilato è volutamente neutro e non contiene le risposte date:
+
+> Ciao Giulia, ho completato il percorso di orientamento sul tuo sito e vorrei chiederti alcune informazioni sul primo incontro.
+
+Microcopy:
+
+> Il messaggio non include le risposte che hai dato. Potrai scegliere liberamente cosa raccontare e con quali parole.
+
 ---
 
 # RISULTATO — BLOCCO
@@ -379,21 +389,21 @@ Le nove card illustrate esistenti restano:
 
 Ansia · Lavoro · Depressione · Elaborazione del trauma · Stress · Disturbi di personalità · Disturbi alimentari · Sostegno alla genitorialità · Disabilità cognitive.
 
-CTA di ogni card: **Approfondisci →**
+L’intera card è cliccabile. Non mostrare un bottone o una label “Approfondisci”: titolo centrato sopra l’illustrazione, immagine ampia e microanimazione in hover.
 
 ## Mapping delle card
 
-| Card | URL |
-| --- | --- |
-| Ansia | `/ambiti/ansia` |
-| Lavoro | `/ambiti/lavoro` |
-| Depressione | `/ambiti/depressione` |
-| Elaborazione del trauma | `/ambiti/trauma` |
-| Stress | `/ambiti/stress` |
-| Disturbi di personalità | `/ambiti/disturbi-personalita` |
-| Disturbi alimentari | `/ambiti/disturbi-alimentari` |
-| Sostegno alla genitorialità | `/ambiti/genitorialita` |
-| Disabilità cognitive | `/ambiti/disabilita-cognitive` |
+| Card                        | URL                            |
+| --------------------------- | ------------------------------ |
+| Ansia                       | `/ambiti/ansia`                |
+| Lavoro                      | `/ambiti/lavoro`               |
+| Depressione                 | `/ambiti/depressione`          |
+| Elaborazione del trauma     | `/ambiti/trauma`               |
+| Stress                      | `/ambiti/stress`               |
+| Disturbi di personalità     | `/ambiti/disturbi-personalita` |
+| Disturbi alimentari         | `/ambiti/disturbi-alimentari`  |
+| Sostegno alla genitorialità | `/ambiti/genitorialita`        |
+| Disabilità cognitive        | `/ambiti/disabilita-cognitive` |
 
 ---
 
@@ -983,4 +993,3 @@ Link: `/iniziare-un-percorso`
 - Le note di emergenza devono essere visibili ma non trattate come banner allarmistici.
 - Conservare apostrofi tipografici nel contenuto se il progetto li supporta.
 - Le pagine degli ambiti richiedono approvazione professionale di Giulia prima del deploy definitivo.
-

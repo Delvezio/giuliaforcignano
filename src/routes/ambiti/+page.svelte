@@ -38,7 +38,7 @@
 
 <Section className="py-12 md:py-16">
 	<Container>
-		<div class="mx-auto max-w-3xl rounded-3xl bg-accent2-50 px-6 py-10 text-center md:p-12">
+		<div class="w-full rounded-[32px] bg-accent2-50 px-6 py-10 text-center md:p-14">
 			<h2 class="font-heading mb-4 text-3xl text-ink">
 				Non sai quale ambito descrive meglio quello che stai vivendo?
 			</h2>

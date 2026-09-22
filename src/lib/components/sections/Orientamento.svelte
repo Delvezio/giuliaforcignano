@@ -4,10 +4,16 @@
 	import percorsi from '$lib/content/orientamento.json';
 	import Section from '$lib/components/ui/Section.svelte';
 	import Container from '$lib/components/ui/Container.svelte';
+	import Button from '$lib/components/ui/Button.svelte';
+
+	export let standalone = false;
+	export let showPageLink = true;
 
 	let selected: (typeof percorsi)[number] | null = null;
 	let phase = 0;
 	let panel: HTMLDivElement;
+	const whatsappHref =
+		'https://wa.me/393403783231?text=Ciao%20Giulia%2C%20ho%20completato%20il%20percorso%20di%20orientamento%20sul%20tuo%20sito%20e%20vorrei%20chiederti%20alcune%20informazioni%20sul%20primo%20incontro.';
 
 	async function advance(next: number) {
 		phase = next;
@@ -26,14 +32,16 @@
 	}
 </script>
 
-<Section className="py-12 md:py-20">
+<Section className={standalone ? 'pb-12 md:pb-20' : 'py-12 md:py-20'}>
 	<Container>
-		<div class="mx-auto mb-10 max-w-3xl text-center">
+		<div class="mx-auto mb-10 max-w-4xl text-center">
 			<p class="mb-3 text-sm font-medium uppercase tracking-wide text-accent1-800">
 				COSA TI PORTA QUI?
 			</p>
-			<h2 class="font-heading mb-5 text-3xl text-ink md:text-4xl">
-				A volte si può iniziare da ciò che stiamo vivendo.
+			<h2 class="font-heading mb-5 text-3xl text-ink md:text-5xl">
+				{standalone
+					? 'Puoi partire dalla situazione che senti più vicina.'
+					: 'A volte si può iniziare da ciò che stiamo vivendo.'}
 			</h2>
 			<p class="mb-3 text-lg text-ink/80">
 				Non è sempre facile dare un nome a ciò che ci accade o sapere già quale percorso cercare.
@@ -42,6 +50,14 @@
 				Puoi partire dalla situazione che senti più vicina alla tua esperienza. Non è un test e non
 				restituisce diagnosi: è soltanto un modo per orientarti tra i contenuti del sito.
 			</p>
+			{#if showPageLink && !standalone}
+				<a
+					href={resolve('/da-dove-iniziare')}
+					class="mt-5 inline-flex font-medium text-accent1-800 underline decoration-1 underline-offset-4 transition hover:decoration-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent1-800 motion-reduce:transition-none"
+				>
+					Preferisci prenderti qualche minuto? Apri il percorso in una pagina dedicata →
+				</a>
+			{/if}
 		</div>
 
 		<div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -136,6 +152,14 @@
 								</li>
 							{/each}
 						</ul>
+						<div class="mt-8 rounded-3xl border border-accent1-200 bg-white p-6 text-center md:p-8">
+							<h4 class="font-heading mb-2 text-2xl text-ink">Vuoi fare una prima domanda?</h4>
+							<p class="mx-auto mb-5 max-w-2xl text-base leading-relaxed text-ink/75">
+								Il messaggio non include le risposte che hai dato. Potrai scegliere liberamente cosa
+								raccontare e con quali parole.
+							</p>
+							<Button href={whatsappHref}>Scrivimi su WhatsApp</Button>
+						</div>
 					{/if}
 
 					<div class="mt-8 flex flex-wrap gap-5 text-sm font-medium">

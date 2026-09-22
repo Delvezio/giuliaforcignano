@@ -89,6 +89,7 @@ Crea:
 /ambiti/disturbi-alimentari
 /ambiti/genitorialita
 /ambiti/disabilita-cognitive
+/da-dove-iniziare
 /iniziare-un-percorso
 /contatti
 ```
@@ -111,20 +112,18 @@ Non aggiungere al menu le nove sottopagine degli ambiti, a meno che il progetto 
 
 ## Home — struttura
 
-Mantieni hero e struttura principale attuale.
-
-Dopo le sezioni introduttive “Chi sono / Analisi Transazionale / Continuità e supporto” e PRIMA delle attuali card degli ambiti, inserisci la nuova sezione “Cosa ti porta qui?”.
+Mantieni la hero e porta “Cosa ti porta qui?” immediatamente dopo. La home deve iniziare dall’esperienza del visitatore prima di presentare Giulia e il suo metodo.
 
 La sequenza della pagina deve diventare concettualmente:
 
 ```text
 Hero
 ↓
-presentazione / metodo / modalità
-↓
 COSA TI PORTA QUI?
 ↓
 percorso interattivo
+↓
+presentazione / metodo / modalità
 ↓
 AMBITI IN CUI POSSO AIUTARTI
 ↓
@@ -248,6 +247,10 @@ Esempio vietato:
 
 Usa risultati e CTA esattamente come definiti nel `CONTENT_SPEC.md`.
 
+Al risultato aggiungi una CTA piena “Scrivimi su WhatsApp” con messaggio neutro precompilato. Il messaggio NON deve contenere né riepilogare le risposte dell’utente. Testo:
+
+> Ciao Giulia, ho completato il percorso di orientamento sul tuo sito e vorrei chiederti alcune informazioni sul primo incontro.
+
 Dove previsto, collega a:
 
 ```text
@@ -280,7 +283,7 @@ Sostegno alla genitorialità → /ambiti/genitorialita
 Disabilità cognitive → /ambiti/disabilita-cognitive
 ```
 
-CTA: “Approfondisci →”.
+Le card devono riprendere l’estetica originale: titolo centrato sopra, illustrazione grande, nessun bottone o label “Approfondisci”. L’intera card è un link; `cursor: pointer`, focus visibile e una microanimazione in hover devono rendere chiara la cliccabilità.
 
 Crea anche `/ambiti` come pagina hub utilizzando le stesse nove card e gli asset esistenti.
 
@@ -318,6 +321,15 @@ Crea `/iniziare-un-percorso` usando il contenuto esatto del `CONTENT_SPEC.md`.
 
 Deve essere una pagina molto leggibile, rassicurante e priva di meccaniche commerciali.
 
+Non impaginarla come una singola colonna stretta di testo. Usa il linguaggio visivo esistente per costruire:
+
+- hero editoriale con immagine di Giulia;
+- tre momenti: prima, durante e dopo l’incontro;
+- fascia rassicurante a tutta larghezza del container;
+- confronto in studio / online;
+- FAQ in accordion accessibile;
+- CTA finale WhatsApp e telefono.
+
 Le FAQ possono essere implementate come accordion accessibile se esiste già un pattern compatibile; altrimenti usa normali sezioni.
 
 CTA finali:
@@ -330,6 +342,18 @@ Chiamami
 Riutilizza i contatti esistenti.
 
 Non inventare durata, prezzo o frequenza delle sedute.
+
+I banner, incluso “INIZIARE UN PERCORSO — Non devi sapere già da dove cominciare”, devono occupare tutta la larghezza disponibile del container del sito. Evita pannelli centrali `max-w-3xl` quando non richiesti dal contenuto.
+
+Tutte le CTA piene con background primario devono usare testo bianco.
+
+---
+
+## Pagina “Da dove iniziare”
+
+Crea `/da-dove-iniziare` e riutilizza lo stesso componente e la stessa sorgente dati del percorso presente in home. Non duplicare logica o contenuti.
+
+La pagina deve presentare il percorso senza distrazioni, ribadire che non è un test diagnostico e terminare con una CTA WhatsApp neutra e una CTA verso `/iniziare-un-percorso`.
 
 ---
 
@@ -548,4 +572,3 @@ Al termine fornisci:
 - eventuali discrepanze tra repository e `CONTENT_SPEC.md`.
 
 Non effettuare redesign non richiesti e non sostituire le illustrazioni attualmente presenti.
-

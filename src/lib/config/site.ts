@@ -60,6 +60,11 @@ export const pageMeta: Record<string, PageMeta> = {
 		description:
 			'Come funziona il primo incontro con Giulia Forcignanò: cosa aspettarsi, cosa raccontare, sedute in studio a Torino oppure online.'
 	},
+	'/da-dove-iniziare': {
+		title: 'Da dove iniziare | Psicologa Torino | Giulia Forcignanò',
+		description:
+			'Un breve percorso non diagnostico per orientarti tra i contenuti e capire da dove iniziare un percorso psicologico con Giulia Forcignanò.'
+	},
 	'/contatti': {
 		title: 'Contatti | Psicologa Torino | Giulia Forcignanò',
 		description:

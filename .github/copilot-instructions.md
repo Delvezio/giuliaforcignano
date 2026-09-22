@@ -89,9 +89,9 @@ Components expose semantic props that map to design decisions:
 ```svelte
 <!-- Example: Button.svelte accepts variant + color, not raw CSS -->
 <script lang="ts">
-  export let variant: 'solid' | 'outline' | 'soft' = 'solid';
-  export let color: 'accent1' | 'accent2' | ... = 'accent1';
-  export let className: string = ''; // escape hatch for one-offs
+	export let variant: 'solid' | 'outline' | 'soft' = 'solid';
+	export let color: 'accent1' | 'accent2' | 'accent3' | 'accent4' | 'accent5' | 'ink' = 'accent1';
+	export let className: string = ''; // escape hatch for one-offs
 </script>
 ```
 
@@ -128,15 +128,15 @@ Page structure in `src/routes/+page.svelte` demonstrates the component compositi
 
 ```svelte
 <Section>
-  <Container>
-    <Heading level={1}>Title</Heading>
-    <Paragraph>Intro</Paragraph>
-  </Container>
+	<Container>
+		<Heading level={1}>Title</Heading>
+		<Paragraph>Intro</Paragraph>
+	</Container>
 </Section>
 
 <Section columns={3}>
-  <Card><Heading level={3}>Item</Heading></Card>
-  <!-- ... -->
+	<Card><Heading level={3}>Item</Heading></Card>
+	<!-- ... -->
 </Section>
 ```
 
@@ -167,16 +167,14 @@ From `+page.svelte` comments: Site planned to expand to 5+ pages, blog section, 
 
 ```css
 /* In CSS or Tailwind classes: */
-background-color: var(--accent1-200);          /* Soft brand */
-color: rgb(var(--ink) / 0.7);                  /* Ink with 70% opacity */
-padding: var(--section-py);                    /* Vertical spacing */
-border-radius: var(--radius-2xl);              /* Rounded corners */
-box-shadow: var(--shadow-card);                /* Elevated card shadow */
+background-color: var(--accent1-200); /* Soft brand */
+color: rgb(var(--ink) / 0.7); /* Ink with 70% opacity */
+padding: var(--section-py); /* Vertical spacing */
+border-radius: var(--radius-2xl); /* Rounded corners */
+box-shadow: var(--shadow-card); /* Elevated card shadow */
 ```
 
 ```html
 <!-- In Tailwind utility classes (from @theme): -->
-<div class="bg-accent1-200 text-accent3-700 rounded-2xl shadow-card">
-  Styled with design tokens
-</div>
+<div class="shadow-card rounded-2xl bg-accent1-200 text-accent3-700">Styled with design tokens</div>
 ```

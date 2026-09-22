@@ -91,4 +91,3 @@ Non autorizzare il deploy se:
 - il percorso salva o trasmette le risposte;
 - le nove illustrazioni sono state sostituite;
 - i testi professionali non sono stati verificati da Giulia.
-

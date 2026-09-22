@@ -21,4 +21,3 @@ Questo pacchetto raccoglie in forma pronta all’uso le istruzioni tecniche e i 
 ## Regola essenziale
 
 `CONTENT_SPEC.md` è la fonte testuale autoritativa. Codex può adattare soltanto punteggiatura o markup indispensabili all’integrazione tecnica, senza riscrivere il copy e senza inventare dati professionali.
-
