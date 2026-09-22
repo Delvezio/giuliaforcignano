@@ -45,15 +45,8 @@
           </div>
 
           <div>
-            <Heading level={3}>I miei studi</Heading>
-            <ol class="mt-3 space-y-3">
-              <li class="flex items-start gap-2">
-                <span class="w-2.5 h-2.5 mt-2 rounded-full bg-accent2-500" aria-hidden="true"></span>
-                <div>
-                  <p>Via Saluzzo, 121</p>
-                  <p class="opacity-70">10126 Torino TO</p>
-                </div>
-              </li>
+            <Heading level={3}>Il mio studio a Torino</Heading>
+            <ul class="mt-3 space-y-3">
               <li class="flex items-start gap-2">
                 <span class="w-2.5 h-2.5 mt-2 rounded-full bg-accent2-500" aria-hidden="true"></span>
                 <div>
@@ -61,7 +54,7 @@
                   <p class="opacity-70">10133 Torino TO</p>
                 </div>
               </li>
-            </ol>
+            </ul>
           </div>
         </div>
       </div>
