@@ -17,13 +17,16 @@
 <Section>
   <Card bg="white" padding="lg" className="space-y-4">
     <Heading level={3}>Titolare del trattamento</Heading>
-    <Paragraph>Nome / Ragione sociale — Indirizzo — Email di contatto.</Paragraph>
+    <Paragraph>Dott.ssa Giulia Forcignanò — Corso Moncalieri 266, 10133 Torino — <a class="text-accent1 underline" href="mailto:info@giuliaforcignano.it">info@giuliaforcignano.it</a>.</Paragraph>
 
     <Heading level={3}>Dati raccolti</Heading>
     <Paragraph>Modulo contatti (nome, email, messaggio). Nessun dato viene ceduto a terzi senza basi giuridiche.</Paragraph>
 
     <Heading level={3}>Finalità</Heading>
     <Paragraph>Rispondere alle richieste inviate tramite il modulo contatti e migliorare i contenuti del sito.</Paragraph>
+
+    <Heading level={3}>Statistiche di navigazione</Heading>
+    <Paragraph>Le visite alle pagine pubbliche sono misurate con Vercel Web Analytics in forma aggregata e senza cookie. Non inviamo alle statistiche i parametri dell’URL della pagina visitata, le pagine di conferma o i dati inseriti nel modulo contatti.</Paragraph>
 
     <Heading level={3}>Base giuridica</Heading>
     <Paragraph>Consenso dell’interessato e legittimo interesse del Titolare per la gestione delle richieste.</Paragraph>
@@ -32,9 +35,9 @@
     <Paragraph>I dati vengono conservati per il tempo necessario a rispondere e comunque non oltre 24 mesi.</Paragraph>
 
     <Heading level={3}>Diritti dell’interessato</Heading>
-    <Paragraph>Accesso, rettifica, cancellazione, limitazione, opposizione, portabilità. Per esercitarli: <a class="text-accent1 underline" href="mailto:info@example.com">info@example.com</a>.</Paragraph>
+    <Paragraph>Accesso, rettifica, cancellazione, limitazione, opposizione, portabilità. Per esercitarli: <a class="text-accent1 underline" href="mailto:info@giuliaforcignano.it">info@giuliaforcignano.it</a>.</Paragraph>
 
     <Heading level={3}>Cookie</Heading>
-    <Paragraph>Vedi anche la <a class="text-accent1 underline" href="/cookies">Cookie Policy</a> (in preparazione).</Paragraph>
+    <Paragraph>Per dettagli sulle statistiche senza cookie, vedi la pagina <a class="text-accent1 underline" href="/cookies">Cookie e statistiche</a>.</Paragraph>
   </Card>
 </Section>

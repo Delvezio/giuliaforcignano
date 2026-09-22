@@ -6,7 +6,7 @@
   import Card from '$lib/components/ui/Card.svelte';
 </script>
 
-<Section align="center" className="pt-[calc(var(--section-py)*0.7)]">
+<Section className="pt-[calc(var(--section-py)*0.7)]">
   <Card bg="glass" padding="lg" className="max-w-xl mx-auto">
     <Heading level={2} align="center" className="mb-2">Grazie! 🎉</Heading>
     <Paragraph align="center" className="mb-4">

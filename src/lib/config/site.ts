@@ -45,8 +45,8 @@ export const pageMeta: Record<string, PageMeta> = {
     description: 'Come vengono trattati i dati personali raccolti tramite questo sito.',
   },
   '/cookies': {
-    title: 'Cookie Policy | Giulia Forcignanò',
-    description: 'Informativa sui cookie utilizzati da questo sito.',
+    title: 'Cookie e statistiche | Giulia Forcignanò',
+    description: 'Come vengono misurate le visite senza cookie tramite Vercel Web Analytics.',
   },
   '/thank-you': {
     title: 'Messaggio inviato | Giulia Forcignanò',
