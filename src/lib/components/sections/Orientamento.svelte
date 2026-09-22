@@ -124,12 +124,12 @@
 			{#each percorsi as item (item.id)}
 				<button
 					type="button"
-					class="flex min-h-48 flex-col rounded-3xl border border-black/10 bg-white p-6 text-left shadow-sm transition hover:border-accent1 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent1-800 motion-reduce:transition-none"
+					class="flex min-h-48 flex-col items-center rounded-3xl border border-black/10 bg-white p-6 text-center shadow-sm transition hover:border-accent1 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent1-800 motion-reduce:transition-none"
 					aria-expanded={selected?.id === item.id && phase > 0}
 					aria-controls={phase > 0 ? 'percorso-orientamento' : undefined}
 					on:click={(event) => start(item, event)}
 				>
-					<span class="mb-3 text-2xl text-ink">{item.title}</span>
+					<span class="font-heading mb-3 text-2xl tracking-tight text-ink">{item.title}</span>
 					<span class="mb-5 flex-1 leading-relaxed text-ink/75">{item.description}</span>
 					<span class="font-medium text-accent1-800"
 						>Parti da qui <span aria-hidden="true">→</span></span
