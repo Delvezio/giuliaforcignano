@@ -27,6 +27,63 @@
 	export let secondaryHref: string | undefined = undefined;
 	export let secondaryLabel: string | undefined = undefined;
 	export let secondaryVariant: 'outline' | 'soft' = 'outline';
+
+	function parallaxImage(node: HTMLImageElement) {
+		const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+		let animationFrame = 0;
+		let isVisible = false;
+		let reducedMotion = motionPreference.matches;
+
+		function updatePosition() {
+			animationFrame = 0;
+			if (!isVisible || reducedMotion) return;
+
+			const frameElement = node.parentElement;
+			if (!frameElement) return;
+
+			const rect = frameElement.getBoundingClientRect();
+			const progress = Math.min(
+				1,
+				Math.max(0, (window.innerHeight - rect.top) / (window.innerHeight + rect.height))
+			);
+			const offset = (progress - 0.5) * 44;
+			node.style.setProperty('--media-parallax-y', `${offset.toFixed(2)}px`);
+		}
+
+		function requestUpdate() {
+			if (!isVisible || reducedMotion || animationFrame) return;
+			animationFrame = window.requestAnimationFrame(updatePosition);
+		}
+
+		function handleMotionPreference() {
+			reducedMotion = motionPreference.matches;
+			if (reducedMotion) node.style.setProperty('--media-parallax-y', '0px');
+			else requestUpdate();
+		}
+
+		const observer = new IntersectionObserver(
+			([entry]) => {
+				isVisible = entry.isIntersecting;
+				if (isVisible) requestUpdate();
+			},
+			{ rootMargin: '15% 0%' }
+		);
+
+		observer.observe(node.parentElement ?? node);
+		window.addEventListener('scroll', requestUpdate, { passive: true });
+		window.addEventListener('resize', requestUpdate, { passive: true });
+		motionPreference.addEventListener('change', handleMotionPreference);
+
+		return {
+			destroy() {
+				observer.disconnect();
+				window.removeEventListener('scroll', requestUpdate);
+				window.removeEventListener('resize', requestUpdate);
+				motionPreference.removeEventListener('change', handleMotionPreference);
+				if (animationFrame) window.cancelAnimationFrame(animationFrame);
+			}
+		};
+	}
 </script>
 
 <Section className={sectionClass}>
@@ -41,7 +98,12 @@
 			>
 				<div class="rounded-[40px] overflow-hidden w-full h-72 sm:h-80 lg:h-[520px]">
 					{#if image}
-						<img src={image} {alt} class="w-full h-full object-cover" />
+						<img
+							use:parallaxImage
+							src={image}
+							{alt}
+							class="media-parallax-image w-full object-cover"
+						/>
 					{:else}
 						<div class="w-full h-full grid place-items-center bg-accent2-100">
 							<span class="text-ink/70">Inserisci un’immagine</span>
@@ -111,3 +173,19 @@
 		</div>
 	</Container>
 </Section>
+
+<style>
+	.media-parallax-image {
+		height: calc(100% + 4rem);
+		margin-top: -2rem;
+		transform: translate3d(0, var(--media-parallax-y, 0), 0);
+		will-change: transform;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.media-parallax-image {
+			transform: none;
+			will-change: auto;
+		}
+	}
+</style>
