@@ -8,7 +8,7 @@
 <Section className="pb-12 md:pb-20">
 	<Container>
 		<div
-			class="grid gap-8 rounded-[32px] border border-black/5 bg-white/80 px-6 py-8 shadow-sm md:px-10 md:py-10 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center lg:gap-12"
+			class="grid gap-8 rounded-[32px] border border-black/5 bg-white/80 px-6 py-8 md:px-10 md:py-10 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center lg:gap-12"
 		>
 			<div class="max-w-3xl">
 				<p class="mb-2 text-sm font-medium uppercase tracking-wide text-accent1-800">

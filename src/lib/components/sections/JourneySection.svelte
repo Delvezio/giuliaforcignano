@@ -18,7 +18,7 @@
 	iconFloat
 	iconFloatDistance="8px"
 	iconFloatDuration="2.5s"
-	sectionClass="pt-16 pb-4 md:pt-20 md:pb-6"
+	sectionClass="pt-16 pb-12 md:pt-20 md:pb-16"
 />
 
 <Orientamento standalone showIntro={false} showPageLink={false} />

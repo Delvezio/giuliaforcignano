@@ -8,7 +8,7 @@ import { resolve } from '$app/paths';
   const year = new Date().getFullYear();
 </script>
 
-<footer id="contatti" class="mt-16">
+<footer id="contatti" class="mt-16 border-t border-black/5">
   <!-- Usiamo Section + Container per allineare alla griglia del sito -->
   <Section className="py-12 md:py-16">
     <Container>

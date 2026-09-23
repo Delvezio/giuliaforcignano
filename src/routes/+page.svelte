@@ -58,5 +58,5 @@
 <JourneySection
 	title="Il tuo viaggio "
 	titleAccent="inizia qui"
-	intro="Un percorso che unisce ascolto, metodo e continuità: scegli la modalità più adatta a te."
+	intro="Un percorso che unisce ascolto, metodo e continuità: ti riconosci almeno in una di queste situazioni?"
 />
