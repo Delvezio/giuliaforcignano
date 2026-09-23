@@ -197,6 +197,7 @@
 <Hero
 	eyebrow="Psicologa"
 	subtitle="Consulenza e sostegno psicologico rivolte ad adolescenti e adulti a Torino."
+	image="/img/photo/giulia-forcignano-psicologa-6.jpg"
 	primaryHref="#ui-buttons"
 	primaryLabel="Azione primaria"
 	secondaryHref="#ui-media-text"

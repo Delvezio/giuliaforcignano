@@ -14,6 +14,7 @@
 		{ icon: '/img/icon/Therapy-Counseling.png', text: 'Sedute in presenza' },
 		{ icon: '/img/icon/hello.png', text: 'Sedute online' }
 	]}
+	image="/img/photo/giulia-forcignano-psicologa-6.jpg"
 	primaryHref="tel:+393403783231"
 	primaryLabel="Chiama ora"
 	secondaryHref="/about"
@@ -31,18 +32,7 @@
 	introWidth="max-w-xl"
 />
 
-<!-- Sezione 2: Media + Text (riga 1) -->
-<MediaText
-	eyebrow="Chi sono"
-	title="Psicologa laureata all'Università di Torino"
-	text="Sono una psicologa laureata in Psicologia del lavoro e del benessere presso l'Università di Torino, con orientamento all'Analisi Transazionale."
-	image="/img/photo/giulia-forcignano-psicologa-2.jpg"
-	alt="Seduta in presenza"
-	primaryHref="/about"
-	primaryLabel="Scopri di più"
-/>
-
-<!-- Sezione 2: Media + Text (riga 2, invertita) -->
+<!-- Sezione 2: Media + Text (riga 1, invertita) -->
 <MediaText
 	reverse
 	eyebrow="Cos'è l'Analisi Transazionale"
@@ -52,7 +42,7 @@
 	alt="Seduta online"
 />
 
-<!-- Sezione 2: Media + Text (riga 3) -->
+<!-- Sezione 2: Media + Text (riga 2) -->
 <MediaText
 	eyebrow="Continuità e supporto"
 	title="Vicino a te, ovunque tu sia, con sedute in presenza e online"

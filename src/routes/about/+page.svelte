@@ -16,10 +16,18 @@
   image
   imageSide="right"
   imageSrc="/img/photo/giulia-forcignano-psicologa-6.jpg"
-  imageAlt="Lo studio"
-  eyebrow="Studio"
+  imageAlt="Giulia Forcignanò, psicologa a Torino"
+  eyebrow="Chi sono"
+  title="Psicologa laureata all'Università di Torino"
+  intro="Sono una psicologa laureata in Psicologia del lavoro e del benessere presso l'Università di Torino, con orientamento all'Analisi Transazionale."
+/>
+
+<SectionHeader
   title="Nel momento in cui scegli di ascoltarti, io sono qui per accoglierti."
   intro="Conoscersi davvero è un gesto di coraggio. Non è necessario farlo da soli."
+  sectionClass="py-16 md:py-20 lg:py-24"
+  max="max-w-screen-lg"
+  introWidth="max-w-xl"
 />
 
 <!-- Contenuto con aside sticky -->
