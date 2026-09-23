@@ -82,5 +82,10 @@ export const pageMeta: Record<string, PageMeta> = {
 		title: 'Messaggio inviato | Giulia Forcignanò',
 		description: 'Grazie per avermi scritto: ti rispondo al più presto.',
 		noindex: true
+	},
+	'/ui': {
+		title: 'Catalogo UI | Giulia Forcignanò',
+		description: 'Catalogo interno dei componenti e degli elementi grafici del sito.',
+		noindex: true
 	}
 };
