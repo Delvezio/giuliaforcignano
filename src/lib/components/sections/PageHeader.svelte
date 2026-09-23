@@ -74,13 +74,9 @@
 					class:lg:pl-[52%]={image && imageSide === 'left'}
 				>
 					<!-- WRAPPER FLEX DEI CONTENUTI -->
-					<div
-						class={`flex flex-col ${alignClasses} ${contentGap}`}
-						data-reveal={image ? (imageSide === 'left' ? 'right' : 'left') : 'up'}
-						style="--reveal-delay: 100ms; --reveal-duration: 850ms;"
-					>
+					<div class={`flex flex-col ${alignClasses} ${contentGap}`}>
 						{#if $$slots.icon || iconSrc || icon}
-							<div>
+							<div data-reveal="up">
 								{#if $$slots.icon}
 									<div class="w-12 h-12 md:w-14 md:h-14 grid place-items-center">
 										<slot name="icon" />
@@ -99,36 +95,49 @@
 
 						<div class="flex w-full min-w-0 flex-col gap-2">
 							{#if eyebrow}
-								<p class="text-sm font-medium tracking-wide uppercase text-accent1-800">
+								<p
+									class="text-sm font-medium tracking-wide uppercase text-accent1-800"
+									data-reveal="up"
+									data-reveal-text
+									style="--reveal-delay: 30ms;"
+								>
 									{eyebrow}
 								</p>
 							{/if}
 
-							<Heading level={1} className="break-words">
-								<slot name="title">{title}</slot>
-							</Heading>
+							<div data-reveal="up" data-reveal-text style="--reveal-delay: 75ms;">
+								<Heading level={1} className="break-words">
+									<slot name="title">{title}</slot>
+								</Heading>
+							</div>
 						</div>
 
 						{#if $$slots.intro}
-							<Paragraph
-								variant="lead"
-								className={`${image ? 'max-w-prose' : 'max-w-2xl'} whitespace-pre-line`}
-							>
-								<slot name="intro" />
-							</Paragraph>
+							<div data-reveal="up" data-reveal-text style="--reveal-delay: 130ms;">
+								<Paragraph
+									variant="lead"
+									className={`${image ? 'max-w-prose' : 'max-w-2xl'} whitespace-pre-line`}
+								>
+									<slot name="intro" />
+								</Paragraph>
+							</div>
 						{:else if intro}
-							<Paragraph
-								variant="lead"
-								className={`${image ? 'max-w-prose' : 'max-w-2xl'} whitespace-pre-line`}
-							>
-								{intro}
-							</Paragraph>
+							<div data-reveal="up" data-reveal-text style="--reveal-delay: 130ms;">
+								<Paragraph
+									variant="lead"
+									className={`${image ? 'max-w-prose' : 'max-w-2xl'} whitespace-pre-line`}
+								>
+									{intro}
+								</Paragraph>
+							</div>
 						{/if}
 
 						{#if (primaryHref && primaryLabel) || (secondaryHref && secondaryLabel)}
 							<div
 								class="mt-1 flex flex-wrap gap-3"
 								class:justify-center={alignResolved === 'center'}
+								data-reveal="up"
+								style="--reveal-delay: 185ms;"
 							>
 								{#if primaryHref && primaryLabel}
 									<Button variant="solid" color="accent1" href={primaryHref}>{primaryLabel}</Button>
@@ -151,13 +160,11 @@
 				class="mx-auto"
 				class:lg:pr-[38%]={image && imageSide === 'right'}
 				class:lg:pl-[38%]={image && imageSide === 'left'}
-				data-reveal="up"
-				style="--reveal-duration: 850ms;"
 			>
 				<!-- WRAPPER FLEX DEI CONTENUTI -->
 				<div class={`flex flex-col ${alignClasses} ${contentGap}`}>
 					{#if $$slots.icon || iconSrc || icon}
-						<div>
+						<div data-reveal="up">
 							{#if $$slots.icon}
 								<div class="w-12 h-12 md:w-14 md:h-14 grid place-items-center">
 									<slot name="icon" />
@@ -172,34 +179,49 @@
 
 					<div class="flex w-full min-w-0 flex-col gap-2">
 						{#if eyebrow}
-							<p class="text-sm font-medium tracking-wide uppercase text-accent1-800">{eyebrow}</p>
+							<p
+								class="text-sm font-medium tracking-wide uppercase text-accent1-800"
+								data-reveal="up"
+								data-reveal-text
+								style="--reveal-delay: 30ms;"
+							>
+								{eyebrow}
+							</p>
 						{/if}
 
-						<Heading level={1} className="break-words">
-							<slot name="title">{title}</slot>
-						</Heading>
+						<div data-reveal="up" data-reveal-text style="--reveal-delay: 75ms;">
+							<Heading level={1} className="break-words">
+								<slot name="title">{title}</slot>
+							</Heading>
+						</div>
 					</div>
 
 					{#if $$slots.intro}
-						<Paragraph
-							variant="lead"
-							className={`${image ? 'max-w-prose' : 'max-w-2xl'} mt-3 whitespace-pre-line`}
-						>
-							<slot name="intro" />
-						</Paragraph>
+						<div data-reveal="up" data-reveal-text style="--reveal-delay: 130ms;">
+							<Paragraph
+								variant="lead"
+								className={`${image ? 'max-w-prose' : 'max-w-2xl'} mt-3 whitespace-pre-line`}
+							>
+								<slot name="intro" />
+							</Paragraph>
+						</div>
 					{:else if intro}
-						<Paragraph
-							variant="lead"
-							className={`${image ? 'max-w-prose' : 'max-w-2xl'} mt-3 whitespace-pre-line`}
-						>
-							{intro}
-						</Paragraph>
+						<div data-reveal="up" data-reveal-text style="--reveal-delay: 130ms;">
+							<Paragraph
+								variant="lead"
+								className={`${image ? 'max-w-prose' : 'max-w-2xl'} mt-3 whitespace-pre-line`}
+							>
+								{intro}
+							</Paragraph>
+						</div>
 					{/if}
 
 					{#if (primaryHref && primaryLabel) || (secondaryHref && secondaryLabel)}
 						<div
 							class="mt-1 flex flex-wrap gap-3"
 							class:justify-center={alignResolved === 'center'}
+							data-reveal="up"
+							style="--reveal-delay: 185ms;"
 						>
 							{#if primaryHref && primaryLabel}
 								<Button variant="solid" color="accent1" href={primaryHref}>{primaryLabel}</Button>

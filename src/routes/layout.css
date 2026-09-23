@@ -141,6 +141,13 @@ body {
 		will-change: opacity, transform, filter;
 	}
 
+	/* Testi: salita più breve e veloce, per comporre le righe in sequenza. */
+	html.reveal-enabled [data-reveal][data-reveal-text] {
+		--reveal-duration: 540ms;
+		--reveal-distance: 0.9rem;
+		--reveal-blur: 1px;
+	}
+
 	html.reveal-enabled [data-reveal='down'] {
 		transform: translate3d(0, calc(var(--reveal-distance, 1.75rem) * -1), 0);
 	}

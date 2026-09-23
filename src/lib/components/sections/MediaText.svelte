@@ -51,25 +51,34 @@
 			</div>
 
 			<!-- Testo -->
-			<div
-				class="w-full lg:w-[48%]"
-				class:lg:order-1={reverse}
-				data-reveal={reverse ? 'left' : 'right'}
-				style="--reveal-delay: 100ms; --reveal-duration: 850ms;"
-			>
+			<div class="w-full lg:w-[48%]" class:lg:order-1={reverse}>
 				{#if eyebrow}
-					<p class="text-sm font-medium tracking-wide uppercase text-accent1-800 mb-1">{eyebrow}</p>
+					<p
+						class="text-sm font-medium tracking-wide uppercase text-accent1-800 mb-1"
+						data-reveal="up"
+						data-reveal-text
+					>
+						{eyebrow}
+					</p>
 				{/if}
 
 				<!-- Slot opzionale per accentuare parole con <em> -->
-				<Heading level={3} className="mb-8"><slot name="title">{title}</slot></Heading>
+				<div data-reveal="up" data-reveal-text style="--reveal-delay: 55ms;">
+					<Heading level={3} className="mb-8"><slot name="title">{title}</slot></Heading>
+				</div>
 
 				{#if text}
-					<Paragraph variant="lead" className="mb-5 max-w-prose">{text}</Paragraph>
+					<div data-reveal="up" data-reveal-text style="--reveal-delay: 110ms;">
+						<Paragraph variant="lead" className="mb-5 max-w-prose">{text}</Paragraph>
+					</div>
 				{/if}
 
 				{#if highlights && highlights.length}
-					<ul class="mb-5 flex flex-wrap items-center gap-x-6 gap-y-3">
+					<ul
+						class="mb-5 flex flex-wrap items-center gap-x-6 gap-y-3"
+						data-reveal="up"
+						style="--reveal-delay: 165ms;"
+					>
 						{#each highlights as h, i (`${h.text}-${i}`)}
 							<li class="inline-flex items-center gap-2 w-auto flex-none">
 								{#if h.icon}
@@ -87,7 +96,7 @@
 				{/if}
 
 				{#if (primaryHref && primaryLabel) || (secondaryHref && secondaryLabel)}
-					<div class="flex flex-wrap gap-3">
+					<div class="flex flex-wrap gap-3" data-reveal="up" style="--reveal-delay: 220ms;">
 						{#if primaryHref && primaryLabel}
 							<Button variant="solid" color="accent1" href={primaryHref}>{primaryLabel}</Button>
 						{/if}

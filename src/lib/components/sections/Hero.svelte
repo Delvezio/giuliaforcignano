@@ -59,30 +59,38 @@
 					{#if eyebrow}
 						<p
 							class="text-sm font-medium tracking-wide uppercase text-accent1-800"
-							data-reveal="down"
-							style="--reveal-delay: 40ms;"
+							data-reveal="up"
+							data-reveal-text
+							style="--reveal-delay: 20ms;"
 						>
 							{eyebrow}
 						</p>
 					{/if}
 
-					<div data-reveal={reverse ? 'right' : 'left'} style="--reveal-delay: 90ms;">
+					<div>
 						<Heading level={1} className="break-words">
-							Psicoterapeuta in formazione analitico <em class="italic">transazionale</em>
+							<span class="block" data-reveal="up" data-reveal-text style="--reveal-delay: 55ms;"
+								>Psicoterapeuta in</span
+							>
+							<span class="block" data-reveal="up" data-reveal-text style="--reveal-delay: 95ms;"
+								>formazione analitico</span
+							>
+							<em
+								class="block italic"
+								data-reveal="up"
+								data-reveal-text
+								style="--reveal-delay: 135ms;">transazionale</em
+							>
 						</Heading>
 					</div>
 
-					<div
-						class="max-w-prose"
-						data-reveal={reverse ? 'right' : 'left'}
-						style="--reveal-delay: 150ms;"
-					>
+					<div class="max-w-prose" data-reveal="up" data-reveal-text style="--reveal-delay: 180ms;">
 						{#if subtitle}
 							<Paragraph variant="lead">{subtitle}</Paragraph>
 						{/if}
 					</div>
 
-					<div class="flex flex-wrap gap-3" data-reveal="up" style="--reveal-delay: 220ms;">
+					<div class="flex flex-wrap gap-3" data-reveal="up" style="--reveal-delay: 235ms;">
 						<Button variant="solid" color="accent1" href={primaryHref}>{primaryLabel}</Button>
 						<Button variant={secondaryVariant} color="accent1" href={secondaryHref}
 							>{secondaryLabel}</Button
@@ -93,7 +101,7 @@
 						<ul
 							class="mt-4 flex flex-wrap items-center gap-x-6 gap-y-3"
 							data-reveal="up"
-							style="--reveal-delay: 300ms;"
+							style="--reveal-delay: 290ms;"
 						>
 							{#each highlights as h, i (`${h.text}-${i}`)}
 								<li class="inline-flex items-center gap-2 w-auto flex-none">

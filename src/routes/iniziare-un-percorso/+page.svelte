@@ -96,8 +96,8 @@
 		>
 			<div
 				class="px-6 py-12 sm:px-10 md:px-14 md:py-16"
-				data-reveal="left"
-				style="--reveal-delay: 120ms;"
+				data-reveal="up"
+				style="--reveal-delay: 55ms;"
 			>
 				<p class="mb-3 text-sm font-medium uppercase tracking-wide text-accent1-800">
 					UNO SPAZIO SENZA PREPARAZIONE
@@ -115,15 +115,15 @@
 			</div>
 			<div
 				class="flex items-center bg-accent1-100 px-6 py-10 sm:px-10 md:px-12"
-				data-reveal="right"
-				style="--reveal-delay: 190ms;"
+				data-reveal="up"
+				style="--reveal-delay: 110ms;"
 			>
 				<ul class="w-full space-y-5">
 					{#each reassurances as reassurance, index (reassurance)}
 						<li
 							class="flex items-start gap-4 border-b border-accent1-300 pb-5 last:border-0 last:pb-0"
-							data-reveal="right"
-							style={`--reveal-delay: ${250 + index * 55}ms;`}
+							data-reveal="up"
+							style={`--reveal-delay: ${165 + index * 45}ms;`}
 						>
 							<span
 								class="mt-1 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-accent1-500 text-sm text-white"
@@ -143,7 +143,7 @@
 		<div class="grid gap-6 lg:grid-cols-2">
 			<section
 				class="rounded-[32px] bg-white p-7 md:p-10"
-				data-reveal="left"
+				data-reveal="up"
 				style="--reveal-duration: 850ms;"
 			>
 				<p class="mb-3 text-sm font-medium uppercase tracking-wide text-accent1-800">IN STUDIO</p>
@@ -163,8 +163,8 @@
 
 			<section
 				class="rounded-[32px] bg-accent3-50 p-7 md:p-10"
-				data-reveal="right"
-				style="--reveal-delay: 90ms; --reveal-duration: 850ms;"
+				data-reveal="up"
+				style="--reveal-delay: 55ms; --reveal-duration: 850ms;"
 			>
 				<p class="mb-3 text-sm font-medium uppercase tracking-wide text-accent1-800">ONLINE</p>
 				<h2 class="font-heading mb-5 text-3xl text-ink">Da uno spazio adatto e riservato</h2>

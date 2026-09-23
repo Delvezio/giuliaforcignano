@@ -18,7 +18,7 @@
 			<!-- ASIDE (1/3) -->
 			<aside
 				class={`lg:col-span-1 ${side === 'right' ? 'lg:order-2' : ''}`}
-				data-reveal={side === 'right' ? 'right' : 'left'}
+				data-reveal="up"
 				style="--reveal-duration: 850ms;"
 			>
 				<div class={`lg:sticky ${stickyTop}`}>
@@ -29,8 +29,8 @@
 			<!-- CONTENT (2/3) -->
 			<div
 				class={`lg:col-span-2 ${side === 'right' ? 'lg:order-1' : ''}`}
-				data-reveal={side === 'right' ? 'left' : 'right'}
-				style="--reveal-delay: 100ms; --reveal-duration: 850ms;"
+				data-reveal="up"
+				style="--reveal-delay: 70ms; --reveal-duration: 850ms;"
 			>
 				<slot />
 			</div>

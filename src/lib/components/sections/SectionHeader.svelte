@@ -72,14 +72,15 @@
 			{#if eyebrow}
 				<p
 					class="text-sm font-medium tracking-wide uppercase text-accent1-800"
-					data-reveal="fade"
-					style="--reveal-delay: 60ms;"
+					data-reveal="up"
+					data-reveal-text
+					style="--reveal-delay: 30ms;"
 				>
 					{eyebrow}
 				</p>
 			{/if}
 
-			<div data-reveal="up" style="--reveal-delay: 110ms;">
+			<div data-reveal="up" data-reveal-text style="--reveal-delay: 75ms;">
 				<Heading level={2} align="center">
 					{title}
 					{#if titleAccent}<em class="italic"> {titleAccent}</em>{/if}
@@ -87,7 +88,7 @@
 			</div>
 
 			{#if intro}
-				<div data-reveal="up" style="--reveal-delay: 180ms;">
+				<div data-reveal="up" data-reveal-text style="--reveal-delay: 130ms;">
 					<Paragraph align="center" variant="lead" className={`mx-auto ${introWidth}`}>
 						{intro}
 					</Paragraph>
@@ -98,7 +99,7 @@
 				<div
 					class="flex flex-wrap justify-center gap-4 mt-6"
 					data-reveal="up"
-					style="--reveal-delay: 250ms;"
+					style="--reveal-delay: 185ms;"
 				>
 					<Button variant="solid" color="accent1" href={primaryHref}>{primaryLabel}</Button>
 					{#if secondaryHref && secondaryLabel}

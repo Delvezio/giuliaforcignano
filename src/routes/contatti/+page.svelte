@@ -22,14 +22,14 @@
 			</div>
 
 			<div class="grid gap-6 sm:grid-cols-2">
-				<section class="rounded-3xl bg-accent2-50 p-6" data-reveal="left">
+				<section class="rounded-3xl bg-accent2-50 p-6" data-reveal="up">
 					<h2 class="font-heading mb-3 text-2xl text-ink">Studio</h2>
 					<address class="not-italic font-semibold">Corso Moncalieri 266<br />10133 Torino</address>
 				</section>
 				<section
 					class="rounded-3xl bg-accent2-50 p-6"
-					data-reveal="right"
-					style="--reveal-delay: 80ms;"
+					data-reveal="up"
+					style="--reveal-delay: 55ms;"
 				>
 					<h2 class="font-heading mb-3 text-2xl text-ink">Contatti</h2>
 					<p class="font-semibold">Telefono</p>
