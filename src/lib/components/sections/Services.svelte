@@ -11,7 +11,11 @@
 <Section className="py-12 md:py-16">
 	<Container>
 		<SectionHeader {eyebrow} {title} />
-		<div class="mx-auto max-w-3xl text-center text-lg leading-relaxed text-ink/80 space-y-4 mb-10">
+		<div
+			class="mx-auto max-w-3xl text-center text-lg leading-relaxed text-ink/80 space-y-4 mb-10"
+			data-reveal="up"
+			style="--reveal-delay: 160ms;"
+		>
 			<p>
 				Ogni persona arriva con una storia diversa. Questi sono alcuni degli ambiti che possiamo
 				affrontare all’interno di un percorso psicologico costruito sulle tue esigenze.

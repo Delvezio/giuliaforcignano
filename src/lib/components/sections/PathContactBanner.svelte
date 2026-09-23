@@ -9,8 +9,10 @@
 	<Container>
 		<div
 			class="grid gap-8 rounded-[32px] border border-black/5 bg-white/80 px-6 py-8 md:px-10 md:py-10 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center lg:gap-12"
+			data-reveal="scale"
+			style="--reveal-duration: 850ms;"
 		>
-			<div class="max-w-3xl">
+			<div class="max-w-3xl" data-reveal="left" style="--reveal-delay: 120ms;">
 				<p class="mb-2 text-sm font-medium uppercase tracking-wide text-accent1-800">
 					INIZIARE UN PERCORSO
 				</p>
@@ -23,7 +25,11 @@
 				</p>
 			</div>
 
-			<div class="flex flex-col items-start gap-5 lg:items-end">
+			<div
+				class="flex flex-col items-start gap-5 lg:items-end"
+				data-reveal="right"
+				style="--reveal-delay: 200ms;"
+			>
 				<div class="flex flex-wrap gap-3">
 					<Button size="md" href="tel:+393403783231">Chiamami</Button>
 					<Button size="md" variant="outline" href="mailto:info@giuliaforcignano.it">

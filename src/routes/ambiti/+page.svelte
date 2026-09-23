@@ -14,7 +14,7 @@
 
 <Section className="py-8 md:py-12">
 	<Container>
-		<div class="mx-auto max-w-3xl space-y-5 text-lg leading-relaxed text-ink/80">
+		<div class="mx-auto max-w-3xl space-y-5 text-lg leading-relaxed text-ink/80" data-reveal="up">
 			<p>
 				Una difficoltà può coinvolgere emozioni, relazioni, lavoro, famiglia o più aspetti della
 				vita contemporaneamente.
@@ -38,7 +38,11 @@
 
 <Section className="py-12 md:py-16">
 	<Container>
-		<div class="w-full rounded-[32px] bg-accent2-50 px-6 py-10 text-center md:p-14">
+		<div
+			class="w-full rounded-[32px] bg-accent2-50 px-6 py-10 text-center md:p-14"
+			data-reveal="scale"
+			style="--reveal-duration: 850ms;"
+		>
 			<h2 class="font-heading mb-4 text-3xl text-ink">
 				Non sai quale ambito descrive meglio quello che stai vivendo?
 			</h2>

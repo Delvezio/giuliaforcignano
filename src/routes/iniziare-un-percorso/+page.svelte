@@ -70,9 +70,11 @@
 <Section className="py-12 md:py-20">
 	<Container>
 		<div class="grid gap-5 lg:grid-cols-3">
-			{#each moments as moment (moment.number)}
+			{#each moments as moment, index (moment.number)}
 				<section
 					class="relative overflow-hidden rounded-[28px] border border-black/5 bg-white p-7 md:p-9"
+					data-reveal="up"
+					style={`--reveal-delay: ${index * 80}ms;`}
 				>
 					<p class="font-heading mb-8 text-5xl text-accent1-200" aria-hidden="true">
 						{moment.number}
@@ -87,8 +89,16 @@
 
 <Section className="pb-12 md:pb-20">
 	<Container>
-		<section class="grid overflow-hidden rounded-[36px] bg-accent2-50 lg:grid-cols-[1.15fr_0.85fr]">
-			<div class="px-6 py-12 sm:px-10 md:px-14 md:py-16">
+		<section
+			class="grid overflow-hidden rounded-[36px] bg-accent2-50 lg:grid-cols-[1.15fr_0.85fr]"
+			data-reveal="scale"
+			style="--reveal-duration: 900ms;"
+		>
+			<div
+				class="px-6 py-12 sm:px-10 md:px-14 md:py-16"
+				data-reveal="left"
+				style="--reveal-delay: 120ms;"
+			>
 				<p class="mb-3 text-sm font-medium uppercase tracking-wide text-accent1-800">
 					UNO SPAZIO SENZA PREPARAZIONE
 				</p>
@@ -103,11 +113,17 @@
 					</p>
 				</div>
 			</div>
-			<div class="flex items-center bg-accent1-100 px-6 py-10 sm:px-10 md:px-12">
+			<div
+				class="flex items-center bg-accent1-100 px-6 py-10 sm:px-10 md:px-12"
+				data-reveal="right"
+				style="--reveal-delay: 190ms;"
+			>
 				<ul class="w-full space-y-5">
-					{#each reassurances as reassurance (reassurance)}
+					{#each reassurances as reassurance, index (reassurance)}
 						<li
 							class="flex items-start gap-4 border-b border-accent1-300 pb-5 last:border-0 last:pb-0"
+							data-reveal="right"
+							style={`--reveal-delay: ${250 + index * 55}ms;`}
 						>
 							<span
 								class="mt-1 grid h-6 w-6 shrink-0 place-items-center rounded-full bg-accent1-500 text-sm text-white"
@@ -125,7 +141,11 @@
 <Section className="pb-12 md:pb-20">
 	<Container>
 		<div class="grid gap-6 lg:grid-cols-2">
-			<section class="rounded-[32px] bg-white p-7 md:p-10">
+			<section
+				class="rounded-[32px] bg-white p-7 md:p-10"
+				data-reveal="left"
+				style="--reveal-duration: 850ms;"
+			>
 				<p class="mb-3 text-sm font-medium uppercase tracking-wide text-accent1-800">IN STUDIO</p>
 				<h2 class="font-heading mb-5 text-3xl text-ink">Uno spazio a Torino</h2>
 				<p class="mb-5 text-lg leading-relaxed text-ink/80">Ricevo in studio in:</p>
@@ -141,7 +161,11 @@
 				>
 			</section>
 
-			<section class="rounded-[32px] bg-accent3-50 p-7 md:p-10">
+			<section
+				class="rounded-[32px] bg-accent3-50 p-7 md:p-10"
+				data-reveal="right"
+				style="--reveal-delay: 90ms; --reveal-duration: 850ms;"
+			>
 				<p class="mb-3 text-sm font-medium uppercase tracking-wide text-accent1-800">ONLINE</p>
 				<h2 class="font-heading mb-5 text-3xl text-ink">Da uno spazio adatto e riservato</h2>
 				<div class="space-y-4 text-lg leading-relaxed text-ink/80">
@@ -158,7 +182,11 @@
 
 <Section className="pb-12 md:pb-20">
 	<Container>
-		<section class="w-full rounded-[36px] bg-white px-6 py-10 sm:px-10 md:px-14 md:py-16">
+		<section
+			class="w-full rounded-[36px] bg-white px-6 py-10 sm:px-10 md:px-14 md:py-16"
+			data-reveal="scale"
+			style="--reveal-duration: 900ms;"
+		>
 			<div class="mb-9 grid gap-5 md:grid-cols-[0.8fr_1.2fr] md:items-end">
 				<div>
 					<p class="mb-3 text-sm font-medium uppercase tracking-wide text-accent1-800">
@@ -173,8 +201,12 @@
 			</div>
 
 			<div class="divide-y divide-black/10 border-y border-black/10">
-				{#each questions as item (item.question)}
-					<details class="group py-2">
+				{#each questions as item, index (item.question)}
+					<details
+						class="group py-2"
+						data-reveal="up"
+						style={`--reveal-delay: ${100 + index * 45}ms;`}
+					>
 						<summary
 							class="flex cursor-pointer list-none items-center justify-between gap-6 py-5 text-left font-heading text-xl text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent1-800 md:text-2xl"
 						>

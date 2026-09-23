@@ -94,7 +94,11 @@
 
 <Section className={standalone ? 'pb-12 md:pb-20' : 'py-12 md:py-20'}>
 	<Container>
-		{#if showIntro}<div class="mx-auto mb-10 max-w-4xl text-center">
+		{#if showIntro}<div
+				class="mx-auto mb-10 max-w-4xl text-center"
+				data-reveal="up"
+				style="--reveal-duration: 850ms;"
+			>
 				<p class="mb-3 text-sm font-medium uppercase tracking-wide text-accent1-800">
 					COSA TI PORTA QUI?
 				</p>
@@ -121,20 +125,22 @@
 			</div>{/if}
 
 		<div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-			{#each percorsi as item (item.id)}
-				<button
-					type="button"
-					class="flex min-h-48 flex-col items-center rounded-3xl bg-transparent p-6 text-center transition-colors duration-300 hover:bg-white/70 focus-visible:bg-white/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent1-800 motion-reduce:transition-none"
-					aria-expanded={selected?.id === item.id && phase > 0}
-					aria-controls={phase > 0 ? 'percorso-orientamento' : undefined}
-					on:click={(event) => start(item, event)}
-				>
-					<span class="font-heading mb-3 text-2xl tracking-tight text-ink">{item.title}</span>
-					<span class="mb-5 flex-1 leading-relaxed text-ink/75">{item.description}</span>
-					<span class="font-medium text-accent1-800"
-						>Parti da qui <span aria-hidden="true">→</span></span
+			{#each percorsi as item, index (item.id)}
+				<div class="h-full" data-reveal="up" style={`--reveal-delay: ${index * 65}ms;`}>
+					<button
+						type="button"
+						class="flex h-full min-h-48 w-full flex-col items-center rounded-3xl bg-transparent p-6 text-center transition-colors duration-300 hover:bg-white/70 focus-visible:bg-white/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent1-800 motion-reduce:transition-none"
+						aria-expanded={selected?.id === item.id && phase > 0}
+						aria-controls={phase > 0 ? 'percorso-orientamento' : undefined}
+						on:click={(event) => start(item, event)}
 					>
-				</button>
+						<span class="font-heading mb-3 text-2xl tracking-tight text-ink">{item.title}</span>
+						<span class="mb-5 flex-1 leading-relaxed text-ink/75">{item.description}</span>
+						<span class="font-medium text-accent1-800"
+							>Parti da qui <span aria-hidden="true">→</span></span
+						>
+					</button>
+				</div>
 			{/each}
 		</div>
 	</Container>
@@ -152,6 +158,8 @@
 			aria-modal="true"
 			aria-labelledby="percorso-orientamento-title"
 			class="relative max-h-[calc(100dvh-2rem)] w-full max-w-4xl overflow-y-auto rounded-3xl bg-accent2-50 p-6 shadow-2xl outline-none focus-visible:ring-2 focus-visible:ring-accent1-800 md:max-h-[calc(100dvh-4rem)] md:p-10"
+			data-reveal="scale"
+			style="--reveal-duration: 500ms; --reveal-distance: 0.75rem; --reveal-blur: 2px;"
 		>
 			<button
 				type="button"

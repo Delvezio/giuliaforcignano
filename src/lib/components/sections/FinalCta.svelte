@@ -20,23 +20,25 @@
 
 <Section>
 	<Container>
-		<Card bg="glass" padding="lg" className="w-full">
-			{#if title}
-				<Heading level={2} align="center" className="mb-3 break-words">{title}</Heading>
-			{/if}
-			{#if text}
-				<Paragraph align="center" className="mb-5 max-w-4xl mx-auto">{text}</Paragraph>
-			{/if}
-			{#if primaryHref && primaryLabel}
-				<div class="flex flex-wrap justify-center gap-3">
-					<Button variant="solid" color="accent1" href={primaryHref}>{primaryLabel}</Button>
-					{#if secondaryHref && secondaryLabel}
-						<Button variant={secondaryVariant} color="accent1" href={secondaryHref}>
-							{secondaryLabel}
-						</Button>
-					{/if}
-				</div>
-			{/if}
-		</Card>
+		<div data-reveal="scale" style="--reveal-duration: 900ms;">
+			<Card bg="glass" padding="lg" className="w-full">
+				{#if title}
+					<Heading level={2} align="center" className="mb-3 break-words">{title}</Heading>
+				{/if}
+				{#if text}
+					<Paragraph align="center" className="mb-5 max-w-4xl mx-auto">{text}</Paragraph>
+				{/if}
+				{#if primaryHref && primaryLabel}
+					<div class="flex flex-wrap justify-center gap-3">
+						<Button variant="solid" color="accent1" href={primaryHref}>{primaryLabel}</Button>
+						{#if secondaryHref && secondaryLabel}
+							<Button variant={secondaryVariant} color="accent1" href={secondaryHref}>
+								{secondaryLabel}
+							</Button>
+						{/if}
+					</div>
+				{/if}
+			</Card>
+		</div>
 	</Container>
 </Section>
