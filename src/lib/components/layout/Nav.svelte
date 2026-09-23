@@ -7,7 +7,14 @@
 	import Container from '$lib/components/ui/Container.svelte';
 	import Button from '$lib/components/ui/Button.svelte';
 
-	type Route = '/' | '/about' | '/method' | '/ambiti' | '/iniziare-un-percorso' | '/contatti';
+	type Route =
+		| '/'
+		| '/about'
+		| '/method'
+		| '/ambiti'
+		| '/da-dove-iniziare'
+		| '/iniziare-un-percorso'
+		| '/contatti';
 
 	type NavItem = { label: string; route: Route };
 
@@ -15,6 +22,7 @@
 		{ label: 'Chi sono', route: '/about' },
 		{ label: 'Metodo', route: '/method' },
 		{ label: 'Ambiti', route: '/ambiti' },
+		{ label: 'Da dove iniziare', route: '/da-dove-iniziare' },
 		{ label: 'Primo incontro', route: '/iniziare-un-percorso' },
 		{ label: 'Contatti', route: '/contatti' }
 	];
@@ -36,7 +44,7 @@
 				</a>
 
 				<!-- Desktop nav -->
-				<nav class="hidden lg:flex items-center gap-3 xl:gap-6" aria-label="Navigazione principale">
+				<nav class="hidden xl:flex items-center gap-3 xl:gap-6" aria-label="Navigazione principale">
 					{#each links as l (l.label)}
 						<a
 							href={resolve(l.route)}
@@ -61,7 +69,7 @@
 
 				<!-- Mobile toggler -->
 				<button
-					class="lg:hidden inline-flex items-center justify-center w-10 h-10 rounded-xl border border-black/10 bg-white/70"
+					class="xl:hidden inline-flex items-center justify-center w-10 h-10 rounded-xl border border-black/10 bg-white/70"
 					aria-label={open ? 'Chiudi menu' : 'Apri menu'}
 					aria-expanded={open}
 					aria-controls="menu-mobile"
@@ -94,7 +102,7 @@
 
 		<!-- Mobile sheet -->
 		{#if open}
-			<div id="menu-mobile" class="lg:hidden border-t border-black/5 bg-white/90">
+			<div id="menu-mobile" class="xl:hidden border-t border-black/5 bg-white/90">
 				<Container className="py-3">
 					<div class="flex flex-col gap-1">
 						{#each links as l (l.label)}

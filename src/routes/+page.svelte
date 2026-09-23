@@ -2,11 +2,8 @@
 <script lang="ts">
 	import Hero from '$lib/components/sections/Hero.svelte';
 	import Services from '$lib/components/sections/Services.svelte';
-	import FinalCta from '$lib/components/sections/FinalCta.svelte';
 	import MediaText from '$lib/components/sections/MediaText.svelte';
-	import SectionHeader from '$lib/components/sections/SectionHeader.svelte';
-	import Orientamento from '$lib/components/sections/Orientamento.svelte';
-	import FirstMeetingTeaser from '$lib/components/sections/FirstMeetingTeaser.svelte';
+	import JourneySection from '$lib/components/sections/JourneySection.svelte';
 </script>
 
 <Hero
@@ -23,19 +20,6 @@
 	secondaryLabel="Scopri di più"
 	secondaryVariant="outline"
 />
-
-<SectionHeader
-	title="Inizia un percorso consapevole verso "
-	titleAccent="il cambiamento"
-	intro="Ti posso aiutare a riconoscere e superare dinamiche relazionali, ruoli e blocchi che influenzano la tua vita."
-	iconSrc="/img/icon/upgrade.svg"
-	iconAlt="Mongolfiera"
-	iconFloat={false}
-	iconFloatDistance="8px"
-	iconFloatDuration="2.5s"
-/>
-
-<Orientamento showIntro={false} showPageLink={false} />
 
 <!-- Sezione 2: Media + Text (riga 1) -->
 <MediaText
@@ -69,15 +53,10 @@
 
 <Services />
 
-<FirstMeetingTeaser />
-
 <!-- <Testimonials title="Dicono di me" intro="Cosa dicono le persone che hanno lavorato con me." />-->
 
-<FinalCta
-	title="Possiamo partire da una prima domanda."
-	text="Se vuoi chiedermi un’informazione o capire se possiamo fissare un primo incontro, puoi contattarmi senza impegno."
-	primaryHref="mailto:info@giuliaforcignano.it"
-	primaryLabel="Scrivimi"
-	secondaryHref="tel:+393403783231"
-	secondaryLabel="Chiamami"
+<JourneySection
+	title="Il tuo viaggio "
+	titleAccent="inizia qui"
+	intro="Un percorso che unisce ascolto, metodo e continuità: scegli la modalità più adatta a te."
 />

@@ -5,10 +5,11 @@
   import StickyAside from '$lib/components/sections/StickyAside.svelte';
   import Heading from '$lib/components/ui/Heading.svelte';
   import Paragraph from '$lib/components/ui/Paragraph.svelte';
-  import Button from '$lib/components/ui/Button.svelte';
   import Card from '$lib/components/ui/Card.svelte';
   import ServiceCard from '$lib/components/ui/ServiceCard.svelte';
 	import SectionHeader from '$lib/components/sections/SectionHeader.svelte';
+	import FirstMeetingLink from '$lib/components/sections/FirstMeetingLink.svelte';
+	import JourneySection from '$lib/components/sections/JourneySection.svelte';
 
 
   type Service = {
@@ -92,7 +93,7 @@
       <Paragraph className="text-ink/80 my-5">
         Il primo incontro è anche uno spazio in cui conoscere il mio modo di lavorare e fare le domande che ritieni importanti.
       </Paragraph>
-      <Button variant="solid" color="accent1" href="/iniziare-un-percorso">Come funziona il primo incontro</Button>
+      <FirstMeetingLink label="Come funziona il primo incontro" />
     </Card>
   </svelte:fragment>
 
@@ -156,35 +157,8 @@ Insieme esploreremo i meccanismi interiori che ti guidano, le emozioni che vivi 
   </Container>
 </Section>
 
-<!-- CTA finale 
-<Section>
-  <Container>
-    <Card bg="glass" padding="lg" className="max-w-3xl mx-auto ">
-      <Heading level={2} align="center" className="mb-8">Se sei qui, stai già compiendo un primo passo importante</Heading>
-      <Paragraph variant="lead" align="center" className="mb-10">
-        <span class="block">Quello di cercare uno spazio per te,</span> 
-        <span class="block">dove conoscerti e capire chi sei.</span>
-      </Paragraph>
-      <div class="flex flex-wrap justify-center gap-3">
-        <Button variant="solid" color="accent1" href="/contact">Chiama ora</Button>
-        <Button variant={secondaryVariant} color="accent1" href="/contact">Scrivimi</Button>
-      </div>
-    </Card>
-  </Container>
-</Section> -->
-
-<SectionHeader
+<JourneySection
   title="Se sei qui, stai già compiendo "
   titleAccent="un primo passo importante"
   intro="Quello di cercare uno spazio per te, dove conoscerti e capire chi sei."
-  iconSrc="/img/icon/hot-air-balloon.svg"
-  iconAlt="Mongolfiera"
-  iconFloat={true}
-  iconFloatDistance="8px"
-  iconFloatDuration="2.5s"
-  primaryHref="tel:+393403783231"
-  primaryLabel="Chiamami ora"
-  bg="accent2"
-  secondaryHref="mailto:info@giuliaforcignano.it"
-  secondaryLabel="Scrivimi"
 />
