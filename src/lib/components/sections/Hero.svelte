@@ -5,21 +5,14 @@
 	import Heading from '$lib/components/ui/Heading.svelte';
 	import Paragraph from '$lib/components/ui/Paragraph.svelte';
 	import Button from '$lib/components/ui/Button.svelte';
+	import AmbitiAnimatedGrid from '$lib/components/sections/AmbitiAnimatedGrid.svelte';
 
 	export let eyebrow: string | undefined = '';
 	export let subtitle: string | undefined =
 		'Ti posso aiutare a riconoscere dinamiche relazionali, ruoli e blocchi che influenzano la tua vita.';
 
-	// Immagine verticale reale (portrait)
-	export let image: string =
-		'https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=900&h=1200&q=80';
-	export let alt: string = 'Hero image';
-
 	// Highlights (icone + testo). `icon` può essere emoji/testo oppure un path/URL immagine.
 	export let highlights: { icon?: string; text: string }[] = [];
-
-	// Layout
-	export let reverse: boolean = false;
 
 	// CTA
 	export let primaryHref: string = '';
@@ -36,124 +29,104 @@
 			val.startsWith('http'));
 </script>
 
-<!-- Section = stessa max della Nav -->
 <Section className="py-0">
-	<!-- Pannello bianco interno alla Section (niente -mx) -->
-	<div class="bg-white rounded-[40px]">
-		<!-- Container = padding identico alla Nav -->
-		<Container>
-			<!-- Wrapper contenuti (niente px orizzontali qui) -->
+	<Container>
+		<div class="grid gap-4 py-4 sm:gap-5 sm:py-6 lg:grid-cols-2 lg:items-stretch lg:py-8">
+			<!-- Colonna testo -->
 			<div
-				class="flex w-full grow self-stretch
-               flex-col lg:flex-row
-               flex-wrap lg:flex-nowrap
-               gap-[70px] lg:gap-x-[1%] lg:gap-y-0
-               lg:justify-between lg:items-stretch
-               py-16 lg:pt-0 lg:pb-0 my-2 lg:my-18"
+				class="flex min-h-[32rem] w-full flex-col justify-center gap-5 rounded-[36px] bg-white px-7 py-12 sm:min-h-[34rem] sm:px-10 lg:min-h-[36rem] lg:gap-[26px] lg:px-12 lg:py-14 xl:px-14"
 			>
-				<!-- Colonna testo -->
-				<div
-					class="w-full lg:w-[50%] flex flex-col gap-5 lg:gap-[30px] lg:py-[100px]"
-					class:lg:order-2={reverse}
-				>
-					{#if eyebrow}
-						<p
-							class="text-sm font-medium tracking-wide uppercase text-accent1-800"
+				{#if eyebrow}
+					<p
+						class="text-sm font-medium tracking-wide uppercase text-accent1-800"
+						data-reveal="up"
+						data-reveal-text
+						style="--reveal-delay: 20ms;"
+					>
+						{eyebrow}
+					</p>
+				{/if}
+
+				<div class="hero-heading">
+					<Heading level={1} className="break-words">
+						<span class="block" data-reveal="up" data-reveal-text style="--reveal-delay: 55ms;"
+							>Psicoterapeuta in</span
+						>
+						<span class="block" data-reveal="up" data-reveal-text style="--reveal-delay: 95ms;"
+							>formazione analitico</span
+						>
+						<em
+							class="block italic"
 							data-reveal="up"
 							data-reveal-text
-							style="--reveal-delay: 20ms;"
+							style="--reveal-delay: 135ms;">transazionale</em
 						>
-							{eyebrow}
-						</p>
-					{/if}
+					</Heading>
+				</div>
 
-					<div>
-						<Heading level={1} className="break-words">
-							<span class="block" data-reveal="up" data-reveal-text style="--reveal-delay: 55ms;"
-								>Psicoterapeuta in</span
-							>
-							<span class="block" data-reveal="up" data-reveal-text style="--reveal-delay: 95ms;"
-								>formazione analitico</span
-							>
-							<em
-								class="block italic"
-								data-reveal="up"
-								data-reveal-text
-								style="--reveal-delay: 135ms;">transazionale</em
-							>
-						</Heading>
-					</div>
-
-					<div class="max-w-prose" data-reveal="up" data-reveal-text style="--reveal-delay: 180ms;">
-						{#if subtitle}
-							<Paragraph variant="lead">{subtitle}</Paragraph>
-						{/if}
-					</div>
-
-					<div class="flex flex-wrap gap-3" data-reveal="up" style="--reveal-delay: 235ms;">
-						<Button variant="solid" color="accent1" href={primaryHref}>{primaryLabel}</Button>
-						<Button variant={secondaryVariant} color="accent1" href={secondaryHref}
-							>{secondaryLabel}</Button
-						>
-					</div>
-
-					{#if highlights && highlights.length}
-						<ul
-							class="mt-4 flex flex-wrap items-center gap-x-6 gap-y-3"
-							data-reveal="up"
-							style="--reveal-delay: 290ms;"
-						>
-							{#each highlights as h, i (`${h.text}-${i}`)}
-								<li class="inline-flex items-center gap-2 w-auto flex-none">
-									{#if h.icon}
-										{#if isImageIcon(h.icon)}
-											<!-- icona come immagine -->
-											<img
-												src={h.icon}
-												alt=""
-												class="h-12 w-12 md:h-16 md:w-16 object-contain"
-												loading="lazy"
-												decoding="async"
-											/>
-										{:else}
-											<!-- icona come emoji/testo -->
-											<span class="text-xl leading-none" aria-hidden="true">{h.icon}</span>
-										{/if}
-									{:else}
-										<!-- fallback puntino -->
-										<span
-											class="inline-block w-2.5 h-2.5 rounded-full bg-accent1-500"
-											aria-hidden="true"
-										></span>
-									{/if}
-									<span class="text-ink/80 whitespace-nowrap">{h.text}</span>
-								</li>
-							{/each}
-						</ul>
+				<div class="max-w-prose" data-reveal="up" data-reveal-text style="--reveal-delay: 180ms;">
+					{#if subtitle}
+						<Paragraph variant="lead">{subtitle}</Paragraph>
 					{/if}
 				</div>
 
-				<!-- Colonna immagine: overflow sopra/sotto da lg+ -->
-				<div
-					class="w-full lg:w-[42%] relative"
-					class:lg:order-1={reverse}
-					data-reveal={reverse ? 'left' : 'right'}
-					style="--reveal-delay: 150ms; --reveal-duration: 950ms; --reveal-distance: 2.5rem;"
-				>
-					<!-- Desktop / large -->
-					<div class="hidden lg:block absolute inset-x-0 -inset-y-8">
-						<div class="h-full rounded-[40px] overflow-hidden">
-							<img src={image} {alt} class="w-full h-full object-cover" />
-						</div>
-					</div>
-					<!-- Mobile/Tablet -->
-					<div
-						class="lg:hidden w-full h-[420px] rounded-[40px] overflow-hidden -translate-y-4 -mb-4"
+				<div class="flex flex-wrap gap-3" data-reveal="up" style="--reveal-delay: 235ms;">
+					<Button variant="solid" color="accent1" href={primaryHref}>{primaryLabel}</Button>
+					<Button variant={secondaryVariant} color="accent1" href={secondaryHref}
+						>{secondaryLabel}</Button
 					>
-						<img src={image} {alt} class="w-full h-full object-cover" />
-					</div>
 				</div>
+
+				{#if highlights && highlights.length}
+					<ul
+						class="mt-4 flex flex-wrap items-center gap-x-6 gap-y-3"
+						data-reveal="up"
+						style="--reveal-delay: 290ms;"
+					>
+						{#each highlights as h, i (`${h.text}-${i}`)}
+							<li class="inline-flex items-center gap-2 w-auto flex-none">
+								{#if h.icon}
+									{#if isImageIcon(h.icon)}
+										<!-- icona come immagine -->
+										<img
+											src={h.icon}
+											alt=""
+											class="h-12 w-12 md:h-16 md:w-16 object-contain"
+											loading="lazy"
+											decoding="async"
+										/>
+									{:else}
+										<!-- icona come emoji/testo -->
+										<span class="text-xl leading-none" aria-hidden="true">{h.icon}</span>
+									{/if}
+								{:else}
+									<!-- fallback puntino -->
+									<span
+										class="inline-block w-2.5 h-2.5 rounded-full bg-accent1-500"
+										aria-hidden="true"
+									></span>
+								{/if}
+								<span class="text-ink/80 whitespace-nowrap">{h.text}</span>
+							</li>
+						{/each}
+					</ul>
+				{/if}
 			</div>
-		</Container>
-	</div>
+
+			<!-- Le quattro posizioni rimangono fisse; gli ambiti cambiano con una rotazione verticale. -->
+			<div
+				class="min-h-[27rem] w-full sm:min-h-[34rem] lg:min-h-[36rem]"
+				data-reveal="right"
+				style="--reveal-delay: 150ms; --reveal-duration: 950ms; --reveal-distance: 2.5rem;"
+			>
+				<AmbitiAnimatedGrid />
+			</div>
+		</div>
+	</Container>
 </Section>
+
+<style>
+	.hero-heading :global(h1) {
+		font-size: clamp(2.2rem, 11vw, var(--step-5)) !important;
+	}
+</style>

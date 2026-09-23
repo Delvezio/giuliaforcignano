@@ -14,7 +14,6 @@
 		{ icon: '/img/icon/Therapy-Counseling.png', text: 'Sedute in presenza' },
 		{ icon: '/img/icon/hello.png', text: 'Sedute online' }
 	]}
-	image="/img/photo/giulia-forcignano-psicologa-6.jpg"
 	primaryHref="tel:+393403783231"
 	primaryLabel="Chiama ora"
 	secondaryHref="/about"

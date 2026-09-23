@@ -1,5 +1,6 @@
 <script lang="ts">
 	import AmbitiGrid from '$lib/components/sections/AmbitiGrid.svelte';
+	import AmbitiAnimatedGrid from '$lib/components/sections/AmbitiAnimatedGrid.svelte';
 	import FinalCta from '$lib/components/sections/FinalCta.svelte';
 	import FirstMeetingLink from '$lib/components/sections/FirstMeetingLink.svelte';
 	import Hero from '$lib/components/sections/Hero.svelte';
@@ -23,6 +24,7 @@
 		['ui-buttons', 'Pulsanti e link'],
 		['ui-cards', 'Card'],
 		['ui-hero', 'Hero'],
+		['ui-ambiti-animated', 'Ambiti animate'],
 		['ui-page-header', 'Page Header'],
 		['ui-section-header', 'Section Header'],
 		['ui-media-text', 'Media + testo'],
@@ -195,12 +197,25 @@
 <Hero
 	eyebrow="Psicologa"
 	subtitle="Consulenza e sostegno psicologico rivolte ad adolescenti e adulti a Torino."
-	image="/img/photo/giulia-forcignano-psicologa-6.jpg"
 	primaryHref="#ui-buttons"
 	primaryLabel="Azione primaria"
 	secondaryHref="#ui-media-text"
 	secondaryLabel="Azione secondaria"
 />
+
+<ComponentLabel
+	id="ui-ambiti-animated"
+	name="AmbitiAnimatedGrid"
+	group="Griglia animata"
+	description="Quattro card che mostrano in sequenza tutti gli ambiti di intervento."
+/>
+<Section className="py-8 md:py-12">
+	<Container>
+		<div class="mx-auto max-w-2xl">
+			<AmbitiAnimatedGrid />
+		</div>
+	</Container>
+</Section>
 
 <ComponentLabel id="ui-page-header" name="PageHeader" group="Sezione" />
 <PageHeader
