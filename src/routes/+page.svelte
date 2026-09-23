@@ -4,6 +4,7 @@
 	import Services from '$lib/components/sections/Services.svelte';
 	import MediaText from '$lib/components/sections/MediaText.svelte';
 	import JourneySection from '$lib/components/sections/JourneySection.svelte';
+	import SectionHeader from '$lib/components/sections/SectionHeader.svelte';
 </script>
 
 <Hero
@@ -19,6 +20,16 @@
 	secondaryHref="/about"
 	secondaryLabel="Scopri di più"
 	secondaryVariant="outline"
+/>
+
+<SectionHeader
+	title="Inizia un percorso consapevole verso"
+	titleAccent="il cambiamento"
+	intro="Ti posso aiutare a riconoscere e superare dinamiche relazionali, ruoli e blocchi che influenzano la tua vita."
+	iconSrc="/img/icon/upgrade.svg"
+	iconAlt="Persona che intraprende un percorso di cambiamento"
+	sectionClass="py-20 md:py-24 lg:py-28"
+	introWidth="max-w-xl"
 />
 
 <!-- Sezione 2: Media + Text (riga 1) -->
