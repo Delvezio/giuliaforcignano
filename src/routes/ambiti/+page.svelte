@@ -10,8 +10,8 @@
 <PageHeader
 	eyebrow="AMBITI DI INTERVENTO"
 	title="Ambiti in cui posso aiutarti"
-	intro="Qui trovi alcuni degli ambiti in cui svolgo la mia attività di sostegno psicologico. Non servono a stabilire autonomamente quale percorso sia necessario: possono semplicemente aiutarti a capire meglio di cosa mi occupo."
-	closingParagraph="Ogni percorso parte dalla persona, dalla sua storia e dagli obiettivi che possiamo definire insieme."
+	intro="Ogni percorso parte dalla persona, dalla sua storia e dagli obiettivi che possiamo definire insieme."
+	closingParagraph="Qui trovi alcuni degli ambiti in cui svolgo la mia attività di sostegno psicologico. Non servono a stabilire autonomamente quale percorso sia necessario: possono semplicemente aiutarti a capire meglio di cosa mi occupo."
 	contentGap="gap-4 md:gap-6"
 />
 
