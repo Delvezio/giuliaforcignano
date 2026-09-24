@@ -5,6 +5,7 @@
 	import FirstMeetingLink from '$lib/components/sections/FirstMeetingLink.svelte';
 	import Hero from '$lib/components/sections/Hero.svelte';
 	import MediaText from '$lib/components/sections/MediaText.svelte';
+	import MeetingPageHeader from '$lib/components/sections/MeetingPageHeader.svelte';
 	import Orientamento from '$lib/components/sections/Orientamento.svelte';
 	import PageHeader from '$lib/components/sections/PageHeader.svelte';
 	import PathContactBanner from '$lib/components/sections/PathContactBanner.svelte';
@@ -27,6 +28,7 @@
 		['ui-hero', 'Hero'],
 		['ui-ambiti-animated', 'Ambiti animate'],
 		['ui-page-header', 'Page Header'],
+		['ui-meeting-page-header', 'Header primo incontro'],
 		['ui-section-header', 'Section Header'],
 		['ui-media-text', 'Media + testo'],
 		['ui-ambiti', 'Card ambiti'],
@@ -231,6 +233,14 @@
 	imageSrc="/img/photo/giulia-forcignano-psicologa-5.jpeg"
 	imageAlt="Esempio di immagine nel Page Header"
 />
+
+<ComponentLabel
+	id="ui-meeting-page-header"
+	name="MeetingPageHeader"
+	group="Page Header"
+	description="Titolo su fondo trasparente e due card informative statiche in colonna."
+/>
+<MeetingPageHeader />
 
 <ComponentLabel id="ui-section-header" name="SectionHeader" group="Sezione" />
 <SectionHeader
