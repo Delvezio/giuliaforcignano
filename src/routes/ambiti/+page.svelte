@@ -19,7 +19,7 @@
 	<Container><AmbitiGrid /></Container>
 </Section>
 
-<Orientamento title="Ti riconosci almeno in una di queste situazioni?" />
+<Orientamento title="Ti riconosci almeno in una di queste situazioni?" showPageLink={false} />
 
 <Section className="py-12 md:py-16">
 	<Container>
