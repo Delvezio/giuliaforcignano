@@ -8,7 +8,15 @@
 		'Decidere di contattare una psicologa può far nascere molte domande. Il primo incontro serve a conoscerci e comprendere insieme ciò che ti ha portato qui.';
 </script>
 
-<PageHeader {eyebrow} {title} {intro} panel panelBg="bg-transparent" contentGap="gap-4 md:gap-6">
+<PageHeader
+	{eyebrow}
+	{title}
+	{intro}
+	panel
+	panelBg="bg-transparent"
+	contentGap="gap-4 md:gap-6"
+	splitContentPadding="px-0"
+>
 	<svelte:fragment slot="media">
 		<div class="grid h-full gap-4">
 			<MeetingModeCard

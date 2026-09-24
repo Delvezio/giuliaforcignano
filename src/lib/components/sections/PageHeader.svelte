@@ -39,6 +39,7 @@
 	/** Nuovo: controllo layout contenuti testuali */
 	export let align: 'center' | 'start' | undefined = undefined; // preferenza esplicita
 	export let contentGap: string = 'gap-6 md:gap-10'; // spacing verticale
+	export let splitContentPadding: string = 'px-7 sm:px-10 lg:px-12 xl:px-14';
 
 	// risoluzione finale dell’allineamento:
 	// - se align non è passato: con immagine → start, senza → center
@@ -73,7 +74,7 @@
 			{/if}
 
 			<Container
-				px={hasSlottedMedia ? 'px-7 sm:px-10 lg:px-12 xl:px-14' : 'px-4 sm:px-8 md:px-16'}
+				px={hasSlottedMedia ? splitContentPadding : 'px-4 sm:px-8 md:px-16'}
 				className={hasSlottedMedia
 					? `flex min-h-[32rem] rounded-[36px] py-12 lg:min-h-[36rem] lg:py-14 ${panelBg}`
 					: 'py-10 md:py-14'}
