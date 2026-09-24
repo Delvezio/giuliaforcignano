@@ -23,8 +23,8 @@
 		{ label: 'Chi sono', route: '/about' },
 		{ label: 'Metodo', route: '/method' },
 		{ label: 'Ambiti', route: '/ambiti' },
-		{ label: 'Da dove iniziare', route: '/da-dove-iniziare' },
 		{ label: 'Primo incontro', route: '/iniziare-un-percorso' },
+		{ label: 'Da dove iniziare', route: '/da-dove-iniziare' },
 		{ label: 'Contatti', route: '/contatti' },
 		{ label: 'UI', route: '/ui' }
 	];
