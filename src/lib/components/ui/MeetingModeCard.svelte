@@ -13,15 +13,15 @@
 </script>
 
 <article
-	class={`grid min-h-[18rem] grid-cols-[minmax(7.5rem,0.78fr)_minmax(0,1.22fr)] overflow-hidden rounded-[32px] ${surfaceClass} sm:grid-cols-[0.85fr_1.15fr]`}
+	class={`grid min-h-[18rem] grid-cols-1 overflow-hidden rounded-[32px] ${surfaceClass} sm:grid-cols-[0.85fr_1.15fr]`}
 	data-reveal="up"
 	style="--reveal-duration: 850ms;"
 >
-	<div class={`flex min-h-full items-center justify-center p-4 sm:p-6 ${mediaClass}`}>
+	<div class={`flex min-h-52 items-center justify-center p-5 sm:min-h-full sm:p-6 ${mediaClass}`}>
 		<img
 			src={image}
 			alt={imageAlt}
-			class="block max-h-[14rem] w-full object-contain transition-transform duration-500 hover:scale-[1.025] motion-reduce:transition-none"
+			class="block max-h-44 w-full object-contain transition-transform duration-500 hover:scale-[1.025] motion-reduce:transition-none sm:max-h-[14rem]"
 		/>
 	</div>
 
