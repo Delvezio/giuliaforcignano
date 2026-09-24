@@ -2,7 +2,9 @@
 	import Section from '$lib/components/ui/Section.svelte';
 	import Container from '$lib/components/ui/Container.svelte';
 	import PageHeader from '$lib/components/sections/PageHeader.svelte';
+	import AmbitiAnimatedGrid from '$lib/components/sections/AmbitiAnimatedGrid.svelte';
 	import StickyAside from '$lib/components/sections/StickyAside.svelte';
+	import FirstMeetingSteps from '$lib/components/sections/FirstMeetingSteps.svelte';
 	import Heading from '$lib/components/ui/Heading.svelte';
 	import Paragraph from '$lib/components/ui/Paragraph.svelte';
 	import Card from '$lib/components/ui/Card.svelte';
@@ -14,8 +16,7 @@
 
 <PageHeader
 	panel
-	panelBg="bg-accent2-50"
-	panelPaddingHeight="[--ph-min:20rem] min-h-[var(--ph-min)]"
+	panelBg="bg-white"
 	eyebrow="Il mio metodo"
 	intro=" "
 >
@@ -26,6 +27,9 @@
 	<svelte:fragment slot="intro">
 		<span class="block">Conoscersi davvero è un gesto di coraggio.</span>
 		<span class="block">Non è necessario farlo da soli.</span>
+	</svelte:fragment>
+	<svelte:fragment slot="media">
+		<AmbitiAnimatedGrid />
 	</svelte:fragment>
 </PageHeader>
 
@@ -91,6 +95,8 @@
 		</Paragraph>
 	</article>
 </StickyAside>
+
+<FirstMeetingSteps title="Il primo incontro: uno spazio per capire da dove partire" />
 
 <Section className="py-12 md:py-16">
 	<Container>
