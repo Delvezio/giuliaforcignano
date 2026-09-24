@@ -1,6 +1,7 @@
 <script lang="ts">
 	import PageHeader from '$lib/components/sections/PageHeader.svelte';
 	import AmbitiGrid from '$lib/components/sections/AmbitiGrid.svelte';
+	import Orientamento from '$lib/components/sections/Orientamento.svelte';
 	import Section from '$lib/components/ui/Section.svelte';
 	import Container from '$lib/components/ui/Container.svelte';
 	import Button from '$lib/components/ui/Button.svelte';
@@ -9,14 +10,16 @@
 <PageHeader
 	eyebrow="AMBITI DI INTERVENTO"
 	title="Ambiti in cui posso aiutarti"
-	intro={`Qui trovi alcuni degli ambiti in cui svolgo la mia attività di sostegno psicologico. Non servono a stabilire autonomamente quale percorso sia necessario: possono semplicemente aiutarti a capire meglio di cosa mi occupo.
-
-Ogni percorso parte dalla persona, dalla sua storia e dagli obiettivi che possiamo definire insieme.`}
+	intro="Qui trovi alcuni degli ambiti in cui svolgo la mia attività di sostegno psicologico. Non servono a stabilire autonomamente quale percorso sia necessario: possono semplicemente aiutarti a capire meglio di cosa mi occupo."
+	closingParagraph="Ogni percorso parte dalla persona, dalla sua storia e dagli obiettivi che possiamo definire insieme."
+	contentGap="gap-4 md:gap-6"
 />
 
 <Section className="py-8 md:py-12">
 	<Container><AmbitiGrid /></Container>
 </Section>
+
+<Orientamento title="Ti riconosci almeno in una di queste situazioni?" />
 
 <Section className="py-12 md:py-16">
 	<Container>

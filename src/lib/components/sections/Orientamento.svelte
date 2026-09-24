@@ -9,6 +9,7 @@
 	export let standalone = false;
 	export let showIntro = true;
 	export let showPageLink = true;
+	export let title: string | undefined = undefined;
 
 	let selected: (typeof percorsi)[number] | null = null;
 	let phase = 0;
@@ -103,9 +104,10 @@
 					COSA TI PORTA QUI?
 				</p>
 				<h2 class="font-heading mb-5 text-3xl text-ink md:text-5xl">
-					{standalone
-						? 'Puoi partire dalla situazione che senti più vicina.'
-						: 'A volte si può iniziare da ciò che stiamo vivendo.'}
+					{title ??
+						(standalone
+							? 'Puoi partire dalla situazione che senti più vicina.'
+							: 'A volte si può iniziare da ciò che stiamo vivendo.')}
 				</h2>
 				<p class="mb-3 text-lg text-ink/80">
 					Non è sempre facile dare un nome a ciò che ci accade o sapere già quale percorso cercare.

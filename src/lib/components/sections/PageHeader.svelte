@@ -9,6 +9,7 @@
 	export let eyebrow: string | undefined = undefined;
 	export let title: string = '';
 	export let intro: string | undefined = undefined;
+	export let closingParagraph: string | undefined = undefined;
 
 	/** Icona opzionale */
 	export let iconSrc: string | undefined = undefined;
@@ -125,22 +126,42 @@
 						</div>
 
 						{#if $$slots.intro}
-							<div data-reveal="up" data-reveal-text style="--reveal-delay: 130ms;">
+							<div
+								class="space-y-4"
+								data-reveal="up"
+								data-reveal-text
+								style="--reveal-delay: 130ms;"
+							>
 								<Paragraph
 									variant="lead"
 									className={`${hasMedia ? 'max-w-prose' : 'max-w-2xl'} whitespace-pre-line`}
 								>
 									<slot name="intro" />
 								</Paragraph>
+								{#if closingParagraph}
+									<Paragraph className={`${hasMedia ? 'max-w-prose' : 'max-w-2xl'} text-ink/80`}>
+										{closingParagraph}
+									</Paragraph>
+								{/if}
 							</div>
 						{:else if intro}
-							<div data-reveal="up" data-reveal-text style="--reveal-delay: 130ms;">
+							<div
+								class="space-y-4"
+								data-reveal="up"
+								data-reveal-text
+								style="--reveal-delay: 130ms;"
+							>
 								<Paragraph
 									variant="lead"
 									className={`${hasMedia ? 'max-w-prose' : 'max-w-2xl'} whitespace-pre-line`}
 								>
 									{intro}
 								</Paragraph>
+								{#if closingParagraph}
+									<Paragraph className={`${hasMedia ? 'max-w-prose' : 'max-w-2xl'} text-ink/80`}>
+										{closingParagraph}
+									</Paragraph>
+								{/if}
 							</div>
 						{/if}
 
@@ -219,22 +240,32 @@
 					</div>
 
 					{#if $$slots.intro}
-						<div data-reveal="up" data-reveal-text style="--reveal-delay: 130ms;">
+						<div class="space-y-4" data-reveal="up" data-reveal-text style="--reveal-delay: 130ms;">
 							<Paragraph
 								variant="lead"
 								className={`${hasMedia ? 'max-w-prose' : 'max-w-2xl'} mt-3 whitespace-pre-line`}
 							>
 								<slot name="intro" />
 							</Paragraph>
+							{#if closingParagraph}
+								<Paragraph className={`${hasMedia ? 'max-w-prose' : 'max-w-2xl'} text-ink/80`}>
+									{closingParagraph}
+								</Paragraph>
+							{/if}
 						</div>
 					{:else if intro}
-						<div data-reveal="up" data-reveal-text style="--reveal-delay: 130ms;">
+						<div class="space-y-4" data-reveal="up" data-reveal-text style="--reveal-delay: 130ms;">
 							<Paragraph
 								variant="lead"
 								className={`${hasMedia ? 'max-w-prose' : 'max-w-2xl'} mt-3 whitespace-pre-line`}
 							>
 								{intro}
 							</Paragraph>
+							{#if closingParagraph}
+								<Paragraph className={`${hasMedia ? 'max-w-prose' : 'max-w-2xl'} text-ink/80`}>
+									{closingParagraph}
+								</Paragraph>
+							{/if}
 						</div>
 					{/if}
 
