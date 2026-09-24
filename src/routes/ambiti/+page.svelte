@@ -9,28 +9,10 @@
 <PageHeader
 	eyebrow="AMBITI DI INTERVENTO"
 	title="Ambiti in cui posso aiutarti"
-	intro="Non sempre è facile dare immediatamente un nome a ciò che stiamo vivendo."
-/>
+	intro={`Qui trovi alcuni degli ambiti in cui svolgo la mia attività di sostegno psicologico. Non servono a stabilire autonomamente quale percorso sia necessario: possono semplicemente aiutarti a capire meglio di cosa mi occupo.
 
-<Section className="py-8 md:py-12">
-	<Container>
-		<div class="mx-auto max-w-3xl space-y-5 text-lg leading-relaxed text-ink/80" data-reveal="up">
-			<p>
-				Una difficoltà può coinvolgere emozioni, relazioni, lavoro, famiglia o più aspetti della
-				vita contemporaneamente.
-			</p>
-			<p>
-				Queste pagine descrivono alcuni degli ambiti in cui svolgo la mia attività di sostegno
-				psicologico. Non servono per formulare diagnosi o stabilire autonomamente quale percorso sia
-				necessario: possono semplicemente aiutarti a capire meglio di cosa mi occupo.
-			</p>
-			<p>
-				Ogni percorso parte dalla persona, dalla sua storia e dagli obiettivi che possiamo definire
-				insieme.
-			</p>
-		</div>
-	</Container>
-</Section>
+Ogni percorso parte dalla persona, dalla sua storia e dagli obiettivi che possiamo definire insieme.`}
+/>
 
 <Section className="py-8 md:py-12">
 	<Container><AmbitiGrid /></Container>
