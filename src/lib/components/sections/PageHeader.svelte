@@ -27,7 +27,7 @@
 	/** Pannello bg (tipo Hero) */
 	export let panel: boolean = false;
 	export let panelBg: string = 'bg-white'; // usato se panel == true
-	export let panelPaddingHeight: string = '[--ph-min:28rem] min-h-[var(--ph-min)]'; // altezza minima del pannello
+	export let panelPaddingHeight: string = '[--ph-min:21rem] min-h-[var(--ph-min)]'; // altezza minima del pannello
 
 	/** Immagine opzionale (≈1/3 del pannello) */
 	export let image: boolean = false;
@@ -38,8 +38,10 @@
 
 	/** Nuovo: controllo layout contenuti testuali */
 	export let align: 'center' | 'start' | undefined = undefined; // preferenza esplicita
-	export let contentGap: string = 'gap-6 md:gap-10'; // spacing verticale
+	export let contentGap: string = 'gap-[var(--space-content)]'; // spacing verticale
 	export let splitContentPadding: string = 'px-7 sm:px-10 lg:px-12 xl:px-14';
+	export let sectionClass: string = 'section-rhythm';
+	export let splitMinHeight: string = 'min-h-[27rem] lg:min-h-[28rem]';
 
 	// risoluzione finale dell’allineamento:
 	// - se align non è passato: con immagine → start, senza → center
@@ -50,7 +52,7 @@
 		alignResolved === 'center' ? 'items-center text-center' : 'items-start text-left';
 </script>
 
-<Section className="py-12 md:py-16">
+<Section className={sectionClass}>
 	{#if panel}
 		<!-- Il media custom crea due riquadri distinti; l'immagine resta integrata nel pannello. -->
 		<div
@@ -76,7 +78,7 @@
 			<Container
 				px={hasSlottedMedia ? splitContentPadding : 'px-4 sm:px-8 md:px-16'}
 				className={hasSlottedMedia
-					? `flex min-h-[32rem] rounded-[36px] py-12 lg:min-h-[36rem] lg:py-14 ${panelBg}`
+					? `flex ${splitMinHeight} rounded-[36px] py-8 ${panelBg}`
 					: 'py-10 md:py-14'}
 			>
 				<!-- TESTO: padding opposto all’immagine, centrato verticalmente rispetto a min-h -->
@@ -107,7 +109,7 @@
 							</div>
 						{/if}
 
-						<div class="flex w-full min-w-0 flex-col gap-2">
+						<div class="flex w-full min-w-0 flex-col gap-[var(--space-eyebrow-title)]">
 							{#if eyebrow}
 								<p
 									class="text-sm font-medium tracking-wide uppercase text-accent1-800"
@@ -168,7 +170,7 @@
 
 						{#if (primaryHref && primaryLabel) || (secondaryHref && secondaryLabel)}
 							<div
-								class="mt-1 flex flex-wrap gap-3"
+								class="flex flex-wrap gap-3"
 								class:justify-center={alignResolved === 'center'}
 								data-reveal="up"
 								style="--reveal-delay: 185ms;"
@@ -189,7 +191,7 @@
 
 			{#if $$slots.media}
 				<div
-					class="hidden min-h-[36rem] w-full lg:block"
+					class={`hidden ${splitMinHeight} w-full lg:block`}
 					data-reveal={imageSide === 'left' ? 'left' : 'right'}
 					style="--reveal-delay: 160ms; --reveal-duration: 1050ms; --reveal-distance: 2rem;"
 				>
@@ -221,7 +223,7 @@
 						</div>
 					{/if}
 
-					<div class="flex w-full min-w-0 flex-col gap-2">
+					<div class="flex w-full min-w-0 flex-col gap-[var(--space-eyebrow-title)]">
 						{#if eyebrow}
 							<p
 								class="text-sm font-medium tracking-wide uppercase text-accent1-800"
@@ -244,7 +246,7 @@
 						<div class="space-y-4" data-reveal="up" data-reveal-text style="--reveal-delay: 130ms;">
 							<Paragraph
 								variant="lead"
-								className={`${hasMedia ? 'max-w-prose' : 'max-w-2xl'} mt-3 whitespace-pre-line`}
+								className={`${hasMedia ? 'max-w-prose' : 'max-w-2xl'} whitespace-pre-line`}
 							>
 								<slot name="intro" />
 							</Paragraph>
@@ -258,7 +260,7 @@
 						<div class="space-y-4" data-reveal="up" data-reveal-text style="--reveal-delay: 130ms;">
 							<Paragraph
 								variant="lead"
-								className={`${hasMedia ? 'max-w-prose' : 'max-w-2xl'} mt-3 whitespace-pre-line`}
+								className={`${hasMedia ? 'max-w-prose' : 'max-w-2xl'} whitespace-pre-line`}
 							>
 								{intro}
 							</Paragraph>
@@ -272,7 +274,7 @@
 
 					{#if (primaryHref && primaryLabel) || (secondaryHref && secondaryLabel)}
 						<div
-							class="mt-1 flex flex-wrap gap-3"
+							class="flex flex-wrap gap-3"
 							class:justify-center={alignResolved === 'center'}
 							data-reveal="up"
 							style="--reveal-delay: 185ms;"

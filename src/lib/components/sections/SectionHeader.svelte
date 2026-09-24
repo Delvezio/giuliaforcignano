@@ -24,7 +24,7 @@
 	export let icon: string | undefined = undefined;
 
 	/** Layout */
-	export let sectionClass: string = 'py-12 md:py-16';
+	export let sectionClass: string = 'section-rhythm';
 	export let max: string = 'max-w-screen-md';
 	export let introWidth: string = 'max-w-sm md:max-w-lg';
 	export let bg: string = '';
@@ -37,7 +37,7 @@
 
 <Section className={sectionClass} {max}>
 	<Container className="text-center" {bg}>
-		<div class="flex flex-col items-center gap-4 md:gap-6">
+		<div class="flex flex-col items-center gap-[var(--space-content)]">
 			{#if $$slots.icon}
 				<div data-reveal="down" style="--reveal-duration: 900ms;">
 					<div
@@ -97,7 +97,7 @@
 
 			{#if primaryHref && primaryLabel}
 				<div
-					class="flex flex-wrap justify-center gap-4 mt-6"
+					class="flex flex-wrap justify-center gap-4"
 					data-reveal="up"
 					style="--reveal-delay: 185ms;"
 				>

@@ -42,7 +42,7 @@
 
 <FirstMeetingSteps />
 
-<Section className="pb-12 md:pb-20">
+<Section className="section-rhythm">
 	<Container>
 		<section
 			class="grid overflow-hidden rounded-[36px] bg-accent2-50 lg:grid-cols-[1.15fr_0.85fr]"
@@ -93,7 +93,7 @@
 	</Container>
 </Section>
 
-<Section className="pb-12 md:pb-20">
+<Section className="section-rhythm">
 	<Container>
 		<section
 			class="w-full rounded-[36px] bg-white px-6 py-10 sm:px-10 md:px-14 md:py-16"

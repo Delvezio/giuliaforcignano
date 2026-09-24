@@ -18,7 +18,7 @@
 	export let secondaryVariant: 'outline' | 'soft' = 'outline';
 </script>
 
-<Section>
+<Section className="section-rhythm">
 	<Container>
 		<div data-reveal="scale" style="--reveal-duration: 900ms;">
 			<Card bg="glass" padding="lg" className="w-full">

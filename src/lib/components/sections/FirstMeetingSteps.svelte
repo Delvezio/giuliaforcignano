@@ -24,14 +24,10 @@
 	];
 </script>
 
-<Section className="py-12 md:py-20">
+<Section className="section-rhythm">
 	<Container>
 		{#if title}
-			<div
-				class="mx-auto mb-10 max-w-4xl md:mb-14"
-				data-reveal="up"
-				data-reveal-text
-			>
+			<div class="mx-auto mb-[var(--space-block)] max-w-4xl" data-reveal="up" data-reveal-text>
 				<Heading level={2} align="center">{title}</Heading>
 			</div>
 		{/if}

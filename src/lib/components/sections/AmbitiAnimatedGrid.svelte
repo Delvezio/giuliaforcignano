@@ -101,7 +101,7 @@
 
 <div
 	bind:this={root}
-	class="grid min-h-[27rem] grid-cols-2 grid-rows-2 gap-3 sm:min-h-[34rem] sm:gap-4 lg:min-h-[36rem]"
+	class="grid min-h-[25rem] grid-cols-2 grid-rows-2 gap-3 sm:min-h-[27rem] sm:gap-4 lg:min-h-[28rem]"
 	role="group"
 	aria-label="Ambiti di intervento"
 	aria-live="off"

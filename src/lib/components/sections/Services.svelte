@@ -8,11 +8,11 @@
 	export let title = 'Ambiti in cui posso aiutarti';
 </script>
 
-<Section className="py-12 md:py-16">
+<Section className="section-rhythm">
 	<Container>
-		<SectionHeader {eyebrow} {title} />
+		<SectionHeader {eyebrow} {title} sectionClass="pb-[var(--space-block)]" />
 		<div
-			class="mx-auto max-w-3xl text-center text-lg leading-relaxed text-ink/80 space-y-4 mb-10"
+			class="mx-auto mb-[var(--space-block)] max-w-3xl space-y-4 text-center text-lg leading-relaxed text-ink/80"
 			data-reveal="up"
 			style="--reveal-delay: 160ms;"
 		>

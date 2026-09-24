@@ -16,7 +16,7 @@
 
 	/** Opzioni layout */
 	export let reverse: boolean = false; // true = immagine a destra su lg+
-	export let sectionClass: string = 'py-16 md:py-20 lg:py-24'; // spacing verticale
+	export let sectionClass: string = 'section-rhythm'; // spacing verticale
 
 	/** Highlights opzionali */
 	export let highlights: { icon?: string; text: string }[] = [];

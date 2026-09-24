@@ -50,10 +50,10 @@
 </script>
 
 <!-- Spaziatura coerente con il resto del sito -->
-<Section className="py-12 md:py-16">
+<Section className="section-rhythm">
   <Container>
     <!-- Header sezione (centrato e allineato ai padding della Nav) -->
-    <SectionHeader title={title} intro={intro} iconSrc="/img/icon/listening-to-feedback.svg" />
+    <SectionHeader title={title} intro={intro} iconSrc="/img/icon/listening-to-feedback.svg" sectionClass="pb-[var(--space-block)]" />
 
     <!-- Griglia fluida: auto-fit + minmax = colonne dinamiche e card a tutta altezza -->
     <div

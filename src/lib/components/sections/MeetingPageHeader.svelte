@@ -14,7 +14,6 @@
 	{intro}
 	panel
 	panelBg="bg-transparent"
-	contentGap="gap-4 md:gap-6"
 	splitContentPadding="px-0"
 >
 	<svelte:fragment slot="media">

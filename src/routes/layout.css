@@ -127,6 +127,29 @@ body {
 	background-attachment: fixed;
 }
 
+/* Ritmo comune: due sezioni consecutive producono sempre la stessa distanza. */
+.section-rhythm {
+	padding-block: var(--space-section-pad);
+}
+
+.section-rhythm-top {
+	padding-top: var(--space-section-pad);
+}
+
+.section-rhythm-bottom {
+	padding-bottom: var(--space-section-pad);
+}
+
+.content-rhythm {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-content);
+}
+
+.actions-rhythm {
+	margin-top: var(--space-actions);
+}
+
 /* Entrate coordinate attivate solo dopo l'hydration, così i contenuti restano visibili senza JS. */
 @media (prefers-reduced-motion: no-preference) {
 	html.reveal-enabled [data-reveal] {

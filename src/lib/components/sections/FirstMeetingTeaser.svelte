@@ -4,7 +4,7 @@
 	import Button from '$lib/components/ui/Button.svelte';
 </script>
 
-<Section className="py-12 md:py-20">
+<Section className="section-rhythm">
 	<Container>
 		<div class="w-full rounded-[32px] bg-accent2-50 px-6 py-10 text-center md:px-12 md:py-16">
 			<p class="mb-3 text-sm font-medium uppercase tracking-wide text-accent1-800">

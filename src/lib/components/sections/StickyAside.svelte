@@ -10,9 +10,11 @@
 	export let gap: string = 'gap-8 md:gap-10';
 	/** Classi extra sul wrapper esterno (opzionale) */
 	export let className: string = '';
+	/** Spaziatura verticale della sezione */
+	export let sectionClass: string = 'section-rhythm';
 </script>
 
-<Section className={`py-12 md:py-16 ${className}`}>
+<Section className={`${sectionClass} ${className}`}>
 	<Container>
 		<div class={`grid grid-cols-1 lg:grid-cols-3 ${gap}`}>
 			<!-- ASIDE (1/3) -->

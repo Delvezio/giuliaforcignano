@@ -5,16 +5,16 @@
 	import FirstMeetingLink from '$lib/components/sections/FirstMeetingLink.svelte';
 </script>
 
-<Section className="pb-12 md:pb-20">
+<Section className="section-rhythm">
 	<Container>
 		<div
 			class="grid gap-8 rounded-[32px] border border-black/5 bg-white/80 px-6 py-8 md:px-10 md:py-10 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center lg:gap-12"
 			data-reveal="scale"
 			style="--reveal-duration: 850ms;"
 		>
-			<div class="max-w-3xl">
+			<div class="content-rhythm max-w-3xl">
 				<p
-					class="mb-2 text-sm font-medium uppercase tracking-wide text-accent1-800"
+					class="text-sm font-medium uppercase tracking-wide text-accent1-800"
 					data-reveal="up"
 					data-reveal-text
 					style="--reveal-delay: 30ms;"
@@ -22,7 +22,7 @@
 					INIZIARE UN PERCORSO
 				</p>
 				<h3
-					class="mb-3 font-heading text-3xl leading-tight tracking-tight text-ink md:text-4xl"
+					class="font-heading text-3xl leading-tight tracking-tight text-ink md:text-4xl"
 					data-reveal="up"
 					data-reveal-text
 					style="--reveal-delay: 75ms;"

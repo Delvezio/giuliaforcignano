@@ -14,12 +14,7 @@
 	import JourneySection from '$lib/components/sections/JourneySection.svelte';
 </script>
 
-<PageHeader
-	panel
-	panelBg="bg-white"
-	eyebrow="Il mio metodo"
-	intro=" "
->
+<PageHeader panel panelBg="bg-white" eyebrow="Il mio metodo" intro=" ">
 	<svelte:fragment slot="title">
 		<span class="block">Analisi <em class="italic">transazionale</em>:</span>
 		<span class="block">cos'è e come <em class="italic">funziona</em></span>
@@ -98,9 +93,10 @@
 
 <FirstMeetingSteps title="Il primo incontro: uno spazio per capire da dove partire" />
 
-<Section className="py-12 md:py-16">
+<Section className="section-rhythm">
 	<Container>
 		<SectionHeader
+			sectionClass="pb-[var(--space-block)]"
 			eyebrow="Come ci vediamo"
 			title="In studio o sedute online?"
 			intro="Puoi iniziare il tuo percorso nel mio studio a Torino oppure online, da uno spazio adatto e riservato."

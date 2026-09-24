@@ -97,6 +97,15 @@
 	--container-max: 80rem;
 	--container-px: 1rem;
 	--section-py: 4rem;
+	/* Ritmo verticale condiviso tra pagine e componenti. Ogni sezione usa
+	   metà della distanza complessiva, così due sezioni adiacenti non sommano
+	   padding arbitrari diversi. */
+	--space-section-pad: clamp(1.5rem, 2.25vw, 2.5rem);
+	--space-content: clamp(1rem, 1.25vw, 1.5rem);
+	--space-eyebrow-title: 0.75rem;
+	--space-actions: 1.5rem;
+	--space-block: clamp(2rem, 3vw, 3rem);
+	--space-grid: clamp(1rem, 2vw, 1.5rem);
 	--radius: 1rem;
 	--radius-2xl: 2rem;
 	--shadow-card: 0 6px 24px rgba(0, 0, 0, 0.08);

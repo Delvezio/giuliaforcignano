@@ -13,31 +13,30 @@
 	title="Ambiti in cui posso aiutarti"
 	intro="Ogni percorso parte dalla persona, dalla sua storia e dagli obiettivi che possiamo definire insieme."
 	closingParagraph="Qui trovi alcuni degli ambiti in cui svolgo la mia attività di sostegno psicologico. Non servono a stabilire autonomamente quale percorso sia necessario: possono semplicemente aiutarti a capire meglio di cosa mi occupo."
-	contentGap="gap-4 md:gap-6"
 />
 
-<Section className="py-8 md:py-12">
+<Section className="section-rhythm">
 	<Container><AmbitiGrid /></Container>
 </Section>
 
 <Orientamento title="Ti riconosci almeno in una di queste situazioni?" showPageLink={false} />
 
-<Section className="py-12 md:py-16">
+<Section className="section-rhythm">
 	<Container>
 		<div
-			class="w-full rounded-[32px] bg-accent2-50 px-6 py-10 text-center md:p-14"
+			class="content-rhythm w-full items-center rounded-[32px] bg-accent2-50 px-6 py-10 text-center md:p-14"
 			data-reveal="scale"
 			style="--reveal-duration: 850ms;"
 		>
-			<h2 class="font-heading mb-4 text-3xl text-ink">
+			<h2 class="font-heading text-3xl text-ink">
 				Non sai quale ambito descrive meglio quello che stai vivendo?
 			</h2>
-			<p class="mb-7 text-lg">Non è necessario saperlo prima di contattarmi.</p>
+			<p class="text-lg">Non è necessario saperlo prima di contattarmi.</p>
 			<div class="flex flex-wrap justify-center gap-3">
 				<Button href="mailto:info@giuliaforcignano.it">Scrivimi</Button>
 				<Button variant="outline" href="tel:+393403783231">Chiama ora</Button>
 			</div>
-			<div class="mt-6 flex justify-center">
+			<div class="flex justify-center">
 				<FirstMeetingLink />
 			</div>
 		</div>

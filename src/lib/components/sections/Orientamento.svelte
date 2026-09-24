@@ -93,33 +93,36 @@
 
 <svelte:window on:keydown={handleKeydown} />
 
-<Section className={standalone ? 'pb-12 md:pb-20' : 'py-12 md:py-20'}>
+<Section className="section-rhythm">
 	<Container>
 		{#if showIntro}<div
-				class="mx-auto mb-10 max-w-4xl text-center"
+				class="mx-auto mb-[var(--space-block)] flex max-w-4xl flex-col items-center gap-[var(--space-content)] text-center"
 				data-reveal="up"
 				style="--reveal-duration: 850ms;"
 			>
-				<p class="mb-3 text-sm font-medium uppercase tracking-wide text-accent1-800">
+				<p class="text-sm font-medium uppercase tracking-wide text-accent1-800">
 					COSA TI PORTA QUI?
 				</p>
-				<h2 class="font-heading mb-5 text-3xl text-ink md:text-5xl">
+				<h2 class="font-heading text-3xl text-ink md:text-5xl">
 					{title ??
 						(standalone
 							? 'Puoi partire dalla situazione che senti più vicina.'
 							: 'A volte si può iniziare da ciò che stiamo vivendo.')}
 				</h2>
-				<p class="mb-3 text-lg text-ink/80">
-					Non è sempre facile dare un nome a ciò che ci accade o sapere già quale percorso cercare.
-				</p>
-				<p class="text-lg text-ink/80">
-					Puoi partire dalla situazione che senti più vicina alla tua esperienza. Non è un test e
-					non restituisce diagnosi: è soltanto un modo per orientarti tra i contenuti del sito.
-				</p>
+				<div class="space-y-3">
+					<p class="text-lg text-ink/80">
+						Non è sempre facile dare un nome a ciò che ci accade o sapere già quale percorso
+						cercare.
+					</p>
+					<p class="text-lg text-ink/80">
+						Puoi partire dalla situazione che senti più vicina alla tua esperienza. Non è un test e
+						non restituisce diagnosi: è soltanto un modo per orientarti tra i contenuti del sito.
+					</p>
+				</div>
 				{#if showPageLink && !standalone}
 					<a
 						href={resolve('/da-dove-iniziare')}
-						class="mt-5 inline-flex font-medium text-accent1-800 underline decoration-1 underline-offset-4 transition hover:decoration-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent1-800 motion-reduce:transition-none"
+						class="inline-flex font-medium text-accent1-800 underline decoration-1 underline-offset-4 transition hover:decoration-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent1-800 motion-reduce:transition-none"
 					>
 						Preferisci prenderti qualche minuto? Apri il percorso in una pagina dedicata →
 					</a>

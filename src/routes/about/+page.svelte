@@ -25,7 +25,6 @@
 <SectionHeader
   title="Nel momento in cui scegli di ascoltarti, io sono qui per accoglierti."
   intro="Conoscersi davvero è un gesto di coraggio. Non è necessario farlo da soli."
-  sectionClass="py-16 md:py-20 lg:py-24"
   max="max-w-screen-lg"
   introWidth="max-w-xl"
 />

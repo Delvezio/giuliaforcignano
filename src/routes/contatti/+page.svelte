@@ -5,16 +5,16 @@
 	import FirstMeetingLink from '$lib/components/sections/FirstMeetingLink.svelte';
 </script>
 
-<Section className="py-12 md:py-16">
+<Section className="section-rhythm">
 	<Container>
 		<div class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4 lg:gap-6">
 			<header
-				class="flex min-h-[30rem] flex-col justify-center rounded-[36px] border border-black/5 bg-white px-7 py-12 md:col-span-2 md:px-10 lg:row-span-2 lg:min-h-0 lg:px-12"
+				class="content-rhythm min-h-[30rem] justify-center rounded-[36px] border border-black/5 bg-white px-7 py-12 md:col-span-2 md:px-10 lg:row-span-2 lg:min-h-0 lg:px-12"
 				data-reveal="scale"
 				style="--reveal-duration: 900ms;"
 			>
 				<p
-					class="mb-4 text-sm font-medium uppercase tracking-wide text-accent1-800"
+					class="text-sm font-medium uppercase tracking-wide text-accent1-800"
 					data-reveal="up"
 					data-reveal-text
 				>
@@ -24,7 +24,7 @@
 					<Heading level={1}>Possiamo partire da una prima domanda.</Heading>
 				</div>
 				<div
-					class="mt-8 max-w-2xl space-y-4 text-lg leading-relaxed text-ink/80"
+					class="max-w-2xl space-y-4 text-lg leading-relaxed text-ink/80"
 					data-reveal="up"
 					data-reveal-text
 					style="--reveal-delay: 110ms;"
@@ -41,50 +41,68 @@
 			</header>
 
 			<section
-				class="rounded-[32px] border border-black/5 bg-accent2-100 p-7 md:col-span-1 md:p-8 lg:col-span-2"
+				class="contact-illustrated-card rounded-[32px] border border-black/5 bg-accent2-100 p-7 md:col-span-1 md:p-8 lg:col-span-2"
 				data-reveal="up"
 				style="--reveal-delay: 55ms;"
 			>
-				<p class="mb-3 text-sm font-medium uppercase tracking-wide text-accent1-800">
-					Dove ricevo
-				</p>
-				<h2 class="font-heading mb-4 text-3xl text-ink">Studio</h2>
-				<address class="text-lg not-italic leading-relaxed text-ink/80">
-					Corso Moncalieri 266<br />10133 Torino
-				</address>
-				<a
-					href="https://www.google.com/maps/search/?api=1&query=Corso+Moncalieri+266+Torino"
-					target="_blank"
-					rel="noreferrer"
-					class="mt-5 inline-flex items-center gap-2 font-medium text-accent1-800 underline decoration-1 underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent1-800"
-				>
-					Apri la mappa <span aria-hidden="true">→</span>
-				</a>
+				<div class="contact-card-layout">
+					<div class="min-w-0">
+						<p class="mb-3 text-sm font-medium uppercase tracking-wide text-accent1-800">
+							Dove ricevo
+						</p>
+						<h2 class="font-heading mb-4 text-3xl text-ink">Studio</h2>
+						<address class="text-lg not-italic leading-relaxed text-ink/80">
+							Corso Moncalieri 266<br />10133 Torino
+						</address>
+						<a
+							href="https://www.google.com/maps/search/?api=1&query=Corso+Moncalieri+266+Torino"
+							target="_blank"
+							rel="noreferrer"
+							class="mt-5 inline-flex items-center gap-2 font-medium text-accent1-800 underline decoration-1 underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent1-800"
+						>
+							Apri la mappa <span aria-hidden="true">→</span>
+						</a>
+					</div>
+					<div class="contact-card-illustration" aria-hidden="true">
+						<img src="/img/icon/Therapy-Counseling.png" alt="" />
+					</div>
+				</div>
 			</section>
 
 			<section
-				class="rounded-[32px] border border-black/5 bg-white p-7 md:col-span-1 md:p-8 lg:col-span-2"
+				class="contact-illustrated-card rounded-[32px] border border-black/5 bg-white p-7 md:col-span-1 md:p-8 lg:col-span-2"
 				data-reveal="up"
 				style="--reveal-delay: 110ms;"
 			>
-				<p class="mb-3 text-sm font-medium uppercase tracking-wide text-accent1-800">
-					Come contattarmi
-				</p>
-				<h2 class="font-heading mb-4 text-3xl text-ink">Contatti</h2>
-				<div class="space-y-4 text-lg">
-					<p>
-						<span class="block text-sm font-medium uppercase tracking-wide text-ink/55">Telefono</span>
-						<a class="text-accent1-800 underline underline-offset-4" href="tel:+393403783231"
-							>+39 340 378 3231</a
-						>
-					</p>
-					<p>
-						<span class="block text-sm font-medium uppercase tracking-wide text-ink/55">Email</span>
-						<a
-							class="break-all text-accent1-800 underline underline-offset-4"
-							href="mailto:info@giuliaforcignano.it">info@giuliaforcignano.it</a
-						>
-					</p>
+				<div class="contact-card-layout">
+					<div class="min-w-0">
+						<p class="mb-3 text-sm font-medium uppercase tracking-wide text-accent1-800">
+							Come contattarmi
+						</p>
+						<h2 class="font-heading mb-4 text-3xl text-ink">Contatti</h2>
+						<div class="space-y-4 text-lg">
+							<p>
+								<span class="block text-sm font-medium uppercase tracking-wide text-ink/55"
+									>Telefono</span
+								>
+								<a class="text-accent1-800 underline underline-offset-4" href="tel:+393403783231"
+									>+39 340 378 3231</a
+								>
+							</p>
+							<p>
+								<span class="block text-sm font-medium uppercase tracking-wide text-ink/55"
+									>Email</span
+								>
+								<a
+									class="break-all text-accent1-800 underline underline-offset-4"
+									href="mailto:info@giuliaforcignano.it">info@giuliaforcignano.it</a
+								>
+							</p>
+						</div>
+					</div>
+					<div class="contact-card-illustration" aria-hidden="true">
+						<img src="/img/icon/hello.svg" alt="" />
+					</div>
 				</div>
 			</section>
 
@@ -93,16 +111,14 @@
 				data-reveal="up"
 				style="--reveal-delay: 55ms;"
 			>
-				<p class="mb-3 text-sm font-medium uppercase tracking-wide text-accent1-800">
-					Modalità
-				</p>
+				<p class="mb-3 text-sm font-medium uppercase tracking-wide text-accent1-800">Modalità</p>
 				<h2 class="font-heading mb-4 text-3xl leading-tight text-ink">
 					Colloqui in presenza o online
 				</h2>
 				<p class="text-lg leading-relaxed text-ink/80">
-					Gli incontri possono svolgersi in presenza nel mio studio a Torino oppure online, da
-					uno spazio adatto e riservato. Valuteremo insieme la modalità più adatta alle tue
-					esigenze e alle caratteristiche del percorso.
+					Gli incontri possono svolgersi in presenza nel mio studio a Torino oppure online, da uno
+					spazio adatto e riservato. Valuteremo insieme la modalità più adatta alle tue esigenze e
+					alle caratteristiche del percorso.
 				</p>
 			</section>
 
@@ -133,3 +149,40 @@
 		</div>
 	</Container>
 </Section>
+
+<style>
+	.contact-illustrated-card {
+		container-type: inline-size;
+	}
+
+	.contact-card-layout {
+		height: 100%;
+	}
+
+	.contact-card-illustration {
+		display: none;
+	}
+
+	/* La soglia dipende dalla card, non dal viewport: il testo mantiene
+	   la propria larghezza anche quando cambia la griglia esterna. */
+	@container (min-width: 29rem) {
+		.contact-card-layout {
+			display: grid;
+			grid-template-columns: minmax(17rem, 1fr) minmax(8rem, 11rem);
+			align-items: center;
+			gap: 1.5rem;
+		}
+
+		.contact-card-illustration {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.contact-card-illustration img {
+			max-height: 10rem;
+			width: 100%;
+			object-fit: contain;
+		}
+	}
+</style>
