@@ -2,6 +2,7 @@
 	import PageHeader from '$lib/components/sections/PageHeader.svelte';
 	import AmbitiGrid from '$lib/components/sections/AmbitiGrid.svelte';
 	import Orientamento from '$lib/components/sections/Orientamento.svelte';
+	import FirstMeetingLink from '$lib/components/sections/FirstMeetingLink.svelte';
 	import Section from '$lib/components/ui/Section.svelte';
 	import Container from '$lib/components/ui/Container.svelte';
 	import Button from '$lib/components/ui/Button.svelte';
@@ -32,7 +33,13 @@
 				Non sai quale ambito descrive meglio quello che stai vivendo?
 			</h2>
 			<p class="mb-7 text-lg">Non è necessario saperlo prima di contattarmi.</p>
-			<Button href="/iniziare-un-percorso">Scopri come funziona il primo incontro →</Button>
+			<div class="flex flex-wrap justify-center gap-3">
+				<Button href="mailto:info@giuliaforcignano.it">Scrivimi</Button>
+				<Button variant="outline" href="tel:+393403783231">Chiama ora</Button>
+			</div>
+			<div class="mt-6 flex justify-center">
+				<FirstMeetingLink />
+			</div>
 		</div>
 	</Container>
 </Section>
