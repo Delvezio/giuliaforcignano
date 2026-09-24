@@ -6,56 +6,10 @@
 	import Heading from '$lib/components/ui/Heading.svelte';
 	import Paragraph from '$lib/components/ui/Paragraph.svelte';
 	import Card from '$lib/components/ui/Card.svelte';
-	import ServiceCard from '$lib/components/ui/ServiceCard.svelte';
+	import MeetingModeCard from '$lib/components/ui/MeetingModeCard.svelte';
 	import SectionHeader from '$lib/components/sections/SectionHeader.svelte';
 	import FirstMeetingLink from '$lib/components/sections/FirstMeetingLink.svelte';
 	import JourneySection from '$lib/components/sections/JourneySection.svelte';
-
-	type Service = {
-		title: string;
-		image?: string;
-		text?: string;
-		// NEW: contenuto ricco per la modale
-		modalHtml?: string;
-		// opzionale: fallback testuale se non usi html
-		modalDescription?: string;
-	};
-	const services: Service[] = [
-		{
-			title: 'In Studio',
-			image: '/img/icon/Therapy-Counseling.png',
-			text: '',
-			modalHtml: `
-      <h3>Cosa faremo insieme</h3>
-      <p>In studio ti accompagno in uno spazio protetto e senza distrazioni, dove lavorare con calma su ansia, pensieri e corpo, passo dopo passo.</p>
-
-      <h4>Vantaggi</h4>
-      <ul>
-        <li>Maggiore senso di “stacco” dalla routine: entri in modalità lavoro su di te.</li>
-        <li>Contatto umano diretto: spesso facilita fiducia, ascolto e continuità.</li>
-        <li>Esperienza più “corporea”: utile se l’ansia si manifesta soprattutto con sintomi fisici.</li>
-      </ul>
-    `
-		},
-		{
-			title: 'Sedute Online',
-			image: '/img/icon/hello.svg',
-			text: '',
-			modalHtml: `
-      <h3>Cosa faremo insieme</h3>
-      <p>Online lavoriamo con la stessa struttura e profondità, ma con più flessibilità: puoi collegarti da casa o da dove ti senti più a tuo agio.</p>
-
-      <p>Per viverla al meglio, ti consiglio di scegliere un luogo tranquillo, usare le cuffie se puoi e assicurarti un po’ di privacy: sentirti al sicuro e non interrotto/a favorisce la calma e ti permette di aprirti con più libertà.</p>
-      <h4>Vantaggi</h4>
-      <ul>
-        <li>Comodità e risparmio di tempo: niente spostamenti, più facile essere costanti.</li>
-        <li>Accessibile ovunque: ideale se viaggi, vivi lontano o hai orari complicati.</li>
-        <li>Più comfort emotivo: partire da un luogo familiare può rendere più semplice aprirti.</li>
-      </ul>
-      
-    `
-		}
-	];
 </script>
 
 <PageHeader
@@ -145,27 +99,25 @@
 			title="In studio o sedute online?"
 			intro="Puoi iniziare il tuo percorso nel mio studio a Torino oppure online, da uno spazio adatto e riservato."
 		/>
-		<div class="w-full flex justify-center">
-			<div
-				class="mx-auto inline-flex flex-wrap items-stretch justify-center gap-6
-                sm:max-w-[20rem] md:max-w-[42rem] lg:max-w-[64rem]"
-			>
-				{#each services as s, index (s.title)}
-					<div
-						class="basis-[20rem] shrink-0 w-[20rem]"
-						data-reveal="up"
-						style={`--reveal-delay: ${index * 90}ms;`}
-					>
-						<ServiceCard
-							title={s.title}
-							image={s.image}
-							text={s.text}
-							modalDescription={s.modalDescription}
-							modalHtml={s.modalHtml}
-						/>
-					</div>
-				{/each}
-			</div>
+		<div class="grid gap-6 lg:grid-cols-2">
+			<MeetingModeCard
+				eyebrow="IN STUDIO"
+				title="Uno spazio a Torino"
+				text={`Ricevo in studio in:
+Corso Moncalieri 266, 10133 Torino`}
+				image="/img/icon/Therapy-Counseling.png"
+				imageAlt="Colloquio psicologico in studio"
+				href="https://www.google.com/maps/search/?api=1&query=Corso+Moncalieri+266+Torino"
+				linkLabel="Apri la mappa"
+			/>
+			<MeetingModeCard
+				eyebrow="ONLINE"
+				title="Da uno spazio adatto e riservato"
+				text="È possibile svolgere i colloqui online. La modalità viene valutata in base alle tue esigenze."
+				image="/img/icon/hello.svg"
+				imageAlt="Colloquio psicologico online"
+				tone="soft"
+			/>
 		</div>
 	</Container>
 </Section>
