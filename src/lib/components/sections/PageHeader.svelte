@@ -33,6 +33,7 @@
 	export let imageSrc: string = '';
 	export let imageAlt: string = '';
 	export let imageSide: 'left' | 'right' = 'right';
+	// opzionale: <svelte:fragment slot="media">...</svelte:fragment>
 
 	/** Nuovo: controllo layout contenuti testuali */
 	export let align: 'center' | 'start' | undefined = undefined; // preferenza esplicita
@@ -40,17 +41,21 @@
 
 	// risoluzione finale dell’allineamento:
 	// - se align non è passato: con immagine → start, senza → center
-	$: alignResolved = align ?? (image ? 'start' : 'center');
+	$: hasSlottedMedia = !!$$slots.media;
+	$: hasMedia = image || hasSlottedMedia;
+	$: alignResolved = align ?? (hasMedia ? 'start' : 'center');
 	$: alignClasses =
 		alignResolved === 'center' ? 'items-center text-center' : 'items-start text-left';
 </script>
 
 <Section className="py-12 md:py-16">
 	{#if panel}
-		<!-- PANNELLO con immagine a filo su 3 lati (solo da lg in su), testo centrato verticalmente -->
+		<!-- Il media custom crea due riquadri distinti; l'immagine resta integrata nel pannello. -->
 		<div
-			class={`relative overflow-hidden rounded-[32px] ${panelBg} ${panelPaddingHeight} `}
-			data-reveal="scale"
+			class={hasSlottedMedia
+				? 'grid gap-4 px-4 sm:gap-5 sm:px-8 md:px-16 lg:grid-cols-2 lg:items-stretch'
+				: `relative overflow-hidden rounded-[32px] ${panelBg} ${panelPaddingHeight}`}
+			data-reveal={hasSlottedMedia ? undefined : 'scale'}
 			style="--reveal-duration: 900ms;"
 		>
 			{#if image}
@@ -66,10 +71,17 @@
 				</div>
 			{/if}
 
-			<Container className="py-10 md:py-14">
+			<Container
+				px={hasSlottedMedia ? 'px-7 sm:px-10 lg:px-12 xl:px-14' : 'px-4 sm:px-8 md:px-16'}
+				className={hasSlottedMedia
+					? `flex min-h-[32rem] rounded-[36px] py-12 lg:min-h-[36rem] lg:py-14 ${panelBg}`
+					: 'py-10 md:py-14'}
+			>
 				<!-- TESTO: padding opposto all’immagine, centrato verticalmente rispetto a min-h -->
 				<div
-					class="mx-auto lg:min-h-[var(--ph-min)] lg:flex lg:flex-col lg:justify-center"
+					class={hasSlottedMedia
+						? 'mx-auto flex w-full flex-1 flex-col justify-center'
+						: 'mx-auto lg:flex lg:min-h-[var(--ph-min)] lg:flex-col lg:justify-center'}
 					class:lg:pr-[52%]={image && imageSide === 'right'}
 					class:lg:pl-[52%]={image && imageSide === 'left'}
 				>
@@ -116,7 +128,7 @@
 							<div data-reveal="up" data-reveal-text style="--reveal-delay: 130ms;">
 								<Paragraph
 									variant="lead"
-									className={`${image ? 'max-w-prose' : 'max-w-2xl'} whitespace-pre-line`}
+									className={`${hasMedia ? 'max-w-prose' : 'max-w-2xl'} whitespace-pre-line`}
 								>
 									<slot name="intro" />
 								</Paragraph>
@@ -125,7 +137,7 @@
 							<div data-reveal="up" data-reveal-text style="--reveal-delay: 130ms;">
 								<Paragraph
 									variant="lead"
-									className={`${image ? 'max-w-prose' : 'max-w-2xl'} whitespace-pre-line`}
+									className={`${hasMedia ? 'max-w-prose' : 'max-w-2xl'} whitespace-pre-line`}
 								>
 									{intro}
 								</Paragraph>
@@ -152,14 +164,24 @@
 					</div>
 				</div>
 			</Container>
+
+			{#if $$slots.media}
+				<div
+					class="hidden min-h-[36rem] w-full lg:block"
+					data-reveal={imageSide === 'left' ? 'left' : 'right'}
+					style="--reveal-delay: 160ms; --reveal-duration: 1050ms; --reveal-distance: 2rem;"
+				>
+					<div class="h-full"><slot name="media" /></div>
+				</div>
+			{/if}
 		</div>
 	{:else}
 		<!-- VERSIONE SENZA PANNELLO (fallback) -->
 		<Container>
 			<div
 				class="mx-auto"
-				class:lg:pr-[38%]={image && imageSide === 'right'}
-				class:lg:pl-[38%]={image && imageSide === 'left'}
+				class:lg:pr-[38%]={hasMedia && imageSide === 'right'}
+				class:lg:pl-[38%]={hasMedia && imageSide === 'left'}
 			>
 				<!-- WRAPPER FLEX DEI CONTENUTI -->
 				<div class={`flex flex-col ${alignClasses} ${contentGap}`}>
@@ -200,7 +222,7 @@
 						<div data-reveal="up" data-reveal-text style="--reveal-delay: 130ms;">
 							<Paragraph
 								variant="lead"
-								className={`${image ? 'max-w-prose' : 'max-w-2xl'} mt-3 whitespace-pre-line`}
+								className={`${hasMedia ? 'max-w-prose' : 'max-w-2xl'} mt-3 whitespace-pre-line`}
 							>
 								<slot name="intro" />
 							</Paragraph>
@@ -209,7 +231,7 @@
 						<div data-reveal="up" data-reveal-text style="--reveal-delay: 130ms;">
 							<Paragraph
 								variant="lead"
-								className={`${image ? 'max-w-prose' : 'max-w-2xl'} mt-3 whitespace-pre-line`}
+								className={`${hasMedia ? 'max-w-prose' : 'max-w-2xl'} mt-3 whitespace-pre-line`}
 							>
 								{intro}
 							</Paragraph>
@@ -247,6 +269,16 @@
 								<img src={imageSrc} alt={imageAlt} class="w-full h-full object-cover" />
 							</div>
 						</div>
+					</div>
+				{/if}
+
+				{#if $$slots.media}
+					<div
+						class={`mt-8 w-full lg:w-[48%] ${imageSide === 'left' ? '' : 'lg:ml-auto'}`}
+						data-reveal={imageSide === 'left' ? 'left' : 'right'}
+						style="--reveal-delay: 120ms; --reveal-duration: 900ms;"
+					>
+						<slot name="media" />
 					</div>
 				{/if}
 			</div>
