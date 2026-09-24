@@ -15,6 +15,7 @@
 	import ComponentLabel from '$lib/components/ui/ComponentLabel.svelte';
 	import Container from '$lib/components/ui/Container.svelte';
 	import Heading from '$lib/components/ui/Heading.svelte';
+	import MeetingModeCard from '$lib/components/ui/MeetingModeCard.svelte';
 	import Paragraph from '$lib/components/ui/Paragraph.svelte';
 	import Section from '$lib/components/ui/Section.svelte';
 	import ServiceCard from '$lib/components/ui/ServiceCard.svelte';
@@ -30,6 +31,7 @@
 		['ui-media-text', 'Media + testo'],
 		['ui-ambiti', 'Card ambiti'],
 		['ui-service-card', 'Service Card'],
+		['ui-meeting-mode-card', 'Modalità incontro'],
 		['ui-orientamento', 'Card percorso'],
 		['ui-contact-banner', 'Banner contatto'],
 		['ui-sticky-aside', 'Sticky Aside'],
@@ -273,6 +275,37 @@
 				title="Sedute in studio"
 				image="/img/icon/Therapy-Counseling.png"
 				modalDescription="Esempio del contenuto mostrato nella finestra di dettaglio del servizio."
+			/>
+		</div>
+	</Container>
+</Section>
+
+<ComponentLabel
+	id="ui-meeting-mode-card"
+	name="MeetingModeCard"
+	group="Card informative"
+	description="Proposta compatta con illustrazione a sinistra e testo a destra per studio e colloqui online."
+/>
+<Section className="py-8 md:py-12">
+	<Container>
+		<div class="grid gap-6 lg:grid-cols-2">
+			<MeetingModeCard
+				eyebrow="IN STUDIO"
+				title="Uno spazio a Torino"
+				text={`Ricevo in studio in:
+Corso Moncalieri 266, 10133 Torino`}
+				image="/img/icon/Therapy-Counseling.png"
+				imageAlt="Colloquio psicologico in studio"
+				href="https://www.google.com/maps/search/?api=1&query=Corso+Moncalieri+266+Torino"
+				linkLabel="Apri la mappa"
+			/>
+			<MeetingModeCard
+				eyebrow="ONLINE"
+				title="Da uno spazio adatto e riservato"
+				text="È possibile svolgere i colloqui online. La modalità viene valutata in base alle tue esigenze."
+				image="/img/icon/hello.svg"
+				imageAlt="Colloquio psicologico online"
+				tone="soft"
 			/>
 		</div>
 	</Container>
