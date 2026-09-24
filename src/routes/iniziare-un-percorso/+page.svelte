@@ -1,5 +1,5 @@
 <script lang="ts">
-	import PageHeader from '$lib/components/sections/PageHeader.svelte';
+	import MeetingPageHeader from '$lib/components/sections/MeetingPageHeader.svelte';
 	import Section from '$lib/components/ui/Section.svelte';
 	import Container from '$lib/components/ui/Container.svelte';
 	import FinalCta from '$lib/components/sections/FinalCta.svelte';
@@ -55,17 +55,7 @@
 	];
 </script>
 
-<PageHeader
-	eyebrow="INIZIARE UN PERCORSO"
-	title="Il primo incontro: uno spazio per capire da dove partire"
-	intro="Decidere di contattare una psicologa può far nascere molte domande. Il primo incontro serve proprio a conoscerci e iniziare a comprendere insieme ciò che ti ha portato qui."
-	panel
-	panelBg="bg-white"
-	image
-	imageSrc="/img/photo/giulia-forcignano-psicologa-5.jpeg"
-	imageAlt="Giulia Forcignanò nel suo studio"
-	align="start"
-/>
+<MeetingPageHeader />
 
 <Section className="py-12 md:py-20">
 	<Container>
@@ -135,48 +125,6 @@
 				</ul>
 			</div>
 		</section>
-	</Container>
-</Section>
-
-<Section className="pb-12 md:pb-20">
-	<Container>
-		<div class="grid gap-6 lg:grid-cols-2">
-			<section
-				class="rounded-[32px] bg-white p-7 md:p-10"
-				data-reveal="up"
-				style="--reveal-duration: 850ms;"
-			>
-				<p class="mb-3 text-sm font-medium uppercase tracking-wide text-accent1-800">IN STUDIO</p>
-				<h2 class="font-heading mb-5 text-3xl text-ink">Uno spazio a Torino</h2>
-				<p class="mb-5 text-lg leading-relaxed text-ink/80">Ricevo in studio in:</p>
-				<address class="font-heading mb-7 text-2xl not-italic text-ink">
-					Corso Moncalieri 266<br />10133 Torino
-				</address>
-				<a
-					href="https://www.google.com/maps/search/?api=1&query=Corso+Moncalieri+266+Torino"
-					target="_blank"
-					rel="noreferrer"
-					class="font-medium text-accent1-800 underline underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent1-800"
-					>Apri l’indirizzo sulla mappa →</a
-				>
-			</section>
-
-			<section
-				class="rounded-[32px] bg-accent3-50 p-7 md:p-10"
-				data-reveal="up"
-				style="--reveal-delay: 55ms; --reveal-duration: 850ms;"
-			>
-				<p class="mb-3 text-sm font-medium uppercase tracking-wide text-accent1-800">ONLINE</p>
-				<h2 class="font-heading mb-5 text-3xl text-ink">Da uno spazio adatto e riservato</h2>
-				<div class="space-y-4 text-lg leading-relaxed text-ink/80">
-					<p>È possibile svolgere i colloqui anche online.</p>
-					<p>
-						La modalità può essere valutata in base alle tue esigenze e alle caratteristiche del
-						percorso.
-					</p>
-				</div>
-			</section>
-		</div>
 	</Container>
 </Section>
 
