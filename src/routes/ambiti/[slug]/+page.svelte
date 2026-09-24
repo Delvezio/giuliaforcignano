@@ -4,7 +4,7 @@
 	import ambiti from '$lib/content/ambiti.json';
 	import Section from '$lib/components/ui/Section.svelte';
 	import Container from '$lib/components/ui/Container.svelte';
-	import Button from '$lib/components/ui/Button.svelte';
+	import PathContactBanner from '$lib/components/sections/PathContactBanner.svelte';
 
 	export let data: PageData;
 </script>
@@ -27,7 +27,7 @@
 				<nav
 					aria-label="Ambiti di intervento"
 					class="lg:sticky lg:top-28"
-			>
+				>
 					<a
 						href={resolve('/ambiti')}
 						class="font-heading text-2xl text-ink underline decoration-1 underline-offset-4 transition hover:text-accent1-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent1-800"
@@ -45,7 +45,7 @@
 									aria-current={ambito.slug === data.ambito.slug ? 'page' : undefined}
 									class={`group flex min-h-11 items-center gap-3 rounded-full border px-4 py-2 text-sm leading-snug transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent1-800 lg:min-h-0 lg:justify-between lg:rounded-none lg:border-x-0 lg:border-t-0 lg:px-2 lg:py-4 lg:text-base ${
 										ambito.slug === data.ambito.slug
-											? 'border-accent1-800 bg-accent1-800 text-white lg:bg-accent1-800'
+											? 'border-black/5 bg-accent2-100 text-ink lg:bg-accent2-100'
 											: 'border-black/10 bg-white/60 text-ink hover:border-accent1-800 hover:text-accent1-800 lg:bg-transparent'
 									}`}
 								>
@@ -94,17 +94,6 @@
 								</p>{/each}
 						</section>
 					{/each}
-					<div
-						class="rounded-3xl bg-accent2-50 p-7 md:p-9"
-						data-reveal="scale"
-						style="--reveal-duration: 850ms;"
-					>
-						<Button
-							href={data.ambito.slug === 'disabilita-cognitive'
-								? '/contatti'
-								: '/iniziare-un-percorso'}>{data.ambito.cta}</Button
-						>
-					</div>
 					{#if data.ambito.emergency}
 						<aside
 							class="border-l-2 border-accent1 pl-5 text-sm text-ink/75"
@@ -121,3 +110,5 @@
 		</div>
 	</Container>
 </Section>
+
+<PathContactBanner />
