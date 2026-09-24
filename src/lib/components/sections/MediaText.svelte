@@ -30,12 +30,36 @@
 
 	function parallaxImage(node: HTMLImageElement) {
 		const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
-		let animationFrame = 0;
+		let measureFrame = 0;
+		let motionFrame = 0;
 		let isVisible = false;
 		let reducedMotion = motionPreference.matches;
+		let hasPosition = false;
+		let currentOffset = 0;
+		let targetOffset = 0;
 
-		function updatePosition() {
-			animationFrame = 0;
+		function applyPosition() {
+			node.style.setProperty('--media-parallax-y', `${currentOffset.toFixed(2)}px`);
+		}
+
+		function animatePosition() {
+			motionFrame = 0;
+			if (!isVisible || reducedMotion) return;
+
+			const distance = targetOffset - currentOffset;
+			if (Math.abs(distance) < 0.08) {
+				currentOffset = targetOffset;
+				applyPosition();
+				return;
+			}
+
+			currentOffset += distance * 0.09;
+			applyPosition();
+			motionFrame = window.requestAnimationFrame(animatePosition);
+		}
+
+		function measurePosition() {
+			measureFrame = 0;
 			if (!isVisible || reducedMotion) return;
 
 			const frameElement = node.parentElement;
@@ -46,41 +70,66 @@
 				1,
 				Math.max(0, (window.innerHeight - rect.top) / (window.innerHeight + rect.height))
 			);
-			const offset = (progress - 0.5) * 44;
-			node.style.setProperty('--media-parallax-y', `${offset.toFixed(2)}px`);
+			targetOffset = (progress - 0.5) * 112;
+
+			if (!hasPosition) {
+				currentOffset = targetOffset;
+				hasPosition = true;
+				applyPosition();
+				return;
+			}
+
+			if (!motionFrame) motionFrame = window.requestAnimationFrame(animatePosition);
 		}
 
-		function requestUpdate() {
-			if (!isVisible || reducedMotion || animationFrame) return;
-			animationFrame = window.requestAnimationFrame(updatePosition);
+		function requestMeasurement() {
+			if (!isVisible || reducedMotion || measureFrame) return;
+			measureFrame = window.requestAnimationFrame(measurePosition);
 		}
 
 		function handleMotionPreference() {
 			reducedMotion = motionPreference.matches;
-			if (reducedMotion) node.style.setProperty('--media-parallax-y', '0px');
-			else requestUpdate();
+			if (reducedMotion) {
+				if (measureFrame) window.cancelAnimationFrame(measureFrame);
+				if (motionFrame) window.cancelAnimationFrame(motionFrame);
+				measureFrame = 0;
+				motionFrame = 0;
+				hasPosition = false;
+				node.style.setProperty('--media-parallax-y', '0px');
+			} else {
+				requestMeasurement();
+			}
 		}
 
 		const observer = new IntersectionObserver(
 			([entry]) => {
 				isVisible = entry.isIntersecting;
-				if (isVisible) requestUpdate();
+				if (isVisible) {
+					requestMeasurement();
+				} else {
+					if (measureFrame) window.cancelAnimationFrame(measureFrame);
+					if (motionFrame) window.cancelAnimationFrame(motionFrame);
+					measureFrame = 0;
+					motionFrame = 0;
+					hasPosition = false;
+				}
 			},
-			{ rootMargin: '15% 0%' }
+			{ rootMargin: '25% 0%' }
 		);
 
 		observer.observe(node.parentElement ?? node);
-		window.addEventListener('scroll', requestUpdate, { passive: true });
-		window.addEventListener('resize', requestUpdate, { passive: true });
+		window.addEventListener('scroll', requestMeasurement, { passive: true });
+		window.addEventListener('resize', requestMeasurement, { passive: true });
 		motionPreference.addEventListener('change', handleMotionPreference);
 
 		return {
 			destroy() {
 				observer.disconnect();
-				window.removeEventListener('scroll', requestUpdate);
-				window.removeEventListener('resize', requestUpdate);
+				window.removeEventListener('scroll', requestMeasurement);
+				window.removeEventListener('resize', requestMeasurement);
 				motionPreference.removeEventListener('change', handleMotionPreference);
-				if (animationFrame) window.cancelAnimationFrame(animationFrame);
+				if (measureFrame) window.cancelAnimationFrame(measureFrame);
+				if (motionFrame) window.cancelAnimationFrame(motionFrame);
 			}
 		};
 	}
@@ -93,8 +142,8 @@
 			<div
 				class="w-full lg:w-[48%]"
 				class:lg:order-2={reverse}
-				data-reveal={reverse ? 'right' : 'left'}
-				style="--reveal-duration: 900ms; --reveal-distance: 2.5rem;"
+				data-reveal="fade"
+				style="--reveal-delay: 80ms; --reveal-duration: 1400ms; --reveal-blur: 5px;"
 			>
 				<div class="rounded-[40px] overflow-hidden w-full h-72 sm:h-80 lg:h-[520px]">
 					{#if image}
@@ -176,8 +225,8 @@
 
 <style>
 	.media-parallax-image {
-		height: calc(100% + 4rem);
-		margin-top: -2rem;
+		height: calc(100% + 10rem);
+		margin-top: -5rem;
 		transform: translate3d(0, var(--media-parallax-y, 0), 0);
 		will-change: transform;
 	}
