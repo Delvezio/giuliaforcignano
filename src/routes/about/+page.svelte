@@ -129,7 +129,8 @@
 							</p>
 							<Heading level={5} className="mt-4">{education.title}</Heading>
 
-							<div class="mt-auto min-h-16 border-t border-black/10 pt-4">
+							<div class="min-h-6 flex-1" aria-hidden="true"></div>
+							<div class="min-h-16 border-t border-black/10 pt-4">
 								<p class="text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-ink/55">
 									{education.footerLabel}
 								</p>
