@@ -121,27 +121,29 @@
 						bg={educationSurfaces[index % educationSurfaces.length].bg}
 						tone="100"
 						padding="md"
-						className={`h-full ${educationSurfaces[index % educationSurfaces.length].className}`}
+						className={`h-full [&>div]:h-full ${educationSurfaces[index % educationSurfaces.length].className}`}
 					>
-						<p class="text-xs font-semibold uppercase tracking-[0.12em] text-accent1-800">
-							{education.overtitle}
-						</p>
-						<Heading level={5} className="mt-4">{education.title}</Heading>
-
-						<div class="mt-6 border-t border-black/10 pt-4">
-							<p class="text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-ink/55">
-								{education.footerLabel}
+						<div class="flex h-full flex-col">
+							<p class="text-xs font-semibold uppercase tracking-[0.12em] text-accent1-800">
+								{education.overtitle}
 							</p>
-							{#if education.date}
-								<time
-									datetime={education.date}
-									class="mt-1 block font-heading text-xl leading-tight text-ink"
-								>
-									{education.footerText}
-								</time>
-							{:else}
-								<p class="mt-1 text-sm leading-snug text-ink/75">{education.footerText}</p>
-							{/if}
+							<Heading level={5} className="mt-4">{education.title}</Heading>
+
+							<div class="mt-auto min-h-16 border-t border-black/10 pt-4">
+								<p class="text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-ink/55">
+									{education.footerLabel}
+								</p>
+								{#if education.date}
+									<time
+										datetime={education.date}
+										class="mt-1 block font-heading text-xl leading-tight text-ink"
+									>
+										{education.footerText}
+									</time>
+								{:else}
+									<p class="mt-1 text-sm leading-snug text-ink/75">{education.footerText}</p>
+								{/if}
+							</div>
 						</div>
 					</Card>
 				{/each}
