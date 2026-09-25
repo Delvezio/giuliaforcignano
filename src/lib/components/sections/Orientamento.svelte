@@ -148,7 +148,9 @@
 						aria-controls={phase > 0 ? 'percorso-orientamento' : undefined}
 						on:click={(event) => start(item, event)}
 					>
-						<span class="font-heading mb-3 text-2xl tracking-tight text-ink">{item.title}</span>
+						<span class="font-heading mb-3 text-2xl italic tracking-tight text-ink"
+							>“{item.title}”</span
+						>
 						<span class="mb-5 flex-1 leading-relaxed text-ink/75">{item.description}</span>
 						<span class="font-medium text-accent1-800"
 							>Parti da qui <span aria-hidden="true">→</span></span
