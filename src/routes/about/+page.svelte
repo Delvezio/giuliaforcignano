@@ -78,7 +78,7 @@
 	<!-- CONTENT (2/3) -->
 	<article class="prose prose-neutral max-w-none">
 		<section class="border-b border-black/10 pb-[var(--space-block)]">
-			<Heading level={2} className="mb-10">Sono Giulia Forcignanò, psicologa.</Heading>
+			<Heading level={2} className="!mt-0 mb-10">Sono Giulia Forcignanò, psicologa.</Heading>
 
 			<Paragraph>
 				Il mio approccio si fonda sull’<strong>Analisi Transazionale</strong>. Un orientamento che
