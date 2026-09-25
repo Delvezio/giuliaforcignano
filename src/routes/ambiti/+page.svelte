@@ -19,7 +19,7 @@
 	<Container><AmbitiGrid /></Container>
 </Section>
 
-<Orientamento title="Ti riconosci almeno in una di queste situazioni?" showPageLink={false} />
+<Orientamento title="Ti riconosci in una di queste situazioni?" showPageLink={false} />
 
 <Section className="section-rhythm">
 	<Container>
