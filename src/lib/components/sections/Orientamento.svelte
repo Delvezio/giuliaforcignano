@@ -11,6 +11,15 @@
 	export let showPageLink = true;
 	export let title: string | undefined = undefined;
 
+	const cardSurfaces = [
+		'bg-accent2-100',
+		'bg-accent4-100',
+		'bg-accent5-100',
+		'bg-accent3-100',
+		'bg-accent1-100',
+		'bg-accent2-100'
+	];
+
 	let selected: (typeof percorsi)[number] | null = null;
 	let phase = 0;
 	let panel: HTMLDivElement;
@@ -134,7 +143,7 @@
 				<div class="h-full" data-reveal="up" style={`--reveal-delay: ${index * 65}ms;`}>
 					<button
 						type="button"
-						class="flex h-full min-h-48 w-full flex-col items-center rounded-3xl bg-transparent p-6 text-center transition-colors duration-300 hover:bg-white/70 focus-visible:bg-white/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent1-800 motion-reduce:transition-none"
+						class={`flex h-full min-h-48 w-full flex-col items-center rounded-3xl ${cardSurfaces[index % cardSurfaces.length]} p-6 text-center transition-colors duration-300 hover:bg-white focus-visible:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent1-800 motion-reduce:transition-none`}
 						aria-expanded={selected?.id === item.id && phase > 0}
 						aria-controls={phase > 0 ? 'percorso-orientamento' : undefined}
 						on:click={(event) => start(item, event)}
