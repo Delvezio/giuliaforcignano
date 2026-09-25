@@ -114,14 +114,14 @@
 
 		<section class="not-prose border-b border-black/10 py-[var(--space-block)]">
 			<Heading level={3}>Istruzione & Formazione</Heading>
-			<div class="not-prose mt-7 grid items-start gap-4 sm:grid-cols-2">
+			<div class="not-prose mt-7 grid items-stretch gap-4 sm:grid-cols-2">
 				{#each educationCards as education, index}
 					<Card
 						as="article"
 						bg={educationSurfaces[index % educationSurfaces.length].bg}
 						tone="100"
 						padding="md"
-						className={educationSurfaces[index % educationSurfaces.length].className}
+						className={`h-full ${educationSurfaces[index % educationSurfaces.length].className}`}
 					>
 						<p class="text-xs font-semibold uppercase tracking-[0.12em] text-accent1-800">
 							{education.overtitle}
