@@ -127,6 +127,11 @@ body {
 	background-attachment: fixed;
 }
 
+/* I link e le CTA usano forma, colore e movimento per indicare l'interazione. */
+a {
+	text-decoration-line: none !important;
+}
+
 /* Ritmo comune: due sezioni consecutive producono sempre la stessa distanza. */
 .section-rhythm {
 	padding-block: var(--space-section-pad);

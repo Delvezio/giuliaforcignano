@@ -18,7 +18,7 @@
 
 	const padd = { sm: 'px-4 py-2 text-sm', md: 'px-5 py-2.5', lg: 'px-6 py-3 text-lg' }[size];
 
-	const base = `inline-flex items-center justify-center gap-2 rounded-2xl font-medium transition
+	const base = `group inline-flex items-center justify-center gap-2 rounded-2xl font-medium transition
      focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2
      disabled:opacity-50 disabled:pointer-events-none ${padd} ${full ? 'w-full' : ''} ${className}`;
 
@@ -66,6 +66,12 @@
 		<slot name="left" />
 		<span><slot /></span>
 		<slot name="right" />
+		{#if variant === 'outline'}
+			<span
+				class="outline-arrow -rotate-45 transition-transform duration-300 ease-out group-hover:rotate-0 motion-reduce:transition-none"
+				aria-hidden="true"
+			></span>
+		{/if}
 	</a>
 	<!-- eslint-enable svelte/no-navigation-without-resolve -->
 {:else}
@@ -81,5 +87,23 @@
 		<slot name="left" />
 		<span><slot /></span>
 		<slot name="right" />
+		{#if variant === 'outline'}
+			<span
+				class="outline-arrow -rotate-45 transition-transform duration-300 ease-out group-hover:rotate-0 motion-reduce:transition-none"
+				aria-hidden="true"
+			></span>
+		{/if}
 	</button>
 {/if}
+
+<style>
+	.outline-arrow {
+		display: inline-block;
+		width: 1em;
+		height: 1em;
+		flex: 0 0 auto;
+		background-color: currentColor;
+		-webkit-mask: url('/img/icon/noun_ArrowRight_4808831.svg') center / contain no-repeat;
+		mask: url('/img/icon/noun_ArrowRight_4808831.svg') center / contain no-repeat;
+	}
+</style>
