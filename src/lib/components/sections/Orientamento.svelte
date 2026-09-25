@@ -123,10 +123,6 @@
 						Non è sempre facile dare un nome a ciò che ci accade o sapere già quale percorso
 						cercare.
 					</p>
-					<p class="text-lg text-ink/80">
-						Puoi partire dalla situazione che senti più vicina alla tua esperienza. È soltanto un
-						modo per orientarti tra i contenuti del sito.
-					</p>
 				</div>
 				{#if showPageLink && !standalone}
 					<a
