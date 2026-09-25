@@ -124,8 +124,8 @@
 						cercare.
 					</p>
 					<p class="text-lg text-ink/80">
-						Puoi partire dalla situazione che senti più vicina alla tua esperienza. Non è un test e
-						non restituisce diagnosi: è soltanto un modo per orientarti tra i contenuti del sito.
+						Puoi partire dalla situazione che senti più vicina alla tua esperienza. È soltanto un
+						modo per orientarti tra i contenuti del sito.
 					</p>
 				</div>
 				{#if showPageLink && !standalone}

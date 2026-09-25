@@ -8,7 +8,7 @@
 <PageHeader
 	eyebrow="DA DOVE INIZIARE"
 	title="Non devi sapere già come definire ciò che stai vivendo."
-	intro="Questo breve percorso può aiutarti a riconoscerti in una situazione e a trovare i contenuti più vicini alla tua esperienza. Non è un test e non restituisce diagnosi."
+	intro="Questo breve percorso può aiutarti a riconoscerti in una situazione e a trovare i contenuti più vicini alla tua esperienza."
 	panel
 	panelBg="bg-white"
 >
