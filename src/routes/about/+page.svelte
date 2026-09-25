@@ -77,56 +77,58 @@
 
 	<!-- CONTENT (2/3) -->
 	<article class="prose prose-neutral max-w-none">
-		<Heading level={2} className="mb-10">Sono Giulia Forcignanò, psicologa.</Heading>
+		<section class="border-b border-black/10 pb-[var(--space-block)]">
+			<Heading level={2} className="mb-10">Sono Giulia Forcignanò, psicologa.</Heading>
 
-		<Paragraph>
-			Il mio approccio si fonda sull’<strong>Analisi Transazionale</strong>. Un orientamento che
-			aiuta a migliorare la qualità della vita attraverso una maggiore consapevolezza del proprio
-			modo di pensare, sentire e agire, sia nel rapporto con sé stessi che nelle relazioni
-			interpersonali.
-		</Paragraph>
+			<Paragraph>
+				Il mio approccio si fonda sull’<strong>Analisi Transazionale</strong>. Un orientamento che
+				aiuta a migliorare la qualità della vita attraverso una maggiore consapevolezza del proprio
+				modo di pensare, sentire e agire, sia nel rapporto con sé stessi che nelle relazioni
+				interpersonali.
+			</Paragraph>
 
-		<Paragraph variant="lead">
-			Accompagno adulti e adolescenti in percorsi di conoscenza di sé, per affrontare con maggiore
-			consapevolezza le difficoltà personali legate al proprio io e alle relazioni con gli altri.
-		</Paragraph>
+			<Paragraph variant="lead">
+				Accompagno adulti e adolescenti in percorsi di conoscenza di sé, per affrontare con maggiore
+				consapevolezza le difficoltà personali legate al proprio io e alle relazioni con gli altri.
+			</Paragraph>
 
-		<Paragraph>
-			Credo nel potere della relazione terapeutica come spazio sicuro in cui osservare insieme, con
-			delicatezza e rispetto, ciò che accade dentro di noi.
-		</Paragraph>
+			<Paragraph>
+				Credo nel potere della relazione terapeutica come spazio sicuro in cui osservare insieme,
+				con delicatezza e rispetto, ciò che accade dentro di noi.
+			</Paragraph>
 
-		<Paragraph variant="lead">
-			Ho aiutato persone con disturbi di personalità, attacchi di panico, disabilità cognitive e
-			difficoltà relazionali, così come chi sta vivendo periodi di ansia, stress o depressione,
-			affronta sfide legate al lavoro o alla genitorialità.
-		</Paragraph>
+			<Paragraph variant="lead">
+				Ho aiutato persone con disturbi di personalità, attacchi di panico, disabilità cognitive e
+				difficoltà relazionali, così come chi sta vivendo periodi di ansia, stress o depressione,
+				affronta sfide legate al lavoro o alla genitorialità.
+			</Paragraph>
 
-		<Paragraph>
-			Il mio percorso professionale mi ha insegnato che non esiste un solo modo per stare meglio, ma
-			che ogni persona ha bisogno del proprio tempo, delle proprie parole, della propria storia, e
-			che tutti ci portiamo dentro dinamiche profonde che ci condizionano: talvolta senza
-			accorgercene o senza gli strumenti per affrontarle. Il mio ruolo è aiutarti a riconoscerle,
-			accoglierle e, quando è necessario, superarle.
-		</Paragraph>
+			<Paragraph>
+				Il mio percorso professionale mi ha insegnato che non esiste un solo modo per stare meglio,
+				ma che ogni persona ha bisogno del proprio tempo, delle proprie parole, della propria
+				storia, e che tutti ci portiamo dentro dinamiche profonde che ci condizionano: talvolta
+				senza accorgercene o senza gli strumenti per affrontarle. Il mio ruolo è aiutarti a
+				riconoscerle, accoglierle e, quando è necessario, superarle.
+			</Paragraph>
+		</section>
 
-		<Heading level={3} className="mt-10">Istruzione & Formazione</Heading>
-		<div class="not-prose mt-7 grid gap-4 sm:grid-cols-2">
-			{#each educationCards as education, index}
-				<Card
-					as="article"
-					bg={educationSurfaces[index % educationSurfaces.length].bg}
-					tone="100"
-					padding="lg"
-					className={`h-full ${educationSurfaces[index % educationSurfaces.length].className}`}
-				>
-					<div class="flex min-h-[17rem] h-full flex-col">
+		<section class="not-prose border-b border-black/10 py-[var(--space-block)]">
+			<Heading level={3}>Istruzione & Formazione</Heading>
+			<div class="not-prose mt-7 grid items-start gap-4 sm:grid-cols-2">
+				{#each educationCards as education, index}
+					<Card
+						as="article"
+						bg={educationSurfaces[index % educationSurfaces.length].bg}
+						tone="100"
+						padding="md"
+						className={educationSurfaces[index % educationSurfaces.length].className}
+					>
 						<p class="text-xs font-semibold uppercase tracking-[0.12em] text-accent1-800">
 							{education.overtitle}
 						</p>
-						<Heading level={5} className="mt-6">{education.title}</Heading>
+						<Heading level={5} className="mt-4">{education.title}</Heading>
 
-						<div class="mt-auto border-t border-black/10 pt-5">
+						<div class="mt-6 border-t border-black/10 pt-4">
 							<p class="text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-ink/55">
 								{education.footerLabel}
 							</p>
@@ -141,17 +143,29 @@
 								<p class="mt-1 text-sm leading-snug text-ink/75">{education.footerText}</p>
 							{/if}
 						</div>
-					</div>
-				</Card>
-			{/each}
-		</div>
+					</Card>
+				{/each}
+			</div>
+		</section>
 
-		<Heading level={3} className="mb-8">Il metodo</Heading>
-		<p>
-			Il mio approccio si fonda sull’Analisi Transazionale, un approccio che dà grande importanza al
-			dialogo interno e alle modalità relazionali che ognuno di noi mette in atto.
-		</p>
-		<Button variant="outline" color="accent1" href="/method">Scopri di più sul metodo</Button>
+		<section class="not-prose pt-[var(--space-block)]">
+			<Card as="div" bg="accent1" tone="50" padding="lg" className="!bg-accent1-50">
+				<div class="grid gap-7 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
+					<div>
+						<p class="text-xs font-semibold uppercase tracking-[0.12em] text-accent1-800">
+							Il mio approccio
+						</p>
+						<Heading level={3} className="mt-3">Il metodo</Heading>
+						<Paragraph className="mt-5 max-w-2xl text-ink/75">
+							Il mio approccio si fonda sull’Analisi Transazionale, un approccio che dà grande
+							importanza al dialogo interno e alle modalità relazionali che ognuno di noi mette in
+							atto.
+						</Paragraph>
+					</div>
+					<Button variant="outline" color="accent1" href="/method">Scopri di più sul metodo</Button>
+				</div>
+			</Card>
+		</section>
 	</article>
 </StickyAside>
 
