@@ -27,7 +27,7 @@
 	/** Pannello bg (tipo Hero) */
 	export let panel: boolean = false;
 	export let panelBg: string = 'bg-white'; // usato se panel == true
-	export let panelPaddingHeight: string = '[--ph-min:21rem] min-h-[var(--ph-min)]'; // altezza minima del pannello
+	export let panelPaddingHeight: string = 'min-h-[var(--page-header-panel-min-height)]'; // altezza minima del pannello
 
 	/** Immagine opzionale (≈1/3 del pannello) */
 	export let image: boolean = false;
@@ -39,9 +39,9 @@
 	/** Nuovo: controllo layout contenuti testuali */
 	export let align: 'center' | 'start' | undefined = undefined; // preferenza esplicita
 	export let contentGap: string = 'gap-[var(--space-content)]'; // spacing verticale
-	export let splitContentPadding: string = 'px-7 sm:px-10 lg:px-12 xl:px-14';
+	export let splitContentPadding: string = 'px-[var(--space-page-header-panel)]';
 	export let sectionClass: string = 'section-rhythm';
-	export let splitMinHeight: string = 'min-h-[27rem] lg:min-h-[28rem]';
+	export let splitMinHeight: string = 'min-h-[var(--page-header-split-min-height)]';
 
 	// risoluzione finale dell’allineamento:
 	// - se align non è passato: con immagine → start, senza → center
@@ -76,16 +76,14 @@
 			{/if}
 
 			<Container
-				px={hasSlottedMedia ? splitContentPadding : 'px-4 sm:px-8 md:px-16'}
+				px={hasSlottedMedia ? splitContentPadding : 'px-[var(--space-page-header-panel)]'}
 				className={hasSlottedMedia
-					? `flex ${splitMinHeight} rounded-[36px] py-8 ${panelBg}`
-					: 'py-10 md:py-14'}
+					? `flex ${splitMinHeight} rounded-[36px] py-[var(--space-page-header-panel)] ${panelBg}`
+					: 'flex min-h-[var(--page-header-panel-min-height)] py-[var(--space-page-header-panel)]'}
 			>
 				<!-- TESTO: padding opposto all’immagine, centrato verticalmente rispetto a min-h -->
 				<div
-					class={hasSlottedMedia
-						? 'mx-auto flex w-full flex-1 flex-col justify-center'
-						: 'mx-auto lg:flex lg:min-h-[var(--ph-min)] lg:flex-col lg:justify-center'}
+					class="mx-auto flex w-full flex-1 flex-col justify-center"
 					class:lg:pr-[52%]={image && imageSide === 'right'}
 					class:lg:pl-[52%]={image && imageSide === 'left'}
 				>
@@ -191,7 +189,7 @@
 
 			{#if $$slots.media}
 				<div
-					class={`hidden ${splitMinHeight} w-full lg:block`}
+					class={`hidden ${splitMinHeight} h-full w-full lg:block`}
 					data-reveal={imageSide === 'left' ? 'left' : 'right'}
 					style="--reveal-delay: 160ms; --reveal-duration: 1050ms; --reveal-distance: 2rem;"
 				>

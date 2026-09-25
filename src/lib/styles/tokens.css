@@ -106,6 +106,9 @@
 	--space-actions: 1.5rem;
 	--space-block: clamp(2rem, 3vw, 3rem);
 	--space-grid: clamp(1rem, 2vw, 1.5rem);
+	--space-page-header-panel: 1.75rem;
+	--page-header-panel-min-height: 28rem;
+	--page-header-split-min-height: 30rem;
 	--radius: 1rem;
 	--radius-2xl: 2rem;
 	--shadow-card: 0 6px 24px rgba(0, 0, 0, 0.08);
@@ -129,6 +132,25 @@
 	:root {
 		--container-px: 0rem;
 		--section-py: 5rem;
+	}
+}
+
+@media (min-width: 640px) {
+	:root {
+		--space-page-header-panel: 2.5rem;
+	}
+}
+
+@media (min-width: 1024px) {
+	:root {
+		--space-page-header-panel: 3rem;
+		--page-header-split-min-height: 32rem;
+	}
+}
+
+@media (min-width: 1280px) {
+	:root {
+		--space-page-header-panel: 3.5rem;
 	}
 }
 
