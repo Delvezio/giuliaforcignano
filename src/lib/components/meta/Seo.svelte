@@ -11,6 +11,14 @@
   $: pathname = $page.url.pathname.replace(/\/+$/, '') || '/';
 
   $: resolved = (() => {
+    if ($page.status === 404) {
+      return {
+        title: `Pagina non trovata | ${site.name}`,
+        description: 'La pagina richiesta non è stata trovata.',
+        noindex: true,
+      };
+    }
+
     const known = pageMeta[pathname];
     if (known) return known;
     return { title: site.title, description: site.description, noindex: false };
