@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { onDestroy, tick } from 'svelte';
+	import { onDestroy, onMount, tick } from 'svelte';
 	import { resolve } from '$app/paths';
 	import percorsi from '$lib/content/orientamento.json';
 	import Section from '$lib/components/ui/Section.svelte';
@@ -25,8 +25,22 @@
 	let panel: HTMLDivElement;
 	let trigger: HTMLButtonElement | null = null;
 	let previousBodyOverflow = '';
-	const whatsappHref =
-		'https://wa.me/393403783231?text=Ciao%20Giulia%2C%20ho%20completato%20il%20percorso%20di%20orientamento%20sul%20tuo%20sito%20e%20vorrei%20chiederti%20alcune%20informazioni%20sul%20primo%20incontro.';
+
+	function buildWhatsappHref(now = new Date()) {
+		const hour = Number(
+			new Intl.DateTimeFormat('it-IT', {
+				timeZone: 'Europe/Rome',
+				hour: '2-digit',
+				hourCycle: 'h23'
+			}).format(now)
+		);
+		const greeting = hour >= 17 ? 'Buonasera' : 'Buongiorno';
+		const message = `${greeting} dott.ssa, Forcignanò, vorrei chiederle alcune informazioni sul primo incontro e su un possibile percorso da fare con lei.`;
+
+		return `https://wa.me/393403783231?text=${encodeURIComponent(message)}`;
+	}
+
+	let whatsappHref = buildWhatsappHref();
 
 	async function advance(next: number) {
 		phase = next;
@@ -96,6 +110,17 @@
 			first.focus();
 		}
 	}
+
+	onMount(() => {
+		const updateWhatsappHref = () => {
+			whatsappHref = buildWhatsappHref();
+		};
+
+		updateWhatsappHref();
+		const intervalId = window.setInterval(updateWhatsappHref, 60_000);
+
+		return () => window.clearInterval(intervalId);
+	});
 
 	onDestroy(unlockScroll);
 </script>
