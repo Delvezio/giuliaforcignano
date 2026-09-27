@@ -14,8 +14,7 @@
 		| '/ambiti'
 		| '/da-dove-iniziare'
 		| '/iniziare-un-percorso'
-		| '/contatti'
-		| '/ui';
+		| '/contatti';
 
 	type NavItem = { label: string; route: Route };
 
@@ -25,8 +24,7 @@
 		{ label: 'Ambiti', route: '/ambiti' },
 		{ label: 'Primo incontro', route: '/iniziare-un-percorso' },
 		{ label: 'Da dove iniziare', route: '/da-dove-iniziare' },
-		{ label: 'Contatti', route: '/contatti' },
-		{ label: 'UI', route: '/ui' }
+		{ label: 'Contatti', route: '/contatti' }
 	];
 
 	let open = false;
