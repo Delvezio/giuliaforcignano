@@ -22,6 +22,9 @@
     <Heading level={3}>Statistiche aggregate</Heading>
     <Paragraph>Usiamo Vercel Web Analytics per contare le visite e capire quali pagine vengono consultate. Il servizio non imposta cookie: elabora dati aggregati e usa un identificatore temporaneo che viene eliminato dopo 24 ore. Le statistiche possono comprendere la pagina visitata, la provenienza, l’area geografica approssimativa e informazioni generali su browser e dispositivo. Per la pagina visitata inviamo solo il percorso, senza parametri nell’URL; escludiamo le pagine di conferma dei moduli e non inviamo il contenuto dei messaggi.</Paragraph>
 
+    <Heading level={3}>Google Analytics</Heading>
+    <Paragraph>Il sito usa anche Google Analytics 4 (fornito da Google Ireland Limited) in modalità senza cookie: la memorizzazione di cookie e identificatori sul dispositivo è disattivata, quindi a Google vengono inviati solo segnali anonimi e aggregati sulla visita (pagina, provenienza, informazioni generali su browser e dispositivo). Google Analytics 4 non registra né conserva l’indirizzo IP. Non usiamo questi dati per pubblicità o profilazione.</Paragraph>
+
     <Heading level={3}>Contatti</Heading>
     <Paragraph>Per chiarimenti: <a href="mailto:info@giuliaforcignano.it" class="text-accent1 underline">info@giuliaforcignano.it</a>.</Paragraph>
   </Card>
