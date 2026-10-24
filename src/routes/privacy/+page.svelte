@@ -26,7 +26,7 @@
     <Paragraph>Rispondere alle richieste inviate tramite il modulo contatti e migliorare i contenuti del sito.</Paragraph>
 
     <Heading level={3}>Statistiche di navigazione</Heading>
-    <Paragraph>Le visite alle pagine pubbliche sono misurate con Vercel Web Analytics in forma aggregata e senza cookie. Non inviamo alle statistiche i parametri dell’URL della pagina visitata, le pagine di conferma o i dati inseriti nel modulo contatti.</Paragraph>
+    <Paragraph>Le visite alle pagine pubbliche sono misurate con Vercel Web Analytics in forma aggregata e senza cookie. Non inviamo alle statistiche i parametri dell’URL della pagina visitata, le pagine di conferma o i dati inseriti nel modulo contatti. Usiamo inoltre Google Analytics 4 (Google Ireland Limited) in modalità senza cookie, che riceve solo segnali anonimi e aggregati sulla visita.</Paragraph>
 
     <Heading level={3}>Base giuridica</Heading>
     <Paragraph>Consenso dell’interessato e legittimo interesse del Titolare per la gestione delle richieste.</Paragraph>
