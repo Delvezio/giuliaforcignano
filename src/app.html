@@ -12,6 +12,30 @@
 		<!-- Google Search Console -->
 		<meta name="google-site-verification" content="NTukQ88VAG9nuzGZvLwJ4pSkgo-EZRPwQVXl_OiA__4" />
 
+		<!-- Google Analytics 4 (G-C3MX2B6KKY)
+		     Solo sul dominio di produzione. Consent Mode v2 con tutto negato di default:
+		     nessun cookie viene impostato finché non esiste un banner di consenso. -->
+		<script>
+			(function () {
+				var h = location.hostname;
+				if (h !== 'giuliaforcignano.it' && h !== 'www.giuliaforcignano.it') return;
+				window.dataLayer = window.dataLayer || [];
+				window.gtag = function () { window.dataLayer.push(arguments); };
+				gtag('consent', 'default', {
+					ad_storage: 'denied',
+					ad_user_data: 'denied',
+					ad_personalization: 'denied',
+					analytics_storage: 'denied'
+				});
+				gtag('js', new Date());
+				gtag('config', 'G-C3MX2B6KKY');
+				var s = document.createElement('script');
+				s.async = true;
+				s.src = 'https://www.googletagmanager.com/gtag/js?id=G-C3MX2B6KKY';
+				document.head.appendChild(s);
+			})();
+		</script>
+
 		%sveltekit.head%
 	</head>
 	<body data-sveltekit-preload-data="hover">
