@@ -123,22 +123,8 @@ html {
 	}
 }
 body {
-	background: transparent;
-}
-/* Sfondo sfumato fisso: un livello fermo dietro ai contenuti che scorrono.
-   Sostituisce background-attachment: fixed, che su iPhone non funziona
-   (la sfumatura veniva stirata su tutta la pagina e in alto sembrava un colore piatto). */
-body::before {
-	content: '';
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100lvh;
-	z-index: -1;
-	pointer-events: none;
-	background: var(--site-bg-gradient);
-	background-size: 160% 160%;
+	background: var(--site-bg-gradient) fixed;
+	background-attachment: fixed;
 }
 
 /* I link e le CTA usano forma, colore e movimento per indicare l'interazione. */
@@ -234,10 +220,4 @@ a {
 	.mediatext-title {
 		font-size: 2.3rem !important;
 	}
-}
-
-/* Evita lo scorrimento orizzontale su mobile causato dalle animazioni di ingresso laterali.
-   Solo sul body: su html interferiva con lo sfondo sfumato fisso. */
-body {
-	overflow-x: clip;
 }

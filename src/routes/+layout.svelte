@@ -9,5 +9,8 @@
 <Seo />
 <MotionObserver />
 <Nav />
-<slot />
+<!-- overflow-x-clip: evita lo scorrimento orizzontale causato dalle animazioni laterali, senza toccare html/body e lo sfondo -->
+<div class="overflow-x-clip">
+	<slot />
+</div>
 <Footer />
