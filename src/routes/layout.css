@@ -212,3 +212,11 @@ a {
 		transition: none !important;
 	}
 }
+
+/* Titoli su mobile: h1 e h2 a 2.3rem (sovrascrive le dimensioni inline del componente Heading) */
+@media (max-width: 767px) {
+	h1,
+	h2 {
+		font-size: 2.3rem !important;
+	}
+}

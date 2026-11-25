@@ -47,9 +47,9 @@
 				class="flex w-full grow self-stretch
                flex-col lg:flex-row
                flex-wrap lg:flex-nowrap
-               gap-[70px] lg:gap-x-[1%] lg:gap-y-0
+               gap-5 lg:gap-x-[1%] lg:gap-y-0
                lg:justify-between lg:items-stretch
-               py-16 lg:pt-0 lg:pb-0 my-2 lg:my-18"
+               pt-4 pb-10 lg:pt-0 lg:pb-0 my-2 lg:my-18"
 			>
 				<!-- Colonna testo -->
 				<div
@@ -89,7 +89,11 @@
 						{/if}
 					</div>
 
-					<div class="flex flex-wrap gap-3" data-reveal="up" style="--reveal-delay: 235ms;">
+					<div
+						class="flex flex-wrap gap-3 max-[400px]:gap-2 max-[400px]:[&_a]:px-4 max-[400px]:[&_a]:text-base"
+						data-reveal="up"
+						style="--reveal-delay: 235ms;"
+					>
 						<Button variant="solid" color="accent1" href={primaryHref}>{primaryLabel}</Button>
 						<Button variant={secondaryVariant} color="accent1" href={secondaryHref}
 							>{secondaryLabel}</Button
@@ -134,7 +138,7 @@
 
 				<!-- Colonna immagine: overflow sopra/sotto da lg+ -->
 				<div
-					class="w-full lg:w-[42%] relative"
+					class="w-full lg:w-[42%] relative max-lg:order-first"
 					class:lg:order-1={reverse}
 					data-reveal={reverse ? 'left' : 'right'}
 					style="--reveal-delay: 150ms; --reveal-duration: 950ms; --reveal-distance: 2.5rem;"
@@ -145,11 +149,13 @@
 							<img src={image} {alt} class="w-full h-full object-cover" />
 						</div>
 					</div>
-					<!-- Mobile/Tablet -->
+					<!-- Mobile/Tablet: foto sopra il testo, alta al massimo il 45% dello schermo
+					     e ridotta quanto serve perché sovratitolo, titolo, sottotitolo e CTA restino visibili -->
 					<div
-						class="lg:hidden w-full h-[420px] rounded-[40px] overflow-hidden -translate-y-4 -mb-4"
+						class="lg:hidden w-full rounded-[32px] overflow-hidden"
+						style="height: max(150px, min(45svh, calc(100svh - 530px)));"
 					>
-						<img src={image} {alt} class="w-full h-full object-cover" />
+						<img src={image} {alt} class="w-full h-full object-cover object-[center_15%]" />
 					</div>
 				</div>
 			</div>
