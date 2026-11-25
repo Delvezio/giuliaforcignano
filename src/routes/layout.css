@@ -220,3 +220,9 @@ a {
 		font-size: 2.3rem !important;
 	}
 }
+
+/* Evita lo scorrimento orizzontale su mobile causato dalle animazioni di ingresso laterali */
+html,
+body {
+	overflow-x: clip;
+}
