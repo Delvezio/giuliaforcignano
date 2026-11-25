@@ -228,9 +228,11 @@ a {
 	display: none;
 }
 @media (max-width: 600px) {
-	/* html: colore pieno di base; body trasparente, altrimenti coprirebbe il livello fisso */
+	/* html: colore pieno di base uguale al fondo della sfumatura (azzurrino), così se il browser
+	   scopre qualche pixel sotto il livello fisso non si vede una striscia crema.
+	   body trasparente, altrimenti coprirebbe il livello fisso */
 	html {
-		background: var(--accent5-300);
+		background: var(--accent4-300);
 	}
 	body {
 		background: transparent;
@@ -241,8 +243,10 @@ a {
 		top: 0;
 		left: 0;
 		right: 0;
-		height: 100lvh;
-		min-height: 100vh;
+		/* più alto dello schermo: copre anche la zona che Chrome/Safari su iPhone
+		   scoprono quando la barra in basso compare o sparisce */
+		height: calc(100lvh + 120px);
+		min-height: calc(100vh + 120px);
 		z-index: -1;
 		pointer-events: none;
 		background: var(--site-bg-gradient);
