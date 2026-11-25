@@ -221,3 +221,31 @@ a {
 		font-size: 2.3rem !important;
 	}
 }
+
+/* Mobile (≤600px): sfumatura fissa crema in alto a sinistra → azzurrino in basso a destra.
+   iPhone ignora background-attachment: fixed, quindi usiamo un livello fisso dietro ai contenuti. */
+.site-bg-mobile {
+	display: none;
+}
+@media (max-width: 600px) {
+	/* html: colore pieno di base; body trasparente, altrimenti coprirebbe il livello fisso */
+	html {
+		background: var(--accent5-300);
+	}
+	body {
+		background: transparent;
+	}
+	.site-bg-mobile {
+		display: block;
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		height: 100lvh;
+		min-height: 100vh;
+		z-index: -1;
+		pointer-events: none;
+		background: var(--site-bg-gradient);
+		background-size: 100% 100%;
+	}
+}

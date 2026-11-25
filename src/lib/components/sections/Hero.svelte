@@ -39,7 +39,8 @@
 <!-- Section = stessa max della Nav -->
 <Section className="py-0">
 	<!-- Pannello bianco interno alla Section (niente -mx) -->
-	<div class="bg-white rounded-[40px]">
+	<!-- max-lg:overflow-hidden: su mobile la foto viene ritagliata dagli angoli del pannello stesso (un solo bordo, nessun alone) -->
+	<div class="bg-white rounded-[40px] max-lg:overflow-hidden max-lg:isolate">
 		<!-- Container = padding identico alla Nav -->
 		<Container>
 			<!-- Wrapper contenuti (niente px orizzontali qui) -->
@@ -152,7 +153,7 @@
 					<!-- Mobile/Tablet: foto a tutta larghezza del pannello, a filo con gli angoli arrotondati, sopra il testo.
 					     Altezza legata alla larghezza (vw): non cambia quando la barra del browser compare o sparisce. -->
 					<div
-						class="lg:hidden -mx-4 sm:-mx-8 md:-mx-16 rounded-t-[40px] overflow-hidden"
+						class="lg:hidden -mx-4 sm:-mx-8 md:-mx-16 overflow-hidden"
 						style="height: clamp(220px, 75vw, 360px);"
 					>
 						<img src={image} {alt} class="w-full h-full object-cover object-[center_15%]" />

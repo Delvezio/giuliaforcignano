@@ -7,6 +7,8 @@
 </script>
 
 <Seo />
+<!-- Sfondo sfumato fisso solo su mobile (≤600px): su iPhone background-attachment: fixed non funziona -->
+<div class="site-bg-mobile" aria-hidden="true"></div>
 <MotionObserver />
 <Nav />
 <!-- overflow-x-clip: evita lo scorrimento orizzontale causato dalle animazioni laterali, senza toccare html/body e lo sfondo -->
