@@ -149,11 +149,11 @@
 							<img src={image} {alt} class="w-full h-full object-cover" />
 						</div>
 					</div>
-					<!-- Mobile/Tablet: foto a tutta larghezza del pannello, a filo con gli angoli arrotondati, sopra il testo, alta al massimo il 45% dello schermo
-					     e ridotta quanto serve perché sovratitolo, titolo, sottotitolo e CTA restino visibili -->
+					<!-- Mobile/Tablet: foto a tutta larghezza del pannello, a filo con gli angoli arrotondati, sopra il testo.
+					     Altezza legata alla larghezza (vw): non cambia quando la barra del browser compare o sparisce. -->
 					<div
 						class="lg:hidden -mx-4 sm:-mx-8 md:-mx-16 rounded-t-[40px] overflow-hidden"
-						style="height: max(150px, min(calc(45lvh + 50px), calc(100lvh - 510px)));"
+						style="height: clamp(220px, 75vw, 360px);"
 					>
 						<img src={image} {alt} class="w-full h-full object-cover object-[center_15%]" />
 					</div>
