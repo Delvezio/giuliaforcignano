@@ -175,7 +175,7 @@
 
 				<!-- Slot opzionale per accentuare parole con <em> -->
 				<div data-reveal="up" data-reveal-text style="--reveal-delay: 55ms;">
-					<Heading level={3} className="mb-8"><slot name="title">{title}</slot></Heading>
+					<Heading level={3} className="mb-8 mediatext-title"><slot name="title">{title}</slot></Heading>
 				</div>
 
 				{#if text}

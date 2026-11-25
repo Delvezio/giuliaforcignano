@@ -216,13 +216,14 @@ a {
 /* Titoli su mobile: h1 e h2 a 2.3rem (sovrascrive le dimensioni inline del componente Heading) */
 @media (max-width: 767px) {
 	h1,
-	h2 {
+	h2,
+	.mediatext-title {
 		font-size: 2.3rem !important;
 	}
 }
 
-/* Evita lo scorrimento orizzontale su mobile causato dalle animazioni di ingresso laterali */
-html,
+/* Evita lo scorrimento orizzontale su mobile causato dalle animazioni di ingresso laterali.
+   Solo sul body: su html interferiva con lo sfondo sfumato fisso. */
 body {
 	overflow-x: clip;
 }
