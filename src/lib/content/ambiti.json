@@ -35,6 +35,59 @@
 		"emergency": false
 	},
 	{
+		"slug": "relazioni-tossiche",
+		"cardTitle": "Relazioni tossiche",
+		"image": "/img/service/relazioni-tossiche.svg",
+		"seoTitle": "Relazioni tossiche e dipendenza affettiva | Psicologa Torino",
+		"seoDescription": "Ti ritrovi in relazioni che ti fanno stare male e non riesci a lasciare? Sostegno psicologico per relazioni tossiche e dipendenza affettiva a Torino e online.",
+		"title": "Relazioni tossiche e dipendenza affettiva: quando l’amore fa più male che bene",
+		"intro": [
+			"Ci sono relazioni in cui, anche se qualcosa ti fa soffrire, è difficile andarsene. Ti accorgi che stai male, magari te lo dicono anche le persone vicine, eppure resti, torni indietro o ti ritrovi in una storia molto simile alla precedente.",
+			"Non significa essere deboli o “sbagliati”. Spesso dietro una relazione che fa male ci sono bisogni profondi, paure e modi di stare con l’altro che si sono formati nel tempo. Un percorso psicologico può aiutarti a capirli e a scegliere in modo più libero."
+		],
+		"sections": [
+			{
+				"heading": "Come riconoscere una relazione tossica",
+				"paragraphs": [
+					"Una relazione può diventare tossica in modi diversi, non sempre evidenti. Alcuni segnali frequenti sono: sentirsi spesso in colpa o “mai abbastanza”, avere paura di dire ciò che si pensa, vivere gelosia e controllo continui, alternare momenti di grande vicinanza a lunghi silenzi o allontanamenti, sentire che la propria vita si è ristretta intorno all’altra persona.",
+					"A volte l’inizio è stato intensissimo, quasi perfetto, e da lì in poi si cerca di ritrovare quella sensazione. Altre volte si vive un tira e molla che logora, con lasciarsi e riprendersi più volte."
+				]
+			},
+			{
+				"heading": "Dipendenza affettiva: quando non riesci a lasciare",
+				"paragraphs": [
+					"Si parla di dipendenza affettiva quando il legame con l’altro diventa il centro della propria vita e l’idea di perderlo genera un’angoscia difficile da sostenere. Non è una diagnosi, ma un modo di stare in relazione che può fare molto soffrire.",
+					"Può esprimersi nel bisogno costante di conferme, nella paura dell’abbandono, nella tendenza a mettere sempre i bisogni dell’altro prima dei propri o nella difficoltà a stare da soli. Spesso si accompagna ad ansia, calo dell’umore e a una fiducia in se stessi che si consuma nel tempo."
+				]
+			},
+			{
+				"heading": "Perché ripeto sempre lo stesso tipo di relazione?",
+				"paragraphs": [
+					"È una delle domande che sento più spesso. L’Analisi Transazionale offre strumenti utili per rispondere: secondo questo approccio, ognuno di noi costruisce fin da piccolo un “copione”, cioè un insieme di convinzioni su di sé, sugli altri e sull’amore, che tende a riproporsi anche da adulti.",
+					"Un altro strumento è il Triangolo drammatico, che descrive tre ruoli in cui possiamo trovarci intrappolati nelle relazioni: vittima, persecutore e salvatore. Riconoscere quale ruolo assumi, e come passi da uno all’altro, aiuta a vedere lo schema invece di subirlo."
+				]
+			},
+			{
+				"heading": "Come può aiutarti un percorso psicologico",
+				"paragraphs": [
+					"Nel percorso partiamo da ciò che stai vivendo oggi: la relazione attuale, quella appena finita o il timore di ricadere nelle stesse dinamiche. Insieme osserviamo cosa succede dentro di te quando sei in relazione, quali bisogni cerchi di soddisfare e quali paure ti trattengono.",
+					"L’obiettivo non è dirti cosa fare con la tua relazione, ma aiutarti a riconoscere i tuoi schemi, rafforzare il rapporto con te stesso e diventare più libero di scegliere relazioni in cui stare bene. Gli incontri si svolgono nel mio studio a Torino oppure online."
+				]
+			},
+			{
+				"heading": "Domande frequenti",
+				"paragraphs": [
+					"Come faccio a capire se la mia relazione è tossica? Un buon punto di partenza è chiederti come stai: se nella relazione ti senti più spesso in ansia, in colpa o svalutato che sereno, vale la pena fermarsi a guardare cosa sta succedendo.",
+					"La dipendenza affettiva si può superare? Con un lavoro su di sé è possibile riconoscere gli schemi che la alimentano e costruire modi diversi di stare in relazione. I tempi e il percorso cambiano da persona a persona.",
+					"Posso iniziare un percorso anche se sono ancora nella relazione? Sì. Non è necessario aver già preso una decisione: il percorso può aiutarti proprio a capire cosa vuoi e di cosa hai bisogno.",
+					"Se nella relazione ci sono minacce, violenza fisica, psicologica o economica, non sei sola o solo: puoi chiamare il 1522, numero gratuito e attivo 24 ore su 24 contro la violenza e lo stalking."
+				]
+			}
+		],
+		"cta": "Scopri come funziona il primo incontro",
+		"emergency": true
+	},
+	{
 		"slug": "lavoro",
 		"cardTitle": "Lavoro",
 		"image": "/img/service/lavoro.svg",

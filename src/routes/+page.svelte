@@ -8,7 +8,7 @@
 </script>
 
 <Hero
-	eyebrow="Psicologa"
+	eyebrow="Psicologa a Torino"
 	subtitle="Consulenza e sostegno psicologico rivolte ad adolescenti e adulti a Torino."
 	highlights={[
 		{ icon: '/img/icon/Therapy-Counseling.png', text: 'Sedute in presenza' },
@@ -36,19 +36,19 @@
 <MediaText
 	reverse
 	eyebrow="Cos'è l'Analisi Transazionale"
-	title="Un approccio che analizza le interazioni tra le persone"
+	title="Un approccio psicologico che analizza le interazioni tra le persone"
 	text="Aiuto a riconoscere schemi di comportamento disfunzionali, decisioni prese nell'infanzia e a sviluppare consapevolezza per un cambiamento personale e relazionale."
 	image="/img/photo/pexels-shvets-production-7176026.jpg"
-	alt="Seduta online"
+	alt="Colloquio psicologico online"
 />
 
 <!-- Sezione 2: Media + Text (riga 2) -->
 <MediaText
-	eyebrow="Continuità e supporto"
-	title="Vicino a te, ovunque tu sia, con sedute in presenza e online"
-	text="Puoi iniziare il tuo percorso nel mio studio a Torino oppure da casa, con colloqui online."
+	eyebrow="Supporto psicologico continuativo"
+	title="Una psicologa vicino a te, ovunque tu sia: sedute in studio a Torino e online"
+	text="Puoi iniziare il tuo percorso psicologico nel mio studio a Torino oppure da casa, con colloqui online."
 	image="/img/photo/pexels-liza-summer-6383268.jpg"
-	alt="Materiali e follow-up"
+	alt="Studio di psicologia a Torino"
 />
 
 <Services />

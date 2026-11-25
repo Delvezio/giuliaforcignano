@@ -56,19 +56,18 @@
 					class="w-full lg:w-[50%] flex flex-col gap-5 lg:gap-[30px] lg:py-[100px]"
 					class:lg:order-2={reverse}
 				>
-					{#if eyebrow}
-						<p
-							class="text-sm font-medium tracking-wide uppercase text-accent1-800"
-							data-reveal="up"
-							data-reveal-text
-							style="--reveal-delay: 20ms;"
-						>
-							{eyebrow}
-						</p>
-					{/if}
-
 					<div>
 						<Heading level={1} className="break-words">
+							{#if eyebrow}
+								<!-- Sovratitolo dentro l'H1 (SEO), con lo stesso aspetto dell'eyebrow -->
+								<span
+									class="block mb-5 lg:mb-[30px] font-sans text-sm font-medium tracking-wide uppercase text-accent1-800"
+									style="font-size: 0.875rem; line-height: 1.25rem; --reveal-delay: 20ms;"
+									data-reveal="up"
+									data-reveal-text
+									>{eyebrow}<span class="sr-only"> – </span></span
+								>
+							{/if}
 							<span class="block" data-reveal="up" data-reveal-text style="--reveal-delay: 55ms;"
 								>Psicoterapeuta in</span
 							>
