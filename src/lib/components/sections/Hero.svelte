@@ -49,7 +49,7 @@
                flex-wrap lg:flex-nowrap
                gap-5 lg:gap-x-[1%] lg:gap-y-0
                lg:justify-between lg:items-stretch
-               pt-0 pb-10 lg:pt-0 lg:pb-0 mt-0 mb-2 lg:my-18"
+               pt-16 pb-10 lg:pt-0 lg:pb-0 mt-0 mb-2 lg:my-18"
 			>
 				<!-- Colonna testo -->
 				<div
@@ -149,11 +149,11 @@
 							<img src={image} {alt} class="w-full h-full object-cover" />
 						</div>
 					</div>
-					<!-- Mobile/Tablet: foto a tutta larghezza del pannello, sopra il testo, alta al massimo il 45% dello schermo
+					<!-- Mobile/Tablet: foto a tutta larghezza del pannello, sotto lo spazio della navbar (pt-16), sopra il testo, alta al massimo il 45% dello schermo
 					     e ridotta quanto serve perché sovratitolo, titolo, sottotitolo e CTA restino visibili -->
 					<div
-						class="lg:hidden -mx-4 sm:-mx-8 md:-mx-16 rounded-t-[40px] overflow-hidden"
-						style="height: max(200px, min(calc(45svh + 50px), calc(100svh - 480px)));"
+						class="lg:hidden -mx-4 sm:-mx-8 md:-mx-16 overflow-hidden"
+						style="height: max(150px, min(calc(45svh + 50px), calc(100svh - 590px)));"
 					>
 						<img src={image} {alt} class="w-full h-full object-cover object-[center_15%]" />
 					</div>
