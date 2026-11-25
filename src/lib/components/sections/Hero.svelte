@@ -153,7 +153,7 @@
 					     e ridotta quanto serve perché sovratitolo, titolo, sottotitolo e CTA restino visibili -->
 					<div
 						class="lg:hidden -mx-4 sm:-mx-8 md:-mx-16 rounded-t-[40px] overflow-hidden"
-						style="height: max(150px, min(calc(45svh + 50px), calc(100svh - 510px)));"
+						style="height: max(150px, min(calc(45lvh + 50px), calc(100lvh - 510px)));"
 					>
 						<img src={image} {alt} class="w-full h-full object-cover object-[center_15%]" />
 					</div>
